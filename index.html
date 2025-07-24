@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIIC Brasil - Câmara Intercontinental de Indústria e Comércio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" href="/Images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Navegação -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+           
+            <img src="Images/CIIC_Logo_BG.png" alt="Logo CIIC" class="logo-img">
+            <a href="#" class="logo">
+                CIIC Brasil
+            </a>
+            
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#inicio">Início</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#paises">Países</a>
+                    <div class="dropdown-content">
+                        <a href="#argentina">Argentina</a>
+                        <a href="#paraguay">Paraguai</a>
+                        <a href="#peru">Peru</a>
+                        <a href="#colombia">Colômbia</a>
+                        <a href="#mexico">México</a>
+                        <a href="#israel">Israel</a>
+                        <a href="#elsalvador">El Salvador</a>
+                        <a href="#uruguay">Uruguai</a>
+                        <a href="#panama">Panamá</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="#negocios">Negócios</a></li>
+                <li class="nav-item"><a href="#actividades">Atividades</a></li>
+                <li class="nav-item"><a href="#cultura">Cultura</a></li>
+                <li class="nav-item"><a href="#institucional">Institucional</a></li>
+                <li class="nav-item"><a href="#contacto">Contato</a></li>
+            </ul>
+            <div class="language-selector">
+
+                <button class="lang-btn" onclick="cambiarIdioma('es')">ES</button>
+                <button class="lang-btn" onclick="cambiarIdioma('en')">EN</button>
+                <button class="lang-btn" onclick="cambiarIdioma('pt')">PT</button>
+
+            </div>
+            <button class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+
+    <!-- Live Updates Ticker -->
+    <div class="live-ticker">
+            <div class="ticker-content">
+                <div class="ticker-item">
+                    <span class="status-dot"></span>
+                    <span>ATUALIZAÇÃO EM TEMPO REAL: Nova oportunidade de negócio - Empresa brasileira busca suprimentos médicos</span>
+                </div>
+                <div class="ticker-item ticker-currency">
+                    <span class="status-dot"></span>
+                    <span>COTAÇÃO USD/BRL: Carregando...</span>
+                </div>
+                
+                <div class="ticker-item">
+                    <span class="status-dot"></span>
+                    <span>EVENTO: Conferência Virtual Argentina-Brasil - 15 de Junho</span>
+                </div>
+                <div class="ticker-item">
+                    <span class="status-dot"></span>
+                    <span>NOVO ACORDO: Exportação de produtos agrícolas para Israel</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+<script>
+        let previousUsdRate = null;
+
+        function updateTicker() {
+            console.log("🔄 Actualizando ticker...");
+            
+            fetch("https://api.exchangerate-api.com/v4/latest/BRL")
+                .then(response => response.json())
+                .then(data => {
+                    if (data && data.rates && data.rates.USD) {
+                        const currentUsdRate = 1 / data.rates.USD; // BRL por USD
+                        
+                        console.log(`💱 USD/BRL: ${currentUsdRate.toFixed(2)}`);
+                        
+                        const tickerElement = document.querySelector('.ticker-currency span:last-child');
+                        if (tickerElement) {
+                            let changeText = '';
+                            
+                            if (previousUsdRate) {
+                                const change = ((currentUsdRate - previousUsdRate) / previousUsdRate) * 100;
+                                if (Math.abs(change) < 0.01) {
+                                    changeText = ' (0.00%)';
+                                } else if (change > 0) {
+                                    changeText = ` (+${change.toFixed(2)}%)`;
+                                } else {
+                                    changeText = ` (${change.toFixed(2)}%)`;
+                                }
+                            }
+                            
+                            tickerElement.textContent = `COTAÇÃO USD/BRL: R$ ${currentUsdRate.toFixed(2)}${changeText}`;
+                        }
+                        
+                        previousUsdRate = currentUsdRate;
+                        console.log("✅ Ticker actualizado");
+                    }
+                })
+                .catch(error => {
+                    console.error("❌ Error en ticker:", error);
+                    const tickerElement = document.querySelector('.ticker-currency span:last-child');
+                    if (tickerElement) {
+                        tickerElement.textContent = 'COTAÇÃO USD/BRL: Error API';
+                    }
+                });
+        }
+
+        // Inicializar cuando el DOM esté listo
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("🚀 Iniciando ticker...");
+            updateTicker();
+            
+            // Actualizar cada 30 segundos
+            setInterval(updateTicker, 30000);
+        });
+    </script>
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Conectando Empresas, Criando Oportunidades</h1>
+                <p>A Câmara Intercontinental de Indústria e Comércio do Brasil facilita conexões empresariais entre o Brasil e 9 países estratégicos, promovendo o crescimento econômico internacional.</p>
+                <div class="cta-buttons">
+                    <a href="#negocios" class="btn btn-primary">
+                        <i class="fas fa-handshake"></i>
+                        Explorar Oportunidades
+                    </a>
+                    <a href="#contacto" class="btn btn-secondary">
+                        <i class="fas fa-envelope"></i>
+                        Contatar
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-cards">
+                    <div class="floating-card">
+                        <div class="card-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>Oportunidades de Negócio</h4>
+                        <p>Conectamos empresas com necessidades específicas</p>
+                    </div>
+                    <div class="floating-card">
+                        <div class="card-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h4>Presença Internacional</h4>
+                        <p>9 países em constante comunicação</p>
+                    </div>
+                    <div class="floating-card">
+                        <div class="card-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Confidencialidade Total</h4>
+                        <p>Processos seguros e discretos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countries Section -->
+    <section class="countries-section" id="paises">
+    <div class="section-header">
+        <h2>Nossos Países Parceiros</h2>
+        <p>Facilitamos conexões comerciais entre o Brasil e nossos países parceiros estratégicos</p>
+    </div>
+    <div class="countries-grid">
+        <div class="country-card" onclick="filterByCountry('argentina')">
+            <div class="country-flag">🇦🇷</div>
+            <h3>Argentina</h3>
+            <p>Principais setores: Agrícola, Pecuário, Tecnologia</p>
+        </div>
+        <div class="country-card" onclick="filterByCountry('paraguay')">
+            <div class="country-flag">🇵🇾</div>
+            <h3>Paraguai</h3>
+            <p>Principais setores: Energia, Agroindústria</p>
+        </div>
+        <div class="country-card" onclick="filterByCountry('peru')">
+            <div class="country-flag">🇵🇪</div>
+            <h3>Peru</h3>
+            <p>Principais setores: Mineração, Pesca, Têxtil</p>
+        </div>
+        <div class="country-card" onclick="filterByCountry('colombia')">
+            <div class="country-flag">🇨🇴</div>
+            <h3>Colômbia</h3>
+            <p>Principais setores: Café, Petróleo, Turismo</p>
+        </div>
+        <div class="country-card" onclick="filterByCountry('mexico')">
+            <div class="country-flag">🇲🇽</div>
+            <h3>México</h3>
+            <p>Principais setores: Automotivo, Manufaturas</p>
+        </div>
+        <div class="country-card" onclick="filterByCountry('israel')">
+            <div class="country-flag">🇮🇱</div>
+            <h3>Israel</h3>
+            <p>Principais setores: Tecnologia, Farmacêutica</p>
+        </div>
+        <div class="country-card" onclick="filterByCountry('elsalvador')">
+            <div class="country-flag">🇸🇻</div>
+            <h3>El Salvador</h3>
+            <p>Principais setores: Têxtil, Maquila</p>
+        </div>
+        <div class="country-card" onclick="filterByCountry('uruguay')">
+            <div class="country-flag">🇺🇾</div>
+            <h3>Uruguai</h3>
+            <p>Principais setores: Pecuário, Florestal, TI</p>
+        </div>
+        <div class="country-card" onclick="filterByCountry('panama')">
+            <div class="country-flag">🇵🇦</div>
+            <h3>Panamá</h3>
+            <p>Principais setores: Logística, Serviços</p>
+        </div>
+    </div>
+</section>
+
+<!-- News Section -->
+<section class="news-section" id="noticias">
+    <div class="section-header">
+        <h2>Últimas Notícias e Oportunidades</h2>
+        <p>Mantenha-se informado sobre as últimas oportunidades de negócio e notícias do setor</p>
+    </div>
+    <div class="news-grid">
+        <div class="featured-news">
+            <h3>Oportunidade em Destaque</h3>
+            <p>Empresa brasileira do setor odontológico busca fornecedor de anestesia em grande quantidade. Requer laboratório internacional com capacidade de exportação para o Brasil.</p>
+            <a href="#contacto" class="btn btn-secondary">
+                <i class="fas fa-arrow-right"></i>
+                Contatar Câmara
+            </a>
+        </div>
+        <div class="news-sidebar">
+            <div class="news-item">
+                <h4>Acordo Comercial Argentina-Brasil</h4>
+                <p class="date">24 de Maio de 2025</p>
+                <p>Novo acordo facilita intercâmbio no setor agrícola...</p>
+            </div>
+            <div class="news-item">
+                <h4>Evento Virtual: Tecnologia e Inovação</h4>
+                <p class="date">22 de Maio de 2025</p>
+                <p>Conferência entre empresas israelenses e brasileiras...</p>
+            </div>
+            <div class="news-item">
+                <h4>Oportunidade de Investimento no México</h4>
+                <p class="date">20 de Maio de 2025</p>
+                <p>Setor automotivo busca parceiros brasileiros...</p>
+            </div>
+            <div class="news-item">
+                <h4>Exportação de Café para Colômbia</h4>
+                <p class="date">18 de Maio de 2025</p>
+                <p>Nova rota comercial para produtos brasileiros...</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Seção de Oportunidades de Negócios -->
+<section class="business-section" id="negocios">
+    <div class="section-header">
+        <h2>Oportunidades de Negócios Ativas</h2>
+        <p>Conectamos empresas com necessidades específicas de forma confidencial e segura</p>
+    </div>
+    <div class="opportunities-container">
+        <div class="opportunity-filters">
+            <button class="filter-btn active" data-filter="all">Todas</button>
+            <button class="filter-btn" data-filter="medical">Médico/Farmacêutico</button>
+            <button class="filter-btn" data-filter="agricultural">Agrícola</button>
+            <button class="filter-btn" data-filter="technology">Tecnologia</button>
+            <button class="filter-btn" data-filter="industrial">Industrial</button>
+        </div>
+        <div class="opportunities-grid">
+            <div class="opportunity-card medical">
+                <div class="opportunity-header">
+                    <div class="opportunity-type">Médico/Farmacêutico</div>
+                    <div class="opportunity-date">Publicado: 25 de Maio de 2025</div>
+                </div>
+                <h3>Suprimentos Odontológicos</h3>
+                <p>Empresa brasileira necessita de fornecedor internacional de anestesia para uso odontológico. Quantidade significativa, contrato de longo prazo.</p>
+                <div class="opportunity-tags">
+                    <span class="tag">Brasil → Internacional</span>
+                    <span class="tag">Contrato Anual</span>
+                </div>
+                <button class="btn btn-primary" onclick="contactChamber('dental-supplies')">
+                    <i class="fas fa-handshake"></i>
+                    Contatar Câmara
+                </button>
+            </div>
+            
+            <div class="opportunity-card agricultural">
+                <div class="opportunity-header">
+                    <div class="opportunity-type">Agrícola</div>
+                    <div class="opportunity-date">Publicado: 23 de Maio de 2025</div>
+                </div>
+                <h3>Exportação de Soja</h3>
+                <p>Produtor argentino busca compradores brasileiros para soja de alta qualidade. Volumes de exportação disponíveis.</p>
+                <div class="opportunity-tags">
+                    <span class="tag">Argentina → Brasil</span>
+                    <span class="tag">Imediato</span>
+                </div>
+                <button class="btn btn-primary" onclick="contactChamber('soja-export')">
+                    <i class="fas fa-handshake"></i>
+                    Contatar Câmara
+                </button>
+            </div>
+
+            <div class="opportunity-card technology">
+                <div class="opportunity-header">
+                    <div class="opportunity-type">Tecnologia</div>
+                    <div class="opportunity-date">Publicado: 21 de Maio de 2025</div>
+                </div>
+                <h3>Software de Gestão</h3>
+                <p>Empresa israelense de tecnologia busca sócios brasileiros para distribuição de software de gestão empresarial.</p>
+                <div class="opportunity-tags">
+                    <span class="tag">Israel → Brasil</span>
+                    <span class="tag">Parceria</span>
+                </div>
+                <button class="btn btn-primary" onclick="contactChamber('software-partnership')">
+                    <i class="fas fa-handshake"></i>
+                    Contatar Câmara
+                </button>
+            </div>
+
+            <div class="opportunity-card industrial">
+                <div class="opportunity-header">
+                    <div class="opportunity-type">Industrial</div>
+                    <div class="opportunity-date">Publicado: 19 de Maio de 2025</div>
+                </div>
+                <h3>Máquinas Têxteis</h3>
+                <p>Fabricante mexicano necessita de componentes especializados para máquinas têxteis. Busca fornecedor brasileiro confiável.</p>
+                <div class="opportunity-tags">
+                    <span class="tag">México → Brasil</span>
+                    <span class="tag">Componentes</span>
+                </div>
+                <button class="btn btn-primary" onclick="contactChamber('textile-machinery')">
+                    <i class="fas fa-handshake"></i>
+                    Contatar Câmara
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Seção de Benefícios para Membros -->
+<section class="benefits-section">
+    <div class="benefits-container">
+        <div class="section-header">
+            <h2>Benefícios para Membros Registrados</h2>
+            <p>Junte-se à nossa rede exclusiva e tenha acesso a oportunidades únicas</p>
+        </div>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <h3>Acesso Privilegiado</h3>
+                <p>Veja oportunidades exclusivas antes do público geral</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Rede de Contatos</h3>
+                <p>Conecte-se com empresários dos 9 países parceiros</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-percent"></i>
+                </div>
+                <h3>Descontos Especiais</h3>
+                <p>Preços preferenciais em serviços e documentação</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <h3>Assistência Documental</h3>
+                <p>Apoio em trâmites e documentação internacional</p>
+            </div>
+        </div>
+        <div class="member-cta">
+            <button class="btn btn-primary" onclick="openMembershipForm()">
+                <i class="fas fa-user-plus"></i>
+                Solicitar Filiação
+            </button>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Widget de Taxas de Câmbio -->
+ <section class="rates-section">
+        <div class="rates-container">
+            <h3><i class="fas fa-chart-line"></i> Cotações em Tempo Real</h3>
+            <div class="rates-grid">
+                <div class="rate-item">
+                    <div class="currency-pair">USD/BRL</div>
+                    <div class="rate-value">Carregando...</div>
+                    <div class="rate-change">--</div>
+                </div>
+                <div class="rate-item">
+                    <div class="currency-pair">EUR/BRL</div>
+                    <div class="rate-value">Carregando...</div>
+                    <div class="rate-change">--</div>
+                </div>
+                <div class="rate-item">
+                    <div class="currency-pair">MXN/BRL</div>
+                    <div class="rate-value">Carregando...</div>
+                    <div class="rate-change">--</div>
+                </div>
+                <div class="rate-item">
+                    <div class="currency-pair">UYU/BRL</div>
+                    <div class="rate-value">Carregando...</div>
+                    <div class="rate-change">--</div>
+                </div>
+                <div class="rate-item">
+                    <div class="currency-pair">ARS/BRL</div>
+                    <div class="rate-value">Carregando...</div>
+                    <div class="rate-change">--</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Seção de Eventos -->
+<section class="events-section" id="atividades">
+    <div class="section-header">
+        <h2>Próximos Eventos</h2>
+        <p>Participe dos nossos eventos e conferências internacionais</p>
+    </div>
+    <div class="events-container">
+        <div class="event-filters">
+            <button class="filter-btn active" data-filter="all">Todos os Países</button>
+            <button class="filter-btn" data-filter="argentina">Argentina</button>
+            <button class="filter-btn" data-filter="mexico">México</button>
+            <button class="filter-btn" data-filter="israel">Israel</button>
+        </div>
+        <div class="events-grid">
+            <div class="event-card">
+                <div class="event-date">
+                    <div class="day">15</div>
+                    <div class="month">JUN</div>
+                </div>
+                <div class="event-info">
+                    <h3>Conferência Virtual Argentina-Brasil</h3>
+                    <p class="event-location"><i class="fas fa-globe"></i> Virtual</p>
+                    <p class="event-description">Oportunidades comerciais nos setores agrícola e pecuário</p>
+                    <div class="event-tags">
+                        <span class="tag">Argentina</span>
+                        <span class="tag">Agricultura</span>
+                    </div>
+                </div>
+                <button class="btn btn-primary">Inscrever-se</button>
+            </div>
+
+            <div class="event-card">
+                <div class="event-date">
+                    <div class="day">22</div>
+                    <div class="month">JUN</div>
+                </div>
+                <div class="event-info">
+                    <h3>Mesa Redonda: Tecnologia e Inovação</h3>
+                    <p class="event-location"><i class="fas fa-map-marker-alt"></i> São Paulo, Brasil</p>
+                    <p class="event-description">Encontro presencial com empresários israelenses do setor tecnológico</p>
+                    <div class="event-tags">
+                        <span class="tag">Israel</span>
+                        <span class="tag">Tecnologia</span>
+                    </div>
+                </div>
+                <button class="btn btn-primary">Inscrever-se</button>
+            </div>
+
+            <div class="event-card">
+                <div class="event-date">
+                    <div class="day">05</div>
+                    <div class="month">JUL</div>
+                </div>
+                <div class="event-info">
+                    <h3>Fórum de Investimentos México-Brasil</h3>
+                    <p class="event-location"><i class="fas fa-globe"></i> Híbrido</p>
+                    <p class="event-description">Oportunidades de investimento binacional no setor manufatureiro</p>
+                    <div class="event-tags">
+                        <span class="tag">México</span>
+                        <span class="tag">Manufatura</span>
+                    </div>
+                </div>
+                <button class="btn btn-primary">Inscrever-se</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Seção de Institucional -->
+<!-- Seção Institucional -->
+<section class="countries-section" id="institucional" style="padding: 5rem 0; background: var(--white);">
+    <div class="section-header">
+        <h2>Nossa Instituição</h2>
+        <p>Conheça a história, missão e equipe que faz da CIIC Brasil uma referência em conexões comerciais internacionais</p>
+    </div>
+
+    <!-- História e Missão -->
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem; margin-bottom: 5rem;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+            <div>
+                <h3 style="font-size: 2rem; color: var(--primary-blue); margin-bottom: 1.5rem;">
+                    <i class="fas fa-building" style="color: var(--accent-gold); margin-right: 0.5rem;"></i>
+                    Nossa História
+                </h3>
+                <p style="margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.7;">
+                    Fundada em 2018, a Câmara Intercontinental de Indústria e Comércio do Brasil nasceu da necessidade de criar pontes comerciais sólidas entre empresas brasileiras e mercados internacionais estratégicos.
+                </p>
+                <p style="margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.7;">
+                    Ao longo dos anos, expandimos nossa presença para 9 países, facilitando mais de 1.000 conexões comerciais e gerando milhões em oportunidades de negócios para nossos associados.
+                </p>
+                <div style="background: var(--bg-light); padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--accent-gold);">
+                    <h4 style="color: var(--primary-blue); margin-bottom: 1rem;">
+                        <i class="fas fa-target"></i> Nossa Missão
+                    </h4>
+                    <p style="margin: 0; font-style: italic;">
+                        "Conectar empresas brasileiras com oportunidades globais, facilitando negócios internacionais através de uma rede confiável e discreta de parceiros comerciais."
+                    </p>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <div class="floating-cards" style="position: relative; width: 100%; height: 400px;">
+                    <div class="floating-card" style="position: absolute; background: var(--white); border-radius: 15px; padding: 1.5rem; box-shadow: 0 15px 35px rgba(0,0,0,0.1); animation: float 6s ease-in-out infinite; top: 20%; left: 10%;">
+                        <div style="width: 50px; height: 50px; background: var(--gradient-bg); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 1.5rem; margin-bottom: 1rem;">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h4>2018</h4>
+                        <p>Fundação da CIIC Brasil</p>
+                    </div>
+                    <div class="floating-card" style="position: absolute; background: var(--white); border-radius: 15px; padding: 1.5rem; box-shadow: 0 15px 35px rgba(0,0,0,0.1); animation: float 6s ease-in-out infinite; animation-delay: 2s; top: 45%; right: 20%;">
+                        <div style="width: 50px; height: 50px; background: var(--gradient-bg); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 1.5rem; margin-bottom: 1rem;">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h4>9 Países</h4>
+                        <p>Presença Internacional</p>
+                    </div>
+                    <div class="floating-card" style="position: absolute; background: var(--white); border-radius: 15px; padding: 1.5rem; box-shadow: 0 15px 35px rgba(0,0,0,0.1); animation: float 6s ease-in-out infinite; animation-delay: 4s; bottom: 10%; left: 20%;">
+                        <div style="width: 50px; height: 50px; background: var(--gradient-bg); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 1.5rem; margin-bottom: 1rem;">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>1000+</h4>
+                        <p>Conexões Realizadas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Valores e Princípios -->
+    <div style="background: var(--bg-light); padding: 4rem 0; margin-bottom: 5rem;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div class="section-header" style="margin-bottom: 3rem;">
+                <h3 style="font-size: 2rem; color: var(--primary-blue);">Nossos Valores</h3>
+                <p>Os princípios que guiam nossa atuação no mercado internacional</p>
+            </div>
+            <div class="countries-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                <div class="country-card" style="background: var(--white); border-radius: 15px; padding: 2rem; text-align: center; box-shadow: 0 8px 25px rgba(0,0,0,0.08); transition: all 0.3s ease; cursor: default;">
+                    <div style="width: 60px; height: 60px; margin: 0 auto 1rem; background: var(--gradient-bg); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--white);">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4 style="margin-bottom: 0.5rem; color: var(--text-dark);">Confidencialidade</h4>
+                    <p style="color: var(--text-light); font-size: 0.9rem;">Protegemos informações comerciais com máxima discrição</p>
+                </div>
+                
+                <div class="country-card" style="background: var(--white); border-radius: 15px; padding: 2rem; text-align: center; box-shadow: 0 8px 25px rgba(0,0,0,0.08); transition: all 0.3s ease; cursor: default;">
+                    <div style="width: 60px; height: 60px; margin: 0 auto 1rem; background: var(--gradient-bg); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--white);">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h4 style="margin-bottom: 0.5rem; color: var(--text-dark);">Confiabilidade</h4>
+                    <p style="color: var(--text-light); font-size: 0.9rem;">Entregamos resultados consistentes e duradouros</p>
+                </div>
+                
+                <div class="country-card" style="background: var(--white); border-radius: 15px; padding: 2rem; text-align: center; box-shadow: 0 8px 25px rgba(0,0,0,0.08); transition: all 0.3s ease; cursor: default;">
+                    <div style="width: 60px; height: 60px; margin: 0 auto 1rem; background: var(--gradient-bg); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--white);">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h4 style="margin-bottom: 0.5rem; color: var(--text-dark);">Networking</h4>
+                    <p style="color: var(--text-light); font-size: 0.9rem;">Construímos redes sólidas de relacionamento</p>
+                </div>
+                
+                <div class="country-card" style="background: var(--white); border-radius: 15px; padding: 2rem; text-align: center; box-shadow: 0 8px 25px rgba(0,0,0,0.08); transition: all 0.3s ease; cursor: default;">
+                    <div style="width: 60px; height: 60px; margin: 0 auto 1rem; background: var(--gradient-bg); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--white);">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <h4 style="margin-bottom: 0.5rem; color: var(--text-dark);">Visão Global</h4>
+                    <p style="color: var(--text-light); font-size: 0.9rem;">Perspectiva internacional em todos os negócios</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Equipe Executiva -->
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div class="section-header">
+            <h3 style="font-size: 2rem; color: var(--primary-blue);">Nossa Equipe Executiva</h3>
+            <p>Profissionais experientes dedicados ao seu sucesso internacional</p>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; margin-bottom: 4rem;">
+            <!-- CEO -->
+            <div class="opportunity-card" style="background: var(--white); border-radius: 15px; padding: 2rem; box-shadow: 0 8px 25px rgba(0,0,0,0.08); transition: all 0.3s ease; border-left: 4px solid var(--accent-gold); text-align: center;">
+                <div style="width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: white; font-weight: bold;">
+                    RS
+                </div>
+                <h4 style="color: var(--primary-blue); margin-bottom: 0.5rem; font-size: 1.3rem;">Roberto Silva</h4>
+                <p style="color: var(--accent-gold); font-weight: 600; margin-bottom: 1rem;">CEO & Fundador</p>
+                <p style="color: var(--text-light); margin-bottom: 1.5rem; line-height: 1.6;">
+                    Mais de 20 anos de experiência em comércio internacional. Formado em Relações Internacionais pela USP, com MBA em Negócios Globais.
+                </p>
+                <div style="display: flex; justify-content: center; gap: 0.5rem;">
+                    <span style="background: var(--bg-light); color: var(--text-dark); padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.8rem;">Comércio Exterior</span>
+                    <span style="background: var(--bg-light); color: var(--text-dark); padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.8rem;">Liderança</span>
+                </div>
+            </div>
+
+            <!-- Diretora Comercial -->
+            <div class="opportunity-card" style="background: var(--white); border-radius: 15px; padding: 2rem; box-shadow: 0 8px 25px rgba(0,0,0,0.08); transition: all 0.3s ease; border-left: 4px solid var(--accent-gold); text-align: center;">
+                <div style="width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: white; font-weight: bold;">
+                    MC
+                </div>
+                <h4 style="color: var(--primary-blue); margin-bottom: 0.5rem; font-size: 1.3rem;">Maria Fernanda Costa</h4>
+                <p style="color: var(--accent-gold); font-weight: 600; margin-bottom: 1rem;">Diretora Comercial</p>
+                <p style="color: var(--text-light); margin-bottom: 1.5rem; line-height: 1.6;">
+                    Especialista em desenvolvimento de negócios internacionais. 15 anos conectando empresas brasileiras com mercados globais.
+                </p>
+                <div style="display: flex; justify-content: center; gap: 0.5rem;">
+                    <span style="background: var(--bg-light); color: var(--text-dark); padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.8rem;">Vendas</span>
+                    <span style="background: var(--bg-light); color: var(--text-dark); padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.8rem;">Relacionamento</span>
+                </div>
+            </div>
+
+            <!-- Diretor de Operações -->
+            <div class="opportunity-card" style="background: var(--white); border-radius: 15px; padding: 2rem; box-shadow: 0 8px 25px rgba(0,0,0,0.08); transition: all 0.3s ease; border-left: 4px solid var(--accent-gold); text-align: center;">
+                <div style="width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: white; font-weight: bold;">
+                    AL
+                </div>
+                <h4 style="color: var(--primary-blue); margin-bottom: 0.5rem; font-size: 1.3rem;">André Luís Santos</h4>
+                <p style="color: var(--accent-gold); font-weight: 600; margin-bottom: 1rem;">Diretor de Operações</p>
+                <p style="color: var(--text-light); margin-bottom: 1.5rem; line-height: 1.6;">
+                    Engenheiro de Produção com especialização em Logística Internacional. Gerencia operações em todos os 9 países parceiros.
+                </p>
+                <div style="display: flex; justify-content: center; gap: 0.5rem;">
+                    <span style="background: var(--bg-light); color: var(--text-dark); padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.8rem;">Operações</span>
+                    <span style="background: var(--bg-light); color: var(--text-dark); padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.8rem;">Logística</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Certificações e Reconhecimentos -->
+        <div style="background: var(--gradient-bg); border-radius: 20px; padding: 3rem; color: var(--white); text-align: center; margin-bottom: 4rem;">
+            <h3 style="font-size: 1.8rem; margin-bottom: 2rem;">
+                <i class="fas fa-award" style="color: var(--accent-gold); margin-right: 0.5rem;"></i>
+                Certificações e Reconhecimentos
+            </h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+                <div>
+                    <i class="fas fa-certificate" style="font-size: 2rem; color: var(--accent-gold); margin-bottom: 1rem;"></i>
+                    <h4>ISO 9001:2015</h4>
+                    <p style="opacity: 0.9; font-size: 0.9rem;">Certificação de Qualidade</p>
+                </div>
+                <div>
+                    <i class="fas fa-shield-alt" style="font-size: 2rem; color: var(--accent-gold); margin-bottom: 1rem;"></i>
+                    <h4>LGPD Compliance</h4>
+                    <p style="opacity: 0.9; font-size: 0.9rem;">Proteção de Dados</p>
+                </div>
+                <div>
+                    <i class="fas fa-medal" style="font-size: 2rem; color: var(--accent-gold); margin-bottom: 1rem;"></i>
+                    <h4>Prêmio Exportação</h4>
+                    <p style="opacity: 0.9; font-size: 0.9rem;">Melhor Câmara 2024</p>
+                </div>
+                <div>
+                    <i class="fas fa-handshake" style="font-size: 2rem; color: var(--accent-gold); margin-bottom: 1rem;"></i>
+                    <h4>Parceiro APEX</h4>
+                    <p style="opacity: 0.9; font-size: 0.9rem;">Agência de Promoção</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">Pronto para Expandir Internacionalmente?</h3>
+            <p style="color: var(--text-light); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Nossa equipe experiente está pronta para conectar sua empresa com oportunidades globais. Entre em contato e descubra como podemos impulsionar seus negócios.
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="#contato" class="btn btn-primary">
+                    <i class="fas fa-phone"></i>
+                    Falar com Especialista
+                </a>
+                <a href="#negocios" class="btn btn-secondary">
+                    <i class="fas fa-search"></i>
+                    Ver Oportunidades
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Seção de Contato -->
+<section class="contact-section" id="contato">
+    <div class="contact-content">
+        <div class="contact-info">
+            <h3>Entre em Contato</h3>
+            <p>Estamos aqui para facilitar suas conexões comerciais internacionais</p>
+            
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <strong>Email Principal</strong>
+                    <p>contato@ciicbrasil.com.br</p>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <div>
+                    <strong>Telefone</strong>
+                    <p>+55 (11) 3456-7890</p>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <i class="fab fa-whatsapp"></i>
+                <div>
+                    <strong>WhatsApp</strong>
+                    <p>+55 (11) 99876-5432</p>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <strong>Endereço</strong>
+                    <p>Av. Paulista, 1000 - São Paulo, SP<br>CNPJ: 12.345.678/0001-90</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="contact-form">
+            <h3>Envie uma Mensagem</h3>
+            <form onsubmit="submitContactForm(event)">
+                <div class="form-group">
+                    <label for="empresa">Empresa</label>
+                    <input type="text" id="empresa" class="form-control" placeholder="Nome da sua empresa" required>
+                </div>
+                <div class="form-group">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" class="form-control" placeholder="Seu nome completo" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" class="form-control" placeholder="seu@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="pais">País</label>
+                    <select id="pais" class="form-control" required>
+                        <option value="">Selecionar país</option>
+                        <option value="brasil">Brasil</option>
+                        <option value="argentina">Argentina</option>
+                        <option value="paraguay">Paraguai</option>
+                        <option value="peru">Peru</option>
+                        <option value="colombia">Colômbia</option>
+                        <option value="mexico">México</option>
+                        <option value="israel">Israel</option>
+                        <option value="elsalvador">El Salvador</option>
+                        <option value="uruguay">Uruguai</option>
+                        <option value="panama">Panamá</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="mensagem">Mensagem</label>
+                    <textarea id="mensagem" class="form-control" rows="4" placeholder="Descreva sua consulta ou necessidade comercial" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-paper-plane"></i>
+                    Enviar Mensagem
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Rodapé -->
+<footer class="footer">
+    <div class="footer-main">
+<div class="footer-main">
+ <!-- Sección de Marca -->
+            <div class="footer-brand" style="justify-content: center;">
+                <div class="footer-logo">
+                    <img src="Images/CIIC_Logo_BG.png" alt="Logo CIIC" class="logo-img">
+                    <a href="#" class="logo">
+                        CIIC Brasil
+                    </a>
+                </div>
+                <p class="footer-description">
+                    A Câmara Intercontinental de Indústria e Comércio do Brasil é sua ponte para oportunidades comerciais globais. Conectamos empresas brasileiras com parceiros estratégicos em 9 países, facilitando negócios internacionais de forma segura e confidencial.
+                </p>
+                
+                <div class="footer-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">9</span>
+                        <span class="stat-label">Países</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Empresas</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">1000+</span>
+                        <span class="stat-label">Negócios</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Suporte</span>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="#" class="social-link" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-link" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-link" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="social-link" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link" title="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+</div>
+
+        <div class="footer-content">
+
+            <!-- Links Rápidos -->
+            <div class="footer-section">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="#inicio"><i class="fas fa-home"></i>Início</a></li>
+                    <li><a href="#paises"><i class="fas fa-flag"></i>Países Parceiros</a></li>
+                    <li><a href="#negocios"><i class="fas fa-handshake"></i>Oportunidades</a></li>
+                    <li><a href="#atividades"><i class="fas fa-calendar"></i>Eventos</a></li>
+                    <li><a href="#cultura"><i class="fas fa-palette"></i>Cultura</a></li>
+                    <li><a href="#institucional"><i class="fas fa-building"></i>Institucional</a></li>
+                </ul>
+
+                <div class="newsletter">
+                    <h5><i class="fas fa-envelope"></i> Newsletter</h5>
+                    <p style="font-size: 0.9rem; margin-bottom: 1rem; color: rgba(255,255,255,0.8);">
+                        Receba oportunidades exclusivas
+                    </p>
+                    <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+                        <input type="email" class="newsletter-input" placeholder="Seu email" required>
+                        <button type="submit" class="newsletter-btn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Países Parceiros -->
+            <div class="footer-section">
+                <h4>Países Parceiros</h4>
+                <div class="country-links">
+                    <a href="#argentina">Argentina</a>
+                    <a href="#paraguay">Paraguai</a>
+                    <a href="#peru">Peru</a>
+                    <a href="#colombia">Colômbia</a>
+                    <a href="#mexico">México</a>
+                    <a href="#israel">Israel</a>
+                    <a href="#elsalvador">El Salvador</a>
+                    <a href="#uruguay">Uruguai</a>
+                    <a href="#panama">Panamá</a>
+                </div>
+            </div>
+
+            <!-- Información de Contacto -->
+            <div class="footer-section">
+                <h4>Contato</h4>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-item-content">
+                            <strong>Email</strong>
+                            <span>contato@ciicbrasil.com.br</span>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="contact-item-content">
+                            <strong>Telefone</strong>
+                            <span>+55 (11) 3456-7890</span>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div class="contact-item-content">
+                            <strong>WhatsApp</strong>
+                            <span>+55 (11) 99876-5432</span>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="contact-item-content">
+                            <strong>Endereço</strong>
+                            <span>Av. Paulista, 1000<br>São Paulo, SP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="footer-bottom-content">
+            <div class="footer-bottom-left">
+                <p>&copy; 2025 Câmara Intercontinental da Indústria e Comércio do Brasil. Todos os direitos reservados.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.8rem;">CNPJ: 12.345.678/0001-90</p>
+            </div>
+            <div class="footer-bottom-right">
+                <a href="#privacy">Política de Privacidade</a>
+                <a href="#terms">Termos de Uso</a>
+                <a href="#sitemap">Mapa do Site</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Botón Back to Top -->
+<button class="back-to-top" onclick="scrollToTop()" title="Voltar ao topo">
+    <i class="fas fa-chevron-up"></i>
+</button>
+
+
+<!-- Modal de Login -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Acesso para Membros</h2>
+        <form onsubmit="handleLogin(event)">
+            <div class="form-group">
+                <label for="loginEmail">Email</label>
+                <input type="email" id="loginEmail" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="loginPassword">Senha</label>
+                <input type="password" id="loginPassword" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Entrar</button>
+        </form>
+        <p style="margin-top: 1rem; text-align: center;">
+            Não tem conta? <a href="#" onclick="openMembershipForm()">Solicitar associação</a>
+        </p>
+    </div>
+</div>
+
+</body>
+<script src="/Functions.js"></script>
+
+</html>
