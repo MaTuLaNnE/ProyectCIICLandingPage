@@ -1300,6 +1300,10 @@ body {
                 grid-template-columns: repeat(2, 1fr);
             }
 
+            body {
+                padding-top: 120px; /* Aún más padding para pantallas muy pequeñas */
+            }
+
             .newsletter-form {
                 flex-direction: column;
             }
