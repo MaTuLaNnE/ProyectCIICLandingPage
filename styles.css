@@ -1301,8 +1301,8 @@ body {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .hero {
-                margin-top: 120px; /* Aún más padding para pantallas muy pequeñas */
+            .hero-content {
+                margin-top: 150px; /* Aún más padding para pantallas muy pequeñas */
             }
 
             .newsletter-form {
