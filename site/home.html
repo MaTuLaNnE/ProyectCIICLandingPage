@@ -10,6 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+    <link rel="icon" href="images/favicon/favicon.ico" type="image/x-icon">
     <style>
         .country-card:hover {
             transform: translateY(-5px);
@@ -25,11 +26,12 @@
 <body class="font-sans bg-gray-50">
     <!-- Navigation -->
     <nav class="bg-white shadow-md sticky top-0 z-50">
+
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             
             <!-- <div class="text-2xl font-bold text-blue-800">CIIC</div> -->
             <div class="flex items-center space-x-3">
-                <img src="/Images/CIIC_Logo_BG.png" alt="Logo CIIC" class="logo-img" style="width: 10%;">
+                <img src="/site/images/CIIC_Logo_BG.png" alt="Logo CIIC" class="logo-img" style="width: 10%;">
             <a class="text-2xl font-bold text-blue-800">
                 CIIC
             </a>
@@ -55,6 +57,7 @@
                 <a href="#opportunities" class="text-gray-700 hover:text-blue-600">Oportunidades</a>
                 <a href="#about" class="text-gray-700 hover:text-blue-600">Sobre</a>
                 <a href="#contact" class="text-gray-700 hover:text-blue-600">Contato</a>
+                <a href="institucional.html" class="text-gray-700 hover:text-blue-600">Institucional</a>
             </div>
             <div class="md:hidden relative">
                 <button id="mobile-menu-button">
@@ -89,7 +92,6 @@
     <section id="hero" class="py-20 text-white" data-aos="fade-in">
         <div class="container mx-auto px-4 text-center">
             <div class="max-w-3xl mx-auto">
-                <p class="text-yellow-400 mb-2 font-medium">ATUALIZAÇÃO EM TEMPO REAL: Nova oportunidade de negócio</p>
                 <h1 class="text-4xl md:text-5xl font-bold mb-6">Conectando Empresas, Criando Oportunidades</h1>
                 <p class="text-xl mb-8">A Câmara Intercontinental de Indústria e Comércio do Brasil facilita conexões empresariais entre o Brasil e 9 países estratégicos.</p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
@@ -593,6 +595,29 @@
             scaleMobile: 1.00,
             color: 0x3a86ff,
             backgroundColor: 0x0
+        });
+    </script>
+
+
+
+
+
+
+
+    <script>
+        // Update current time
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+            document.getElementById('current-time').textContent = timeString;
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+
+        // Initialize AOS and Feather Icons
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init();
+            feather.replace();
         });
     </script>
 </body>
