@@ -18,6 +18,7 @@ async function loadNews() {
         <h2>${n.title}</h2>
         <p>${n.summary ?? ''}</p>
         <small>${new Date(n.published_at).toLocaleDateString()}</small>
+        <img src="${n.image_url}">
       </article>
     `
   })
