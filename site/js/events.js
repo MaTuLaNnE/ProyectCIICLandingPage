@@ -17,7 +17,7 @@ async function loadEvents() {
     container.innerHTML += `
       <article class="events-card">
         <h2>${e.title}</h2>
-        <p>${e.summary ?? ''}</p>
+        <p>${e.subtitle ?? ''}</p>
         <small>${new Date(e.date).toLocaleDateString()}</small>
       </article>
     `
