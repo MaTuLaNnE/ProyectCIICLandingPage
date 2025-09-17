@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Noticias CIIC</title>
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- SDK Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/js/supabase.js"></script>
+  <script src="/js/events.js"></script>
+</head>
+<body onload="loadEvents()">
+  <header>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="events.html">Eventos</a>
+      <a href="news.html">Noticias</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Noticias</h1>
+    <div id="events-list"></div>
+  </main>
+
+  <footer>
+    <p>&copy; CIIC - 2025</p>
+  </footer>
+</body>
+</html>

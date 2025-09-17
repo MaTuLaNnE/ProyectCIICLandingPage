@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Noticias CIIC</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="images/favicon/favicon.ico" type="image/x-icon">
+
+  <!-- SDK Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/js/supabase.js"></script>
+  <script src="/js/news.js"></script>
+</head>
+<body onload="loadNews()">
+  <header>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="events.html">Eventos</a>
+      <a href="news.html">Noticias</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Noticias</h1>
+    <div id="news-list"></div>
+  </main>
+
+  <footer>
+    <p>&copy; CIIC - 2025</p>
+  </footer>
+</body>
+</html>
