@@ -2,7 +2,7 @@ async function loadEvents() {
   const { data, error } = await supabase
     .from('Events')
     .select('*')
-    .order('date', { ascending: false })
+    .order('start_date', { ascending: false })
 
 
   if (error) {
