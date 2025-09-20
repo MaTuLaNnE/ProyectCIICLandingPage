@@ -23,39 +23,45 @@ async function loadEvents() {
   data.forEach(e => {
     container.innerHTML += `
       <div class="grid grid-cols-1 event-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
-          <div class="p-2"><!-- Contenido -->
-
+        <div class="p-6">
+          <!-- Header Section -->
+          <div class="mb-6">
             <!-- Título -->
-            <h3 class="text-2xl font-bold text-blue-800 mb-2">${e.title}</h3>
-
+            <h3 class="text-2xl font-bold text-blue-800 mb-4 leading-tight">${e.title}</h3>
+            
             <!-- Subtítulo -->
-            <p class="text-gray-600 mb-4" style="font-size: large; font-weight: bold;">${e.subtitle}</p>
+            <p class="text-lg font-semibold text-gray-600 leading-relaxed">${e.subtitle}</p>
+          </div>
 
-            <!-- Descripción -->
-            <p class="text-gray-700 mb-6 text-justify">${e.description}</p>
+          <!-- Descripción -->
+          <div class="mb-8">
+            <p class="text-gray-700 text-justify leading-relaxed">${e.description}</p>
+          </div>
 
+          <!-- Info Section -->
+          <div class="space-y-6">
             <!-- Ubicación + Fecha -->
-            <div class="grid grid-cols-2" style="padding-left: 20px; padding-right: 20px; justify-items: center; align-items: center;">
-              <div class="flex items-center mb-4"><!-- Ubicación -->
-                <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
-                <span class="text-xl text-gray-500">${e.location}</span>
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div class="flex items-center">
+                <i data-feather="map-pin" class="w-5 h-5 mr-3 text-gray-400"></i>
+                <span class="text-lg text-gray-600">${e.location}</span>
               </div>
 
-              <div class="bg-blue-800 text-white p-3 rounded-xl text-center inline-block mb-4"><!-- Fecha -->
-                <div class="text-xl font-bold">${new Date(e.start_date).toLocaleDateString()}</div>
-                <div class="text-xs">Até</div>
-                <div class="text-xl font-bold">${new Date(e.end_date).toLocaleDateString()}</div>
+              <div class="bg-blue-800 text-white px-4 py-3 rounded-xl text-center min-w-[140px]">
+                <div class="text-lg font-bold">${new Date(e.start_date).toLocaleDateString()}</div>
+                <div class="text-xs opacity-75">Até</div>
+                <div class="text-lg font-bold">${new Date(e.end_date).toLocaleDateString()}</div>
               </div>
             </div>
 
             <!-- Tags -->
-            <div class="grid grid-cols-2 gap-2" style="padding-left: 60px; padding-right: 60px;">
-              <span style="justify-self: center;" class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">País</span>
-              <span style="justify-self: center;" class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Categoría</span>
+            <div class="flex flex-wrap gap-3 justify-center pt-2">
+              <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">País</span>
+              <span class="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium">Categoría</span>
             </div>
-
           </div>
         </div>
+      </div>
     `
   })
 }
