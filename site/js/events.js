@@ -1,14 +1,18 @@
 async function loadEvents() {
   const { data, error } = await supabase
-    .from('Events')
+    .from('events')
     .select(`
-      id,
+      eventid,
       title,
-      subtitle,
-      description,
+      summary,
       start_date,
+      created_ay,
+      countryId,
+      categoryId,
+      subtitle,
       end_date,
-      location
+      location,
+      isVirtual
     `)
     .order('start_date', { ascending: false });
 
