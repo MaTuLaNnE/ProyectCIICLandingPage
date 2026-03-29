@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,23 +15,44 @@
         .institutional-card {
             transition: all 0.3s ease;
         }
+
         .institutional-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
+
         .objective-item:hover {
             background-color: rgba(59, 130, 246, 0.05);
         }
+
         .participant-card:hover {
             transform: scale(1.03);
         }
+
         #hero-institutional {
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('http://static.photos/workspace/1200x630/42');
             background-size: cover;
             background-position: center;
         }
+
+        .animate-fadeIn {
+            animation: fadeInScale 0.25s ease;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: translateY(10px) scale(0.98);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
     </style>
 </head>
+
 <body class="font-sans bg-gray-50">
     <!-- Navigation -->
     <nav class="bg-white shadow-md sticky top-0 z-50">
@@ -42,17 +64,16 @@
                         Camara Intercontinental de Industria e Comercio
                     </a>
                 </div>
-            
+
             </div>
-            
+
             <div class="hidden md:flex space-x-8">
                 <a href="index.html" class="text-gray-700 hover:text-blue-600">Início</a>
                 <a href="#quem-somos" class="text-gray-700 hover:text-blue-600">Quem Somos</a>
                 <a href="#objetivos" class="text-gray-700 hover:text-blue-600">Objetivos</a>
                 <a href="#participantes" class="text-gray-700 hover:text-blue-600">Participantes</a>
-                <a href="#contato" class="text-gray-700 hover:text-blue-600">Contato</a>
             </div>
-            
+
             <div class="md:hidden">
                 <button id="mobile-menu-button">
                     <i data-feather="menu"></i>
@@ -62,7 +83,6 @@
                     <a href="#quem-somos" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Quem Somos</a>
                     <a href="#objetivos" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Objetivos</a>
                     <a href="#participantes" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Participantes</a>
-                    <a href="#contato" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Contato</a>
                 </div>
             </div>
         </div>
@@ -72,14 +92,16 @@
     <section id="hero-institutional" class="py-32 text-white" data-aos="fade-in">
         <div class="container mx-auto px-4 text-center">
             <h1 class="text-4xl md:text-5xl font-bold mb-6">Instituição e Propósito</h1>
-            <p class="text-xl mb-8 max-w-3xl mx-auto">Conheça os fundamentos, objetivos e princípios que regem a Câmara Intercontinental de Indústria e Comércio do Brasil</p>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">Conheça os fundamentos, objetivos e princípios que regem a Câmara
+                Intercontinental de Indústria e Comércio do Brasil</p>
         </div>
     </section>
 
     <!-- Quem Somos Section -->
     <section id="quem-somos" class="py-16 bg-white">
         <div class="container mx-auto px-4">
-            <div class="institutional-card bg-white rounded-xl shadow-md overflow-hidden max-w-5xl mx-auto" data-aos="fade-up">
+            <div class="institutional-card bg-white rounded-xl shadow-md overflow-hidden max-w-5xl mx-auto"
+                data-aos="fade-up">
                 <div class="p-8">
                     <div class="flex items-center mb-6">
                         <div class="bg-blue-100 p-3 rounded-full mr-4">
@@ -89,19 +111,28 @@
                     </div>
                     <div class="space-y-4 text-gray-700">
                         <p>
-                            A Câmara Intercontinental de Indústria e Comércio do Brasil (CIIC) é uma instituição dedicada a promover a integração entre nações, empresas, entidades e pessoas. Atuamos como ponte estratégica entre o setor produtivo, governos, investidores, associações, organizações culturais, educacionais e esportivas.
+                            A Câmara Intercontinental de Indústria e Comércio do Brasil (CIIC) é uma instituição
+                            dedicada a promover a integração entre nações, empresas, entidades e pessoas. Atuamos como
+                            ponte estratégica entre o setor produtivo, governos, investidores, associações, organizações
+                            culturais, educacionais e esportivas.
                         </p>
                         <p>
-                            Com sede no Brasil e representantes em diversos países, a CIIC tem como missão fortalecer as relações comerciais, estimular a cooperação internacional e valorizar a diversidade cultural. Nosso compromisso é ampliar conexões que gerem desenvolvimento econômico, social, esportivo e educacional, sempre pautados pela ética, pela inovação e pela construção de um futuro sustentável.
+                            Com sede no Brasil e representantes em diversos países, a CIIC tem como missão fortalecer as
+                            relações comerciais, estimular a cooperação internacional e valorizar a diversidade
+                            cultural. Nosso compromisso é ampliar conexões que gerem desenvolvimento econômico, social,
+                            esportivo e educacional, sempre pautados pela ética, pela inovação e pela construção de um
+                            futuro sustentável.
                         </p>
                     </div>
                     <div class="flex items-center justify-center">
-                        <a href="equipe.html" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium flex items-center justify-center" style="margin-top: 40px; max-width: 300px; font-size: large;">
-                            
+                        <a href="equipe.html"
+                            class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium flex items-center justify-center"
+                            style="margin-top: 40px; max-width: 300px; font-size: large;">
+
                             Ver Representantes
                         </a>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -110,7 +141,8 @@
     <!-- Objetivos Section -->
     <section id="objetivos" class="py-16 bg-gray-100">
         <div class="container mx-auto px-4">
-            <div class="institutional-card bg-white rounded-xl shadow-md overflow-hidden max-w-5xl mx-auto" data-aos="fade-up">
+            <div class="institutional-card bg-white rounded-xl shadow-md overflow-hidden max-w-5xl mx-auto"
+                data-aos="fade-up">
                 <div class="p-8">
                     <div class="flex items-center mb-6">
                         <div class="bg-blue-100 p-3 rounded-full mr-4">
@@ -119,68 +151,81 @@
                         <h2 class="text-2xl font-bold text-gray-800">Nossos Objetivos</h2>
                     </div>
                     <div class="text-gray-700 mb-6">
-                        <p>A CIIC Brasil trabalha com base em objetivos claros e estratégicos que norteiam todas as nossas ações:</p>
+                        <p>A CIIC Brasil trabalha com base em objetivos claros e estratégicos que norteiam todas as
+                            nossas ações:</p>
                     </div>
-                    
+
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="objective-item bg-white border border-gray-200 rounded-lg p-6 transition-all duration-300">
+                        <div
+                            class="objective-item bg-white border border-gray-200 rounded-lg p-6 transition-all duration-300">
                             <div class="flex items-center mb-3">
                                 <div class="bg-green-100 p-2 rounded-full mr-3">
                                     <i data-feather="handshake" class="w-5 h-5 text-green-600"></i>
                                 </div>
                                 <h4 class="font-bold text-gray-800">Parcerias Internacionais</h4>
                             </div>
-                            <p class="text-gray-600">Fomentar parcerias internacionais entre empresas, governos, associações e entidades.</p>
+                            <p class="text-gray-600">Fomentar parcerias internacionais entre empresas, governos,
+                                associações e entidades.</p>
                         </div>
-                        
-                        <div class="objective-item bg-white border border-gray-200 rounded-lg p-6 transition-all duration-300">
+
+                        <div
+                            class="objective-item bg-white border border-gray-200 rounded-lg p-6 transition-all duration-300">
                             <div class="flex items-center mb-3">
                                 <div class="bg-green-100 p-2 rounded-full mr-3">
                                     <i data-feather="trending-up" class="w-5 h-5 text-green-600"></i>
                                 </div>
                                 <h4 class="font-bold text-gray-800">Apoio aos Investidores</h4>
                             </div>
-                            <p class="text-gray-600">Apoiar investidores estrangeiros, criando condições para novos negócios no Brasil e em outros países.</p>
+                            <p class="text-gray-600">Apoiar investidores estrangeiros, criando condições para novos
+                                negócios no Brasil e em outros países.</p>
                         </div>
-                        
-                        <div class="objective-item bg-white border border-gray-200 rounded-lg p-6 transition-all duration-300">
+
+                        <div
+                            class="objective-item bg-white border border-gray-200 rounded-lg p-6 transition-all duration-300">
                             <div class="flex items-center mb-3">
                                 <div class="bg-green-100 p-2 rounded-full mr-3">
                                     <i data-feather="leaf" class="w-5 h-5 text-green-600"></i>
                                 </div>
                                 <h4 class="font-bold text-gray-800">Desenvolvimento Sustentável</h4>
                             </div>
-                            <p class="text-gray-600">Impulsionar o desenvolvimento sustentável, promovendo projetos responsáveis e inovadores.</p>
+                            <p class="text-gray-600">Impulsionar o desenvolvimento sustentável, promovendo projetos
+                                responsáveis e inovadores.</p>
                         </div>
-                        
-                        <div class="objective-item bg-white border border-gray-200 rounded-lg p-6 transition-all duration-300">
+
+                        <div
+                            class="objective-item bg-white border border-gray-200 rounded-lg p-6 transition-all duration-300">
                             <div class="flex items-center mb-3">
                                 <div class="bg-green-100 p-2 rounded-full mr-3">
                                     <i data-feather="book" class="w-5 h-5 text-green-600"></i>
                                 </div>
                                 <h4 class="font-bold text-gray-800">Cultura e Educação</h4>
                             </div>
-                            <p class="text-gray-600">Valorizar a cultura, a educação e o esporte como ferramentas de integração entre povos.</p>
+                            <p class="text-gray-600">Valorizar a cultura, a educação e o esporte como ferramentas de
+                                integração entre povos.</p>
                         </div>
-                        
-                        <div class="objective-item bg-white border border-gray-200 rounded-lg p-6 transition-all duration-300">
+
+                        <div
+                            class="objective-item bg-white border border-gray-200 rounded-lg p-6 transition-all duration-300">
                             <div class="flex items-center mb-3">
                                 <div class="bg-green-100 p-2 rounded-full mr-3">
                                     <i data-feather="globe" class="w-5 h-5 text-green-600"></i>
                                 </div>
                                 <h4 class="font-bold text-gray-800">Cooperação Internacional</h4>
                             </div>
-                            <p class="text-gray-600">Facilitar a comunicação e a cooperação entre países, ampliando o diálogo intercultural e institucional.</p>
+                            <p class="text-gray-600">Facilitar a comunicação e a cooperação entre países, ampliando o
+                                diálogo intercultural e institucional.</p>
                         </div>
-                        
-                        <div class="objective-item bg-white border border-gray-200 rounded-lg p-6 transition-all duration-300">
+
+                        <div
+                            class="objective-item bg-white border border-gray-200 rounded-lg p-6 transition-all duration-300">
                             <div class="flex items-center mb-3">
                                 <div class="bg-green-100 p-2 rounded-full mr-3">
                                     <i data-feather="users" class="w-5 h-5 text-green-600"></i>
                                 </div>
                                 <h4 class="font-bold text-gray-800">Conexão de Talentos</h4>
                             </div>
-                            <p class="text-gray-600">Conectar talentos e oportunidades, fortalecendo redes de colaboração em diferentes áreas da sociedade.</p>
+                            <p class="text-gray-600">Conectar talentos e oportunidades, fortalecendo redes de
+                                colaboração em diferentes áreas da sociedade.</p>
                         </div>
                     </div>
                 </div>
@@ -191,7 +236,8 @@
     <!-- Participantes Section -->
     <section id="participantes" class="py-16 bg-white">
         <div class="container mx-auto px-4">
-            <div class="institutional-card bg-white rounded-xl shadow-md overflow-hidden max-w-5xl mx-auto" data-aos="fade-up">
+            <div class="institutional-card bg-white rounded-xl shadow-md overflow-hidden max-w-5xl mx-auto"
+                data-aos="fade-up">
                 <div class="p-8">
                     <div class="flex items-center mb-6">
                         <div class="bg-blue-100 p-3 rounded-full mr-4">
@@ -201,47 +247,60 @@
                     </div>
                     <div class="space-y-4 text-gray-700 mb-8">
                         <p>
-                            A Câmara Intercontinental de Indústria e Comércio do Brasil (CIIC) é formada por uma ampla rede de empresas, profissionais, associações, entidades culturais, esportivas e educacionais, além de representantes oficiais em diferentes países.
+                            A Câmara Intercontinental de Indústria e Comércio do Brasil (CIIC) é formada por uma ampla
+                            rede de empresas, profissionais, associações, entidades culturais, esportivas e
+                            educacionais, além de representantes oficiais em diferentes países.
                         </p>
                         <p>
-                            Nossos participantes compartilham um objetivo comum: fortalecer a cooperação internacional e criar oportunidades que unam negócios, cultura, esporte e educação.
+                            Nossos participantes compartilham um objetivo comum: fortalecer a cooperação internacional e
+                            criar oportunidades que unam negócios, cultura, esporte e educação.
                         </p>
                     </div>
-                    
+
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                        <div class="participant-card bg-white border border-gray-200 rounded-lg p-6 shadow-sm transition-all duration-300">
+                        <div
+                            class="participant-card bg-white border border-gray-200 rounded-lg p-6 shadow-sm transition-all duration-300">
                             <div class="bg-blue-100 p-3 rounded-full inline-block mb-4">
                                 <i data-feather="briefcase" class="w-6 h-6 text-blue-600"></i>
                             </div>
                             <h4 class="font-bold text-lg text-gray-800 mb-2">Empresas e Investidores</h4>
-                            <p class="text-gray-600">Empresas e investidores que buscam expandir suas atividades em âmbito global, conectando mercados e criando oportunidades.</p>
+                            <p class="text-gray-600">Empresas e investidores que buscam expandir suas atividades em
+                                âmbito global, conectando mercados e criando oportunidades.</p>
                         </div>
-                        
-                        <div class="participant-card bg-white border border-gray-200 rounded-lg p-6 shadow-sm transition-all duration-300">
+
+                        <div
+                            class="participant-card bg-white border border-gray-200 rounded-lg p-6 shadow-sm transition-all duration-300">
                             <div class="bg-blue-100 p-3 rounded-full inline-block mb-4">
                                 <i data-feather="layers" class="w-6 h-6 text-blue-600"></i>
                             </div>
                             <h4 class="font-bold text-lg text-gray-800 mb-2">Associações e Entidades</h4>
-                            <p class="text-gray-600">Associações e entidades de diversos setores produtivos, culturais, esportivos e sociais, unidas pela cooperação.</p>
+                            <p class="text-gray-600">Associações e entidades de diversos setores produtivos, culturais,
+                                esportivos e sociais, unidas pela cooperação.</p>
                         </div>
-                        
-                        <div class="participant-card bg-white border border-gray-200 rounded-lg p-6 shadow-sm transition-all duration-300">
+
+                        <div
+                            class="participant-card bg-white border border-gray-200 rounded-lg p-6 shadow-sm transition-all duration-300">
                             <div class="bg-blue-100 p-3 rounded-full inline-block mb-4">
-                                <i data-feather="user" class="w-6 h-6 text-blue-600"></i>
+                                <i data-feather="user-check" class="w-6 h-6 text-blue-600"></i>
                             </div>
-                            <h4 class="font-bold text-lg text-gray-800 mb-2">Profissionais e Talentos</h4>
-                            <p class="text-gray-600">Profissionais e talentos de diferentes áreas, integrados em redes de cooperação internacional estratégica.</p>
+                            <h4 class="font-bold text-lg text-gray-800 mb-2">Profissionais e Especialistas</h4>
+                            <p class="text-gray-600">
+                                Profissionais de diferentes setores conectados a uma rede internacional de colaboração,
+                                capacitação, visibilidade e acesso a oportunidades institucionais e empresariais.
+                            </p>
                         </div>
-                        
-                        <div class="participant-card bg-white border border-gray-200 rounded-lg p-6 shadow-sm transition-all duration-300">
+
+                        <div
+                            class="participant-card bg-white border border-gray-200 rounded-lg p-6 shadow-sm transition-all duration-300">
                             <div class="bg-blue-100 p-3 rounded-full inline-block mb-4">
                                 <i data-feather="flag" class="w-6 h-6 text-blue-600"></i>
                             </div>
                             <h4 class="font-bold text-lg text-gray-800 mb-2">Representantes Institucionais</h4>
-                            <p class="text-gray-600">Representantes institucionais em países da América Latina e outros continentes, atuando como embaixadores da integração.</p>
+                            <p class="text-gray-600">Representantes institucionais em países da América Latina e outros
+                                continentes, atuando como embaixadores da integração.</p>
                         </div>
                     </div>
-                    
+
                     <div class="bg-blue-50 border border-blue-100 rounded-xl p-8 text-center">
                         <div class="flex justify-center mb-4">
                             <div class="bg-yellow-100 p-3 rounded-full">
@@ -250,13 +309,150 @@
                         </div>
                         <h3 class="text-xl font-bold text-blue-800 mb-3">Nossos Valores</h3>
                         <p class="text-gray-700">
-                            A CIIC valoriza a diversidade e a representatividade, reunindo pessoas e instituições que acreditam no poder do diálogo, da inovação e da colaboração entre nações.
+                            A CIIC valoriza a diversidade e a representatividade, reunindo pessoas e instituições que
+                            acreditam no poder do diálogo, da inovação e da colaboração entre nações.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4" class="mt-10 bg-gray-50 border border-gray-200 rounded-xl p-8">
+            <div class="institutional-card bg-white rounded-xl shadow-md overflow-hidden max-w-5xl mx-auto"
+                data-aos="fade-up">
+
+                <div class="p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-green-100 p-3 rounded-full mr-4">
+                            <i data-feather="briefcase" class="w-6 h-6 text-green-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">Atuação com Profissionais</h3>
+                    </div>
+
+                    <p class="text-gray-700 mb-6">
+                        A CIIC também atua no fortalecimento de profissionais e especialistas por meio de uma rede
+                        internacional
+                        de conexões,
+                        visibilidade institucional, capacitação e acesso a projetos, eventos e oportunidades de
+                        colaboração.
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white border border-gray-200 rounded-lg p-5">
+                            <h4 class="font-bold text-gray-800 mb-2">Networking e Oportunidades</h4>
+                            <p class="text-gray-600">
+                                Conexão com empresas, investidores e instituições em busca de profissionais qualificados
+                                para
+                                projetos, consultorias e parcerias.
+                            </p>
+                        </div>
+
+                        <div class="bg-white border border-gray-200 rounded-lg p-5">
+                            <h4 class="font-bold text-gray-800 mb-2">Capacitação e Desenvolvimento</h4>
+                            <p class="text-gray-600">
+                                Cursos, workshops, seminários e conferências voltados para atualização profissional,
+                                liderança e
+                                inovação.
+                            </p>
+                        </div>
+
+                        <div class="bg-white border border-gray-200 rounded-lg p-5">
+                            <h4 class="font-bold text-gray-800 mb-2">Reconhecimento e Visibilidade</h4>
+                            <p class="text-gray-600">
+                                Divulgação de perfis, projetos, serviços, publicações, certificações e credenciais
+                                institucionais.
+                            </p>
+                        </div>
+
+                        <div class="bg-white border border-gray-200 rounded-lg p-5">
+                            <h4 class="font-bold text-gray-800 mb-2">Mentoria e Comunidades Setoriais</h4>
+                            <p class="text-gray-600">
+                                Integração entre profissionais experientes e novos talentos, além da criação de grupos
+                                por
+                                área
+                                de atuação.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="educacao" class="py-16 bg-white-100">
+        <div class="container mx-auto px-4">
+            <div class="institutional-card bg-white rounded-xl shadow-md overflow-hidden max-w-5xl mx-auto"
+                data-aos="fade-up">
+                <div class="p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i data-feather="book-open" class="w-6 h-6 text-blue-600"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-800">Educação e Capacitação</h2>
+                    </div>
+
+                    <div class="space-y-4 text-gray-700 mb-8">
+                        <p>
+                            A CIIC promove programas de educação, formação profissional e desenvolvimento de talentos
+                            com foco no fortalecimento do capital humano e na preparação de profissionais para os
+                            desafios do mercado global.
+                        </p>
+                        <p>
+                            Nossa estrutura inclui cursos de capacitação, programas de especialização e iniciativas
+                            voltadas ao aperfeiçoamento de líderes, executivos, empreendedores e equipes empresariais.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="bg-white border border-gray-200 rounded-lg p-6">
+                            <h4 class="font-bold text-lg text-gray-800 mb-2">Capacitação Empresarial</h4>
+                            <p class="text-gray-600">
+                                Cursos e treinamentos em gestão, liderança, comércio internacional, marketing, finanças,
+                                inovação, tecnologia, sustentabilidade e negociação empresarial.
+                            </p>
+                        </div>
+
+                        <div class="bg-white border border-gray-200 rounded-lg p-6">
+                            <h4 class="font-bold text-lg text-gray-800 mb-2">Mestrados e Especializações</h4>
+                            <p class="text-gray-600">
+                                Programas voltados ao desenvolvimento estratégico de profissionais que desejam
+                                aprofundar conhecimentos e assumir posições de maior responsabilidade.
+                            </p>
+                        </div>
+
+                        <div class="bg-white border border-gray-200 rounded-lg p-6">
+                            <h4 class="font-bold text-lg text-gray-800 mb-2">Formatos Flexíveis</h4>
+                            <p class="text-gray-600">
+                                Programas presenciais, online e híbridos, oferecendo flexibilidade e acesso para
+                                profissionais e empresas de diferentes regiões.
+                            </p>
+                        </div>
+
+                        <div class="bg-white border border-gray-200 rounded-lg p-6">
+                            <h4 class="font-bold text-lg text-gray-800 mb-2">Benefícios dos Programas</h4>
+                            <p class="text-gray-600">
+                                Formação alinhada ao mercado, certificação internacional, aplicação prática e ampliação
+                                da rede profissional e das oportunidades de carreira.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-blue-50 border border-blue-100 rounded-xl p-6">
+                        <h3 class="text-xl font-bold text-blue-800 mb-3">Áreas de Formação</h3>
+                        <p class="text-gray-700">
+                            Gestão empresarial, liderança, comércio internacional, logística, marketing, finanças
+                            corporativas, transformação digital, empreendedorismo, recursos humanos, sustentabilidade,
+                            tecnologia, análise de dados e comunicação estratégica.
                         </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- Stats Section -->
     <section class="py-16 bg-blue-800 text-white">
@@ -286,13 +482,16 @@
     <section id="contato" class="py-20 bg-gray-100">
         <div class="container mx-auto px-4 text-center" data-aos="fade-up">
             <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">Junte-se à Nossa Rede</h2>
-            <p class="text-xl mb-8 max-w-2xl mx-auto text-gray-600">Faça parte da maior rede de cooperação comercial internacional do Brasil</p>
+            <p class="text-xl mb-8 max-w-2xl mx-auto text-gray-600">Faça parte da maior rede de cooperação comercial
+                internacional do Brasil</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="index.html#contato" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium flex items-center justify-center">
+                <a href="index.html#contato"
+                    class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium flex items-center justify-center">
                     <i data-feather="mail" class="w-5 h-5 mr-2"></i>
                     Entrar em Contato
                 </a>
-                <a href="index.html#negocios" class="bg-white hover:bg-gray-50 text-blue-800 border border-gray-300 px-6 py-3 rounded-lg font-medium flex items-center justify-center">
+                <a href="index.html#negocios"
+                    class="bg-white hover:bg-gray-50 text-blue-800 border border-gray-300 px-6 py-3 rounded-lg font-medium flex items-center justify-center">
                     <i data-feather="search" class="w-5 h-5 mr-2"></i>
                     Ver Oportunidades
                 </a>
@@ -337,15 +536,21 @@
                     <ul class="space-y-2">
                         <li class="flex items-center">
                             <i data-feather="mail" class="w-4 h-4 mr-2"></i>
-                            <span class="text-gray-400">contato@ciic.org.br</span>
+                            <span class="text-gray-400">ciicbrasil.admi@gmail.com</span>
                         </li>
                         <li class="flex items-center">
                             <i data-feather="phone" class="w-4 h-4 mr-2"></i>
-                            <span class="text-gray-400">+55 11 99999-9999</span>
+                            <a href="https://api.whatsapp.com/send?phone=5551981676518&text=" class="text-gray-400">+55
+                                51 98167-6518</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="phone" class="w-4 h-4 mr-2"></i>
+                            <a href="https://api.whatsapp.com/send?phone=5551981676518&text=" class="text-gray-400">+55
+                                51 99247-8505</a>
                         </li>
                         <li class="flex items-center">
                             <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
-                            <span class="text-gray-400">São Paulo, Brasil</span>
+                            <span class="text-gray-400">Rio de Janeiro, Brasil</span>
                         </li>
                     </ul>
                 </div>
@@ -356,10 +561,19 @@
         </div>
     </footer>
 
+    
+    <!-- Contact Floating Button -->
+    <button onclick="openContactModal()" id="contactFloatBtn"
+        class="fixed bottom-8 right-24 bg-green-600 hover:bg-green-700 text-white p-3 rounded-full shadow-lg z-[9998] transition-all duration-300">
+        <i data-feather="message-circle"></i>
+    </button>
+
     <!-- Back to Top Button -->
-    <button onclick="topFunction()" id="backToTop" class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hidden">
+    <button onclick="topFunction()" id="backToTop"
+        class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hidden">
         <i data-feather="arrow-up"></i>
     </button>
+
 
     <script>
         // Initialize animations and icons
@@ -367,13 +581,13 @@
         feather.replace();
 
         // Mobile menu toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+        document.getElementById('mobile-menu-button').addEventListener('click', function () {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
         });
 
         // Back to top button
-        window.onscroll = function() {scrollFunction()};
+        window.onscroll = function () { scrollFunction() };
 
         function scrollFunction() {
             const backToTopBtn = document.getElementById("backToTop");
@@ -385,17 +599,17 @@
         }
 
         function topFunction() {
-            window.scrollTo({top: 0, behavior: 'smooth'});
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                
+
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
-                
+
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     targetElement.scrollIntoView({
@@ -404,6 +618,83 @@
                 }
             });
         });
+
+        function openContactModal() {
+            const modal = document.getElementById('contactModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            feather.replace();
+        }
+
+        function closeContactModal() {
+            const modal = document.getElementById('contactModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
     </script>
+
+
+
+
+
+
+    <!-- Contact Modal -->
+    <div id="contactModal" onclick="if(event.target === this) closeContactModal()"
+        class="fixed inset-0 bg-black/50 hidden items-center justify-center z-[9999] px-4">
+        <div class="bg-white w-full max-w-lg rounded-2xl shadow-2xl p-8 relative animate-fadeIn">
+
+            <!-- Botón cerrar -->
+            <button onclick="closeContactModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700">
+                <i data-feather="x" class="w-5 h-5"></i>
+            </button>
+
+            <!-- Título -->
+            <div class="mb-6">
+                <h2 class="text-2xl font-bold text-gray-800">Entre em Contato</h2>
+                <p class="text-gray-500 mt-1">
+                    Preencha os dados abaixo e envie sua solicitude.
+                </p>
+            </div>
+
+            <!-- Formulario -->
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Nome</label>
+                    <input type="text" placeholder="Seu nome"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">País</label>
+                    <input type="text" placeholder="Seu país"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">E-mail</label>
+                    <input type="email" placeholder="seuemail@exemplo.com"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Solicitude</label>
+                    <textarea rows="5" placeholder="Escreva sua mensagem..."
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"></textarea>
+                </div>
+
+                <div class="flex justify-end gap-3 pt-2">
+                    <button type="button" onclick="closeContactModal()"
+                        class="px-5 py-3 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50">
+                        Cancelar
+                    </button>
+
+                    <button type="submit" class="px-5 py-3 rounded-lg bg-blue-600 text-white hover:bg-blue-700">
+                        Enviar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
+
 </html>

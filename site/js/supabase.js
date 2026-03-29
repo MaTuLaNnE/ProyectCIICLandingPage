@@ -1,6 +1,6 @@
 const { createClient } = supabase
 
-const supabaseUrl = "https://xsysdcvyryzxldlyrbfo.supabase.co"
-const supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhzeXNkY3Z5cnl6eGxkbHlyYmZvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTc3MjY0NTIsImV4cCI6MjA3MzMwMjQ1Mn0.xTCWftzODlXrfpTXLadrQ78K8b0SlxcLZ_ddTWH5Lfg"
+const supabaseUrl = "https://idhamypkvekfwmofewqc.supabase.co"
+const supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlkaGFteXBrdmVrZndtb2Zld3FjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ4MTA0OTgsImV4cCI6MjA5MDM4NjQ5OH0.yXZkoTU33EZEtpD3XwLvrx_65Kw0IXuRevRssOdDnzM"
 
 window.supabase = createClient(supabaseUrl, supabaseAnonKey)
