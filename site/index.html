@@ -106,7 +106,7 @@
                 <p class="text-xl mb-8">A Câmara Intercontinental de Indústria e Comércio do Brasil facilita conexões
                     empresariais entre o Brasil e 16 países estratégicos.</p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="#contact" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-medium">Entre em
+                    <a onclick="openContactModal()" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-medium">Entre em
                         Contato</a>
                     <a href="#opportunities"
                         class="bg-white text-blue-800 hover:bg-gray-100 px-6 py-3 rounded-lg font-medium">Ver
@@ -838,13 +838,23 @@
             color: 0x3a86ff,
             backgroundColor: 0x0
         });
+
+        // Back to top button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            const backToTopBtn = document.getElementById("backToTop");
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                backToTopBtn.classList.remove('hidden');
+            } else {
+                backToTopBtn.classList.add('hidden');
+            }
+        }
+
+        function topFunction() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
     </script>
-
-
-
-
-
-
 
     <script>
         // Update current time
@@ -873,6 +883,7 @@
             modal.classList.add('hidden');
             modal.classList.remove('flex');
         }
+
     </script>
 
 
