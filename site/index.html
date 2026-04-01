@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,21 +18,23 @@
     <style>
         .country-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
+
         #hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('http://static.photos/office/1200x630/42');
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(images/pagina/salonreunionesfondo.png);
             background-size: cover;
             background-position: center;
         }
     </style>
 </head>
+
 <body class="font-sans bg-gray-50">
     <!-- Navigation -->
     <nav class="bg-white shadow-md sticky top-0 z-50">
-        
+
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            
+
             <div class="flex items-center space-x-3">
                 <img src="images/CIIC_Logo_BG.png" alt="Logo CIIC" class="logo-img" style="width: 10%;">
                 <div style="max-width: 200px;">
@@ -39,9 +42,9 @@
                         Camara Intercontinental de Industria e Comercio
                     </a>
                 </div>
-            
+
             </div>
-            
+
             <div class="hidden md:flex space-x-8">
                 <a href="#" class="text-blue-800 hover:text-blue-600">Início</a>
                 <a href="#services" class="text-gray-700 hover:text-blue-600">Serviços</a>
@@ -61,7 +64,6 @@
                 </div>
                 <a href="#opportunities" class="text-gray-700 hover:text-blue-600">Oportunidades</a>
                 <a href="#about" class="text-gray-700 hover:text-blue-600">Sobre</a>
-                <a href="#contact" class="text-gray-700 hover:text-blue-600">Contato</a>
                 <a href="institucional.html" class="text-gray-700 hover:text-blue-600">Institucional</a>
             </div>
             <div class="md:hidden relative">
@@ -72,11 +74,13 @@
                     <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Início</a>
                     <a href="#services" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Serviços</a>
                     <div class="relative">
-                        <button id="mobile-countries-button" class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 flex justify-between items-center">
+                        <button id="mobile-countries-button"
+                            class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 flex justify-between items-center">
                             Países <i data-feather="chevron-down" class="w-4 h-4"></i>
                         </button>
                         <div id="mobile-countries-menu" class="hidden bg-gray-50 pl-4">
-                            <a href="#countries" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Todos os Países</a>
+                            <a href="#countries" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Todos os
+                                Países</a>
                             <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Argentina</a>
                             <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Paraguai</a>
                             <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Peru</a>
@@ -87,8 +91,8 @@
                     </div>
                     <a href="#opportunities" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Oportunidades</a>
                     <a href="#about" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Sobre</a>
-                    <a href="#contact" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Contato</a>
-                    <a href="institucional.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Institucional</a>
+                    <a href="institucional.html"
+                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Institucional</a>
                 </div>
             </div>
         </div>
@@ -99,10 +103,14 @@
         <div class="container mx-auto px-4 text-center">
             <div class="max-w-3xl mx-auto">
                 <h1 class="text-4xl md:text-5xl font-bold mb-6">Conectando Empresas, Criando Oportunidades</h1>
-                <p class="text-xl mb-8">A Câmara Intercontinental de Indústria e Comércio do Brasil facilita conexões empresariais entre o Brasil e 16 países estratégicos.</p>
+                <p class="text-xl mb-8">A Câmara Intercontinental de Indústria e Comércio do Brasil facilita conexões
+                    empresariais entre o Brasil e 16 países estratégicos.</p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="#contact" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-medium">Entre em Contato</a>
-                    <a href="#opportunities" class="bg-white text-blue-800 hover:bg-gray-100 px-6 py-3 rounded-lg font-medium">Ver Oportunidades</a>
+                    <a onclick="openContactModal()" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-medium">Entre em
+                        Contato</a>
+                    <a href="#opportunities"
+                        class="bg-white text-blue-800 hover:bg-gray-100 px-6 py-3 rounded-lg font-medium">Ver
+                        Oportunidades</a>
                 </div>
             </div>
         </div>
@@ -130,37 +138,85 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-16 bg-gray-100">
+    <section id="services" class="relative py-16 bg-gray-100">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Nossos Serviços</h2>
+            <h3 class="text-gray-900 text-center mb-8 max-w-4xl mx-auto">
+                A Câmara Intercontinental de Indústria e Comércio do Brasil (CIIC) oferece uma ampla gama de serviços
+                destinados a apoiar empresas, empreendedores e investidores no desenvolvimento de negócios nacionais e
+                internacionais. Nosso objetivo é facilitar conexões estratégicas, promover oportunidades comerciais e
+                fornecer suporte especializado para o crescimento e a internacionalização das empresas.
+                Por meio de nossa rede institucional e de parceiros globais, disponibilizamos soluções que fortalecem o
+                comércio, estimulam a cooperação empresarial e contribuem para a expansão sustentável dos negócios.
+            </h3>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-blue-600 mb-4">
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+                    <div class="text-green-600 mb-4">
                         <i data-feather="eye" class="w-8 h-8"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Acesso Privilegiado</h3>
-                    <p class="text-gray-600">Veja oportunidades exclusivas antes do público geral</p>
+                    <h3 class="text-lg font-bold mb-2">Para Empresas</h3>
+
+                    <p class="text-gray-600">
+                        Assessoria completa para instalação e operação no Brasil, incluindo endereço fiscal,
+                        representação legal, certificações internacionais e auditoria de produção.
+                    </p>
+
+                    <p class="text-gray-600 mt-2">
+                        Apoio na busca de investidores, expansão internacional e desenvolvimento de projetos
+                        com presença em mais de 15 países.
+                    </p>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-blue-600 mb-4">
+
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+                    <div class="text-green-600 mb-4">
                         <i data-feather="users" class="w-8 h-8"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Rede de Contatos</h3>
-                    <p class="text-gray-600">Conecte-se com empresários dos 16 países parceiros</p>
+                    <h3 class="text-lg font-bold mb-2">Para Empreendedores</h3>
+
+
+                    <p class="text-gray-600">
+                        Orientação para criação, formalização e desenvolvimento de negócios,
+                        com suporte estratégico, legal e administrativo.
+                    </p>
+
+                    <p class="text-gray-600 mt-2">
+                        Acesso a networking, eventos, investidores e oportunidades de crescimento
+                        em mercados nacionais e internacionais.
+                    </p>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="300">
-                    <div class="text-blue-600 mb-4">
-                        <i data-feather="tag" class="w-8 h-8"></i>
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+                    <div class="text-green-600 mb-4">
+                        <i data-feather="rss" class="w-8 h-8"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Descontos Especiais</h3>
-                    <p class="text-gray-600">Preços preferenciais em serviços e documentação</p>
+                    <h3 class="text-lg font-bold mb-2">Internacionalização</h3>
+
+                    <p class="text-gray-600">
+                        Apoio na expansão internacional, exportação e conexão com parceiros
+                        comerciais em diversos países.
+                    </p>
+
+                    <p class="text-gray-600 mt-2">
+                        Estudos de mercado, identificação de oportunidades e suporte estratégico
+                        para crescimento global.
+                    </p>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="400">
-                    <div class="text-blue-600 mb-4">
-                        <i data-feather="file-text" class="w-8 h-8"></i>
+
+
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+                    <div class="text-green-600 mb-4">
+                        <i data-feather="award" class="w-8 h-8"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Assistência Documental</h3>
-                    <p class="text-gray-600">Apoio em trâmites e documentação internacional</p>
+                    <h3 class="text-lg font-bold mb-2">Capacitação & Desenvolvimento</h3>
+
+                    <p class="text-gray-600">
+                        Cursos, workshops e programas de formação em gestão, inovação,
+                        comércio internacional e liderança.
+                    </p>
+
+                    <p class="text-gray-600 mt-2">
+                        Programas de incubação, mentoria e certificações para fortalecer
+                        empresas e profissionais.
+                    </p>
                 </div>
             </div>
         </div>
@@ -171,96 +227,209 @@
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Nossos Países Parceiros</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="country-card bg-white border border-gray-200 rounded-lg p-6 shadow-sm transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-4xl mb-4">🇦🇷</div>
-                    <h3 class="text-xl font-bold mb-2">Argentina</h3>
+                <div class="country-card bg-white border border-gray-200 rounded-lg p-6 shadow-sm transition-all duration-300"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center gap-2 mb-2">
+                        <img src="images/flags/Flag_of_Argentina.svg.png" class="w-6 h-4 object-cover rounded-sm"
+                            alt="Argentina">
+
+                        <h3 class="text-xl font-bold">Argentina</h3>
+                    </div>
                     <p class="text-gray-600 mb-4">Principais setores: Agrícola, Pecuário, Tecnologia</p>
                     <div class="h-1 bg-blue-100 rounded-full mb-2">
-                        <div class="h-1 bg-blue-600 rounded-full" style="width: 80%"></div>
+                        <div class="h-1 bg-green-600 rounded-full" style="width: 80%"></div>
                     </div>
                     <p class="text-sm text-gray-500">80% de conexões ativas</p>
                 </div>
-                <div class="country-card bg-white border border-gray-200 rounded-lg p-6 shadow-sm transition-all duration-300" data-aos="fade-up" data-aos-delay="150">
-                    <div class="text-4xl mb-4">🇵🇾</div>
-                    <h3 class="text-xl font-bold mb-2">Paraguai</h3>
+                <div class="country-card bg-white border border-gray-200 rounded-lg p-6 shadow-sm transition-all duration-300"
+                    data-aos="fade-up" data-aos-delay="150">
+                    <div class="flex items-center gap-2 mb-2">
+                        <img src="images/flags/Flag_of_Paraguay.svg.png" class="w-6 h-4 object-cover rounded-sm"
+                            alt="Paraguai">
+
+                        <h3 class="text-xl font-bold">Paraguai</h3>
+                    </div>
                     <p class="text-gray-600 mb-4">Principais setores: Energia, Agroindústria</p>
                     <div class="h-1 bg-blue-100 rounded-full mb-2">
-                        <div class="h-1 bg-blue-600 rounded-full" style="width: 70%"></div>
+                        <div class="h-1 bg-green-600 rounded-full" style="width: 70%"></div>
                     </div>
                     <p class="text-sm text-gray-500">70% de conexões ativas</p>
                 </div>
-                <div class="country-card bg-white border border-gray-200 rounded-lg p-6 shadow-sm transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-4xl mb-4">🇵🇪</div>
-                    <h3 class="text-xl font-bold mb-2">Peru</h3>
+                <div class="country-card bg-white border border-gray-200 rounded-lg p-6 shadow-sm transition-all duration-300"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center gap-2 mb-2">
+                        <img src="images/flags/Flag_of_Peru.svg" class="w-6 h-4 object-cover rounded-sm" alt="Peru">
+
+                        <h3 class="text-xl font-bold">Peru</h3>
+                    </div>
                     <p class="text-gray-600 mb-4">Principais setores: Mineração, Pesca, Têxtil</p>
                     <div class="h-1 bg-blue-100 rounded-full mb-2">
-                        <div class="h-1 bg-blue-600 rounded-full" style="width: 65%"></div>
+                        <div class="h-1 bg-green-600 rounded-full" style="width: 65%"></div>
                     </div>
                     <p class="text-sm text-gray-500">65% de conexões ativas</p>
                 </div>
-                <div class="country-card bg-white border border-gray-200 rounded-lg p-6 shadow-sm transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-4xl mb-4">🇨🇴</div>
-                    <h3 class="text-xl font-bold mb-2">Colômbia</h3>
+                <div class="country-card bg-white border border-gray-200 rounded-lg p-6 shadow-sm transition-all duration-300"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center gap-2 mb-2">
+                        <img src="images/flags/Flag_of_Colombia.svg.png" class="w-6 h-4 object-cover rounded-sm"
+                            alt="Colômbia">
+
+                        <h3 class="text-xl font-bold">Colômbia</h3>
+                    </div>
                     <p class="text-gray-600 mb-4">Principais setores: Café, Petróleo, Turismo</p>
                     <div class="h-1 bg-blue-100 rounded-full mb-2">
-                        <div class="h-1 bg-blue-600 rounded-full" style="width: 75%"></div>
+                        <div class="h-1 bg-green-600 rounded-full" style="width: 75%"></div>
                     </div>
                     <p class="text-sm text-gray-500">75% de conexões ativas</p>
                 </div>
-                <div class="country-card bg-white border border-gray-200 rounded-lg p-6 shadow-sm transition-all duration-300" data-aos="fade-up" data-aos-delay="150">
-                    <div class="text-4xl mb-4">🇲🇽</div>
-                    <h3 class="text-xl font-bold mb-2">México</h3>
+                <div class="country-card bg-white border border-gray-200 rounded-lg p-6 shadow-sm transition-all duration-300"
+                    data-aos="fade-up" data-aos-delay="150">
+                    <div class="flex items-center gap-2 mb-2">
+                        <img src="images/flags/Flag_of_Mexico.svg.png" class="w-6 h-4 object-cover rounded-sm"
+                            alt="México">
+
+                        <h3 class="text-xl font-bold">México</h3>
+                    </div>
+
                     <p class="text-gray-600 mb-4">Principais setores: Automotivo, Manufaturas</p>
                     <div class="h-1 bg-blue-100 rounded-full mb-2">
-                        <div class="h-1 bg-blue-600 rounded-full" style="width: 85%"></div>
+                        <div class="h-1 bg-green-600 rounded-full" style="width: 85%"></div>
                     </div>
                     <p class="text-sm text-gray-500">85% de conexões ativas</p>
                 </div>
-                <div class="country-card bg-white border border-gray-200 rounded-lg p-6 shadow-sm transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-4xl mb-4">🇮🇱</div>
-                    <h3 class="text-xl font-bold mb-2">Israel</h3>
+                <div class="country-card bg-white border border-gray-200 rounded-lg p-6 shadow-sm transition-all duration-300"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center gap-2 mb-2">
+                        <img src="images/flags/Flag_of_Israel.svg" class="w-6 h-4 object-cover rounded-sm" alt="Israel">
+
+                        <h3 class="text-xl font-bold">Israel</h3>
+                    </div>
                     <p class="text-gray-600 mb-4">Principais setores: Tecnologia, Farmacêutica</p>
                     <div class="h-1 bg-blue-100 rounded-full mb-2">
-                        <div class="h-1 bg-blue-600 rounded-full" style="width: 90%"></div>
+                        <div class="h-1 bg-green-600 rounded-full" style="width: 90%"></div>
                     </div>
                     <p class="text-sm text-gray-500">90% de conexões ativas</p>
                 </div>
-                <div class="country-card bg-white border border-gray-200 rounded-lg p-6 shadow-sm transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-4xl mb-4">🇺🇾</div>
-                    <h3 class="text-xl font-bold mb-2">Uruguay</h3>
-                    <p class="text-gray-600 mb-4">Principais setores: Agricultura, Ganaderia</p>
+                <div class="country-card bg-white border border-gray-200 rounded-lg p-6 shadow-sm transition-all duration-300"
+                    data-aos="fade-up" data-aos-delay="200">
+
+                    <div class="flex items-center gap-3 mb-2">
+                        <img src="images/flags/Flag_of_Uruguay.svg.png" class="h-5 w-auto rounded-sm shadow-sm"
+                            alt="Uruguay">
+                        <h3 class="text-xl font-bold">Uruguay</h3>
+                    </div>
+
+                    <p class="text-gray-600 mb-4">Principais setores: Agricultura, Ganadería</p>
+
                     <div class="h-1 bg-blue-100 rounded-full mb-2">
-                        <div class="h-1 bg-blue-600 rounded-full" style="width: 90%"></div>
+                        <div class="h-1 bg-green-600 rounded-full" style="width: 90%"></div>
                     </div>
+
                     <p class="text-sm text-gray-500">90% de conexões ativas</p>
                 </div>
-                <div class="country-card bg-white border border-gray-200 rounded-lg p-6 shadow-sm transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-4xl mb-4">🇸🇻</div>
-                    <h3 class="text-xl font-bold mb-2">El Salvador</h3>
+
+
+                <div class="country-card bg-white border border-gray-200 rounded-lg p-6 shadow-sm transition-all duration-300"
+                    data-aos="fade-up" data-aos-delay="200">
+
+                    <div class="flex items-center gap-3 mb-2">
+                        <img src="images/flags/Flag_of_El_Salvador.svg.png" class="h-5 w-auto rounded-sm shadow-sm"
+                            alt="El Salvador">
+                        <h3 class="text-xl font-bold">El Salvador</h3>
+                    </div>
+
                     <p class="text-gray-600 mb-4">Principais setores: Agrícola, Construção</p>
+
                     <div class="h-1 bg-blue-100 rounded-full mb-2">
-                        <div class="h-1 bg-blue-600 rounded-full" style="width: 90%"></div>
+                        <div class="h-1 bg-green-600 rounded-full" style="width: 90%"></div>
                     </div>
+
                     <p class="text-sm text-gray-500">90% de conexões ativas</p>
                 </div>
-                <div class="country-card bg-white border border-gray-200 rounded-lg p-6 shadow-sm transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-4xl mb-4">🇵🇦</div>
-                    <h3 class="text-xl font-bold mb-2">Panamá</h3>
-                    <p class="text-gray-600 mb-4">Principais setores: Serviços, Economía</p>
-                    <div class="h-1 bg-blue-100 rounded-full mb-2">
-                        <div class="h-1 bg-blue-600 rounded-full" style="width: 90%"></div>
+
+
+                <div class="country-card bg-white border border-gray-200 rounded-lg p-6 shadow-sm transition-all duration-300"
+                    data-aos="fade-up" data-aos-delay="200">
+
+                    <div class="flex items-center gap-3 mb-2">
+                        <img src="images/flags/Flag_of_Panama.svg.png" class="h-5 w-auto rounded-sm shadow-sm"
+                            alt="Panamá">
+                        <h3 class="text-xl font-bold">Panamá</h3>
                     </div>
+
+                    <p class="text-gray-600 mb-4">Principais setores: Serviços, Economia</p>
+
+                    <div class="h-1 bg-blue-100 rounded-full mb-2">
+                        <div class="h-1 bg-green-600 rounded-full" style="width: 90%"></div>
+                    </div>
+
                     <p class="text-sm text-gray-500">90% de conexões ativas</p>
+                </div>
+                <div class="country-card bg-white border border-gray-200 rounded-lg p-6 shadow-sm transition-all duration-300"
+                    data-aos="fade-up" data-aos-delay="200">
+
+                    <div class="flex items-center gap-3 mb-2">
+                        <img src="images/flags/Flag_of_Spain.svg.png" class="h-5 w-auto rounded-sm shadow-sm"
+                            alt="España">
+                        <h3 class="text-xl font-bold">España</h3>
+                    </div>
+
+                    <p class="text-gray-600 mb-4">Principais setores: Turismo, Comércio, Tecnologia</p>
+
+                    <div class="h-1 bg-blue-100 rounded-full mb-2">
+                        <div class="h-1 bg-green-600 rounded-full" style="width: 75%"></div>
+                    </div>
+
+                    <p class="text-sm text-gray-500">75% de conexões ativas</p>
+                </div>
+                <div class="country-card bg-white border border-gray-200 rounded-lg p-6 shadow-sm transition-all duration-300"
+                    data-aos="fade-up" data-aos-delay="200">
+
+                    <div class="flex items-center gap-3 mb-2">
+                        <img src="images/flags/Flag_of_Dubai.svg.png" class="h-5 w-auto rounded-sm shadow-sm"
+                            alt="Dubai">
+                        <h3 class="text-xl font-bold">Dubai</h3>
+                    </div>
+
+                    <p class="text-gray-600 mb-4">Principais setores: Finanças, Imobiliário, Comércio</p>
+
+                    <div class="h-1 bg-blue-100 rounded-full mb-2">
+                        <div class="h-1 bg-green-600 rounded-full" style="width: 85%"></div>
+                    </div>
+
+                    <p class="text-sm text-gray-500">85% de conexões ativas</p>
+                </div>
+                <div class="country-card bg-white border border-gray-200 rounded-lg p-6 shadow-sm transition-all duration-300"
+                    data-aos="fade-up" data-aos-delay="200">
+
+                    <div class="flex items-center gap-3 mb-2">
+                        <img src="images/flags/Flag_of_India.svg.png" class="h-5 w-auto rounded-sm shadow-sm"
+                            alt="India">
+                        <img src="images/flags/Flag_of_Kenya.svg.png" class="h-5 w-auto rounded-sm shadow-sm"
+                            alt="Kenya">
+                        <h3 class="text-xl font-bold">India & Kenya</h3>
+                    </div>
+
+                    <p class="text-gray-600 mb-4">Principais setores: Tecnologia, Agricultura, Comércio Internacional
+                    </p>
+
+                    <div class="h-1 bg-blue-100 rounded-full mb-2">
+                        <div class="h-1 bg-green-600 rounded-full" style="width: 80%"></div>
+                    </div>
+
+                    <p class="text-sm text-gray-500">80% de conexões ativas</p>
                 </div>
             </div>
             <div class="flex items-center justify-center">
-                        <a href="equipe.html" class="bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-lg font-medium flex items-center justify-center" style="margin-top: 40px; max-width: 300px; font-size: larger;">
-                            
-                            Ver Representantes
-                        </a>
-                    </div>
+                <a href="equipe.html"
+                    class="bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-lg font-medium flex items-center justify-center"
+                    style="margin-top: 40px; max-width: 300px; font-size: larger;">
+
+                    Ver Representantes
+                </a>
+            </div>
         </div>
-        
+
     </section>
 
     <!-- Opportunities Section -->
@@ -278,10 +447,13 @@
                             <p class="text-blue-600">Brasil → Internacional</p>
                         </div>
                     </div>
-                    <p class="mb-4">Empresa brasileira necessita de fornecedor internacional de anestesia para uso odontológico. Quantidade significativa, contrato de longo prazo.</p>
+                    <p class="mb-4">Empresa brasileira necessita de fornecedor internacional de anestesia para uso
+                        odontológico. Quantidade significativa, contrato de longo prazo.</p>
                     <div class="flex justify-between items-center">
-                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Contrato Anual</span>
-                        <a href="#contact" class="text-blue-600 hover:text-blue-800 font-medium">Solicitar Detalhes <i data-feather="arrow-right" class="inline ml-1"></i></a>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Contrato
+                            Anual</span>
+                        <a href="#contact" class="text-blue-600 hover:text-blue-800 font-medium">Solicitar Detalhes <i
+                                data-feather="arrow-right" class="inline ml-1"></i></a>
                     </div>
                 </div>
                 <div class="bg-white text-gray-800 p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="150">
@@ -294,10 +466,13 @@
                             <p class="text-blue-600">Argentina → Brasil</p>
                         </div>
                     </div>
-                    <p class="mb-4">Produtor argentino busca compradores brasileiros para soja de alta qualidade. Volumes de exportação disponíveis.</p>
+                    <p class="mb-4">Produtor argentino busca compradores brasileiros para soja de alta qualidade.
+                        Volumes de exportação disponíveis.</p>
                     <div class="flex justify-between items-center">
-                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Imediato</span>
-                        <a href="#contact" class="text-blue-600 hover:text-blue-800 font-medium">Solicitar Detalhes <i data-feather="arrow-right" class="inline ml-1"></i></a>
+                        <span
+                            class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Imediato</span>
+                        <a href="#contact" class="text-blue-600 hover:text-blue-800 font-medium">Solicitar Detalhes <i
+                                data-feather="arrow-right" class="inline ml-1"></i></a>
                     </div>
                 </div>
                 <div class="bg-white text-gray-800 p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
@@ -310,10 +485,13 @@
                             <p class="text-blue-600">Israel → Brasil</p>
                         </div>
                     </div>
-                    <p class="mb-4">Empresa israelense de tecnologia busca sócios brasileiros para distribuição de software de gestão empresarial.</p>
+                    <p class="mb-4">Empresa israelense de tecnologia busca sócios brasileiros para distribuição de
+                        software de gestão empresarial.</p>
                     <div class="flex justify-between items-center">
-                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Parceria</span>
-                        <a href="#contact" class="text-blue-600 hover:text-blue-800 font-medium">Solicitar Detalhes <i data-feather="arrow-right" class="inline ml-1"></i></a>
+                        <span
+                            class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Parceria</span>
+                        <a href="#contact" class="text-blue-600 hover:text-blue-800 font-medium">Solicitar Detalhes <i
+                                data-feather="arrow-right" class="inline ml-1"></i></a>
                     </div>
                 </div>
                 <div class="bg-white text-gray-800 p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="250">
@@ -326,15 +504,20 @@
                             <p class="text-blue-600">México → Brasil</p>
                         </div>
                     </div>
-                    <p class="mb-4">Fabricante mexicano necessita de componentes especializados para máquinas têxteis. Busca fornecedor brasileiro confiável.</p>
+                    <p class="mb-4">Fabricante mexicano necessita de componentes especializados para máquinas têxteis.
+                        Busca fornecedor brasileiro confiável.</p>
                     <div class="flex justify-between items-center">
-                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Componentes</span>
-                        <a href="#contact" class="text-blue-600 hover:text-blue-800 font-medium">Solicitar Detalhes <i data-feather="arrow-right" class="inline ml-1"></i></a>
+                        <span
+                            class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Componentes</span>
+                        <a href="#contact" class="text-blue-600 hover:text-blue-800 font-medium">Solicitar Detalhes <i
+                                data-feather="arrow-right" class="inline ml-1"></i></a>
                     </div>
                 </div>
             </div>
             <div class="text-center mt-10" data-aos="fade-up">
-                <a href="news.html" class="bg-white text-blue-800 hover:bg-gray-100 px-6 py-3 rounded-lg font-medium">Ver Todas as Oportunidades</a>
+                <a href="news.html"
+                    class="bg-white text-blue-800 hover:bg-gray-100 px-6 py-3 rounded-lg font-medium">Ver Todas as
+                    Oportunidades</a>
             </div>
         </div>
     </section>
@@ -352,27 +535,32 @@
         <div class="container mx-auto px-4">
             <h2 class="text-2xl font-bold text-center mb-8" data-aos="fade-up">Cotações em Tempo Real</h2>
             <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
-                <div class="rate-item bg-white p-4 rounded-lg shadow-sm text-center" data-aos="fade-up" data-aos-delay="100">
+                <div class="rate-item bg-white p-4 rounded-lg shadow-sm text-center" data-aos="fade-up"
+                    data-aos-delay="100">
                     <p class="currency-pair text-gray-600 mb-2">USD/BRL</p>
                     <p class="rate-value text-xl font-bold"></p>
                     <p class="rate-change text-sm text-green-500 mt-1"></p>
                 </div>
-                <div class="rate-item bg-white p-4 rounded-lg shadow-sm text-center" data-aos="fade-up" data-aos-delay="150">
+                <div class="rate-item bg-white p-4 rounded-lg shadow-sm text-center" data-aos="fade-up"
+                    data-aos-delay="150">
                     <p class="currency-pair text-gray-600 mb-2">EUR/BRL</p>
                     <p class="rate-value text-xl font-bold"></p>
                     <p class="rate-change text-sm text-green-500 mt-1"></p>
                 </div>
-                <div class="rate-item bg-white p-4 rounded-lg shadow-sm text-center" data-aos="fade-up" data-aos-delay="200">
+                <div class="rate-item bg-white p-4 rounded-lg shadow-sm text-center" data-aos="fade-up"
+                    data-aos-delay="200">
                     <p class="currency-pair text-gray-600 mb-2">MXN/BRL</p>
                     <p class="rate-value text-xl font-bold"></p>
                     <p class="rate-change text-sm text-green-500 mt-1"></p>
                 </div>
-                <div class="rate-item bg-white p-4 rounded-lg shadow-sm text-center" data-aos="fade-up" data-aos-delay="250">
+                <div class="rate-item bg-white p-4 rounded-lg shadow-sm text-center" data-aos="fade-up"
+                    data-aos-delay="250">
                     <p class="currency-pair text-gray-600 mb-2">UYU/BRL</p>
                     <p class="rate-value text-xl font-bold"></p>
                     <p class="rate-change text-sm text-green-500 mt-1"></p>
                 </div>
-                <div class="rate-item bg-white p-4 rounded-lg shadow-sm text-center" data-aos="fade-up" data-aos-delay="300">
+                <div class="rate-item bg-white p-4 rounded-lg shadow-sm text-center" data-aos="fade-up"
+                    data-aos-delay="300">
                     <p class="currency-pair text-gray-600 mb-2">ARS/BRL</p>
                     <p class="rate-value text-xl font-bold"></p>
                     <p class="rate-change text-sm text-green-500 mt-1"></p>
@@ -386,7 +574,8 @@
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Próximos Eventos</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="border border-gray-200 rounded-lg overflow-hidden shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                <div class="border border-gray-200 rounded-lg overflow-hidden shadow-sm" data-aos="fade-up"
+                    data-aos-delay="100">
                     <div class="bg-blue-800 text-white p-4 text-center">
                         <div class="text-2xl font-bold">15</div>
                         <div class="text-sm">JUN</div>
@@ -399,44 +588,54 @@
                             <span class="text-sm">Virtual</span>
                         </div>
                         <div class="mt-4">
-                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Argentina</span>
-                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium ml-2">Agricultura</span>
+                            <span
+                                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Argentina</span>
+                            <span
+                                class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium ml-2">Agricultura</span>
                         </div>
                     </div>
                 </div>
-                <div class="border border-gray-200 rounded-lg overflow-hidden shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                <div class="border border-gray-200 rounded-lg overflow-hidden shadow-sm" data-aos="fade-up"
+                    data-aos-delay="200">
                     <div class="bg-blue-800 text-white p-4 text-center">
                         <div class="text-2xl font-bold">22</div>
                         <div class="text-sm">JUN</div>
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Mesa Redonda: Tecnologia e Inovação</h3>
-                        <p class="text-gray-600 mb-4">Encontro presencial com empresários israelenses do setor tecnológico</p>
+                        <p class="text-gray-600 mb-4">Encontro presencial com empresários israelenses do setor
+                            tecnológico</p>
                         <div class="flex items-center">
                             <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
                             <span class="text-sm">São Paulo, Brasil</span>
                         </div>
                         <div class="mt-4">
-                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Israel</span>
-                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium ml-2">Tecnologia</span>
+                            <span
+                                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Israel</span>
+                            <span
+                                class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium ml-2">Tecnologia</span>
                         </div>
                     </div>
                 </div>
-                <div class="border border-gray-200 rounded-lg overflow-hidden shadow-sm" data-aos="fade-up" data-aos-delay="300">
+                <div class="border border-gray-200 rounded-lg overflow-hidden shadow-sm" data-aos="fade-up"
+                    data-aos-delay="300">
                     <div class="bg-blue-800 text-white p-4 text-center">
                         <div class="text-2xl font-bold">05</div>
                         <div class="text-sm">JUL</div>
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Fórum de Investimentos México-Brasil</h3>
-                        <p class="text-gray-600 mb-4">Oportunidades de investimento binacional no setor manufatureiro</p>
+                        <p class="text-gray-600 mb-4">Oportunidades de investimento binacional no setor manufatureiro
+                        </p>
                         <div class="flex items-center">
                             <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
                             <span class="text-sm">Híbrido</span>
                         </div>
                         <div class="mt-4">
-                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">México</span>
-                            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium ml-2">Manufatura</span>
+                            <span
+                                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">México</span>
+                            <span
+                                class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium ml-2">Manufatura</span>
                         </div>
                     </div>
                 </div>
@@ -450,21 +649,28 @@
             <div class="flex flex-col lg:flex-row items-center gap-12">
                 <div class="lg:w-1/2" data-aos="fade-right">
                     <h2 class="text-3xl font-bold mb-6">Nossa História</h2>
-                    <p class="text-gray-700 mb-6">Fundada em 2018, a Câmara Intercontinental de Indústria e Comércio do Brasil nasceu da necessidade de criar pontes comerciais sólidas entre empresas brasileiras e mercados internacionais estratégicos.</p>
-                    <p class="text-gray-700 mb-8">Ao longo dos anos, expandimos nossa presença para 16 países, facilitando mais de 1.000 conexões comerciais e gerando milhões em oportunidades de negócios para nossos associados.</p>
+                    <p class="text-gray-700 mb-6">Fundada em 2018, a Câmara Intercontinental de Indústria e Comércio do
+                        Brasil nasceu da necessidade de criar pontes comerciais sólidas entre empresas brasileiras e
+                        mercados internacionais estratégicos.</p>
+                    <p class="text-gray-700 mb-8">Ao longo dos anos, expandimos nossa presença para 16 países,
+                        facilitando mais de 1.000 conexões comerciais e gerando milhões em oportunidades de negócios
+                        para nossos associados.</p>
                     <div class="bg-white p-6 rounded-lg shadow-md">
                         <h3 class="text-xl font-bold mb-4">Nossa Missão</h3>
-                        <p class="text-gray-700 italic">"Conectar empresas brasileiras com oportunidades globais, facilitando negócios internacionais através de uma rede confiável e discreta de parceiros comerciais."</p>
+                        <p class="text-gray-700 italic">"Conectar empresas brasileiras com oportunidades globais,
+                            facilitando negócios internacionais através de uma rede confiável e discreta de parceiros
+                            comerciais."</p>
                     </div>
                 </div>
                 <div class="lg:w-1/2" data-aos="fade-left">
-                    <img src="images/pagina/salonreunionesfondo.png" alt="Team meeting" class="rounded-lg shadow-lg w-full">
+                    <img src="images/pagina/salonreunionesfondo.png" alt="Team meeting"
+                        class="rounded-lg shadow-lg w-full">
                 </div>
             </div>
         </div>
     </section>
 
-    
+
 
     <!-- Certifications Section -->
     <section class="py-16 bg-gray-100">
@@ -507,10 +713,14 @@
     <section id="contact" class="py-20 bg-blue-800 text-white">
         <div class="container mx-auto px-4 text-center" data-aos="fade-up">
             <h2 class="text-3xl md:text-4xl font-bold mb-6">Pronto para Expandir Internacionalmente?</h2>
-            <p class="text-xl mb-8 max-w-2xl mx-auto">Nossa equipe experiente está pronta para conectar sua empresa com oportunidades globais. Entre em contato e descubra como podemos impulsionar seus negócios.</p>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Nossa equipe experiente está pronta para conectar sua empresa com
+                oportunidades globais. Entre em contato e descubra como podemos impulsionar seus negócios.</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#" class="bg-white text-blue-800 hover:bg-gray-100 px-6 py-3 rounded-lg font-medium">Fale Conosco</a>
-                <a href="#" class="bg-transparent border-2 border-white hover:bg-white hover:text-blue-800 px-6 py-3 rounded-lg font-medium">Agendar Reunião</a>
+                <a href="#" class="bg-white text-blue-800 hover:bg-gray-100 px-6 py-3 rounded-lg font-medium">Fale
+                    Conosco</a>
+                <a href="#"
+                    class="bg-transparent border-2 border-white hover:bg-white hover:text-blue-800 px-6 py-3 rounded-lg font-medium">Agendar
+                    Reunião</a>
             </div>
         </div>
     </section>
@@ -519,15 +729,17 @@
     <footer class="bg-gray-900 text-white py-12">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-             <div>
-    <h3 class="text-xl font-bold mb-4">CIIC</h3>
-    <p class="text-gray-400">Conectando Empresas, Criando Oportunidades</p>
-    <div class="flex space-x-4 mt-6">
-        <a href="https://www.instagram.com/camara.ciic/?igsh=MW9sdnRpbmN4bDEydw%3D%3Dhttp%3A%2F%2F" class="text-gray-400 hover:text-white"><i data-feather="instagram"></i></a>
-        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="linkedin"></i></a>
-        <a href="https://api.whatsapp.com/send?phone=5551981676518&text=" class="text-gray-400 hover:text-white"><i data-feather="message-circle"></i></a>
-    </div>
-</div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">CIIC</h3>
+                    <p class="text-gray-400">Conectando Empresas, Criando Oportunidades</p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="https://www.instagram.com/camara.ciic/?igsh=MW9sdnRpbmN4bDEydw%3D%3Dhttp%3A%2F%2F"
+                            class="text-gray-400 hover:text-white"><i data-feather="instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="linkedin"></i></a>
+                        <a href="https://api.whatsapp.com/send?phone=5551981676518&text="
+                            class="text-gray-400 hover:text-white"><i data-feather="message-circle"></i></a>
+                    </div>
+                </div>
                 <div>
                     <h3 class="text-lg font-bold mb-4">Serviços</h3>
                     <ul class="space-y-2">
@@ -555,11 +767,13 @@
                         </li>
                         <li class="flex items-center">
                             <i data-feather="phone" class="w-4 h-4 mr-2"></i>
-                            <a href="https://api.whatsapp.com/send?phone=5551981676518&text=" class="text-gray-400">+55 51 98167-6518</a>
+                            <a href="https://api.whatsapp.com/send?phone=5551981676518&text=" class="text-gray-400">+55
+                                51 98167-6518</a>
                         </li>
                         <li class="flex items-center">
                             <i data-feather="phone" class="w-4 h-4 mr-2"></i>
-                            <a href="https://api.whatsapp.com/send?phone=5551981676518&text=" class="text-gray-400">+55 51 99247-8505</a>
+                            <a href="https://api.whatsapp.com/send?phone=5551981676518&text=" class="text-gray-400">+55
+                                51 99247-8505</a>
                         </li>
                         <li class="flex items-center">
                             <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
@@ -574,19 +788,32 @@
         </div>
     </footer>
 
+    
+    <!-- Contact Floating Button -->
+    <button onclick="openContactModal()" id="contactFloatBtn"
+        class="fixed bottom-8 right-24 bg-green-600 hover:bg-green-700 text-white p-3 rounded-full shadow-lg z-[9998] transition-all duration-300">
+        <i data-feather="message-circle"></i>
+    </button>
+
+    <!-- Back to Top Button -->
+    <button onclick="topFunction()" id="backToTop"
+        class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hidden">
+        <i data-feather="arrow-up"></i>
+    </button>
+
     <script>
         // Initialize animations and icons
         AOS.init();
         feather.replace();
 
         // Mobile menu toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+        document.getElementById('mobile-menu-button').addEventListener('click', function () {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
         });
 
         // Mobile countries menu toggle
-        document.getElementById('mobile-countries-button').addEventListener('click', function() {
+        document.getElementById('mobile-countries-button').addEventListener('click', function () {
             const menu = document.getElementById('mobile-countries-menu');
             menu.classList.toggle('hidden');
             const icon = this.querySelector('i');
@@ -611,29 +838,116 @@
             color: 0x3a86ff,
             backgroundColor: 0x0
         });
+
+        // Back to top button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            const backToTopBtn = document.getElementById("backToTop");
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                backToTopBtn.classList.remove('hidden');
+            } else {
+                backToTopBtn.classList.add('hidden');
+            }
+        }
+
+        function topFunction() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
     </script>
-
-
-
-
-
-
 
     <script>
         // Update current time
         function updateTime() {
             const now = new Date();
-            const timeString = now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+            const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
             document.getElementById('current-time').textContent = timeString;
         }
         setInterval(updateTime, 1000);
         updateTime();
 
         // Initialize AOS and Feather Icons
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             AOS.init();
             feather.replace();
         });
+        function openContactModal() {
+            const modal = document.getElementById('contactModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            feather.replace();
+        }
+
+        function closeContactModal() {
+            const modal = document.getElementById('contactModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
     </script>
+
+
+
+
+
+
+    <!-- Contact Modal -->
+    <div id="contactModal" onclick="if(event.target === this) closeContactModal()"
+        class="fixed inset-0 bg-black/50 hidden items-center justify-center z-[9999] px-4">
+        <div class="bg-white w-full max-w-lg rounded-2xl shadow-2xl p-8 relative animate-fadeIn">
+
+            <!-- Botón cerrar -->
+            <button onclick="closeContactModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700">
+                <i data-feather="x" class="w-5 h-5"></i>
+            </button>
+
+            <!-- Título -->
+            <div class="mb-6">
+                <h2 class="text-2xl font-bold text-gray-800">Entre em Contato</h2>
+                <p class="text-gray-500 mt-1">
+                    Preencha os dados abaixo e envie sua solicitude.
+                </p>
+            </div>
+
+            <!-- Formulario -->
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Nome</label>
+                    <input type="text" placeholder="Seu nome"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">País</label>
+                    <input type="text" placeholder="Seu país"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">E-mail</label>
+                    <input type="email" placeholder="seuemail@exemplo.com"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Solicitude</label>
+                    <textarea rows="5" placeholder="Escreva sua mensagem..."
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"></textarea>
+                </div>
+
+                <div class="flex justify-end gap-3 pt-2">
+                    <button type="button" onclick="closeContactModal()"
+                        class="px-5 py-3 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50">
+                        Cancelar
+                    </button>
+
+                    <button type="submit" class="px-5 py-3 rounded-lg bg-blue-600 text-white hover:bg-blue-700">
+                        Enviar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
+
 </html>
