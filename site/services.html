@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIIC Brasil - Serviços</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="icon" href="/site/images/favicon/favicon.ico" type="image/x-icon">
+
+    <style>
+        .institutional-card {
+            transition: all 0.3s ease;
+        }
+
+        .institutional-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card:hover {
+            background-color: rgba(59, 130, 246, 0.04);
+            transform: translateY(-4px);
+        }
+
+        #hero-services {
+            background: linear-gradient(rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.68)),
+                url('images/pagina/EjecutivosFondoYates.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .animate-fadeIn {
+            animation: fadeInScale 0.25s ease;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: translateY(10px) scale(0.98);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="images/CIIC_Logo_BG.png" alt="Logo CIIC" class="logo-img" style="width: 10%;">
+                <div style="max-width: 220px;">
+                    <a class="text-40px font-bold text-blue-800">
+                        Camara Intercontinental de Industria e Comercio
+                    </a>
+                </div>
+            </div>
+
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-gray-700 hover:text-blue-600">Início</a>
+                <a href="news.html" class="text-gray-700 hover:text-blue-600">Oportunidades</a>
+                <a href="equipe.html" class="text-gray-700 hover:text-blue-600">Equipe</a>
+                <a href="institucional.html" class="text-gray-700 hover:text-blue-600">Institucional</a>
+                <a href="services.html" class="text-blue-700 hover:text-blue-600">Serviços</a>
+                <a href="acordos.html" class="text-gray-700 hover:text-blue-600">Acordos</a>
+            </div>
+
+            <div class="md:hidden">
+                <button id="mobile-menu-button">
+                    <i data-feather="menu"></i>
+                </button>
+                <div id="mobile-menu" class="hidden absolute right-0 mt-2 w-56 bg-white rounded-md shadow-lg py-1 z-50">
+                    <a href="index.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Início</a>
+                    <a href="news.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Oportunidades</a>
+                    <a href="equipe.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Equipe</a>
+                    <a href="institucional.html"
+                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Institucional</a>
+                    <a href="services.html" class="block px-4 py-2 text-blue-700 hover:bg-gray-100">Serviços</a>
+                    <a href="acordos.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Acordos</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="hero-services" class="py-32 text-white" data-aos="fade-in">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Serviços e Soluções</h1>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">
+                A CIIC oferece suporte estratégico para empresas, empreendedores e profissionais que desejam crescer,
+                internacionalizar-se e gerar novas oportunidades de negócio.
+            </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row justify-center gap-4 mt-6">
+    
+    <a href="institucional.html"
+        class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium flex items-center justify-center">
+        <i data-feather="file-text" class="w-5 h-5 mr-2"></i>
+        Voltar a institucional
+    </a>
+
+    <a href="acordos.html"
+        class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium flex items-center justify-center">
+        <i data-feather="file-text" class="w-5 h-5 mr-2"></i>
+        Ver Acordos
+    </a>
+
+</div>
+    </section>
+
+    <!-- Intro -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="institutional-card bg-white rounded-xl shadow-md overflow-hidden max-w-5xl mx-auto"
+                data-aos="fade-up">
+                <div class="p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i data-feather="briefcase" class="w-6 h-6 text-blue-600"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-800">Como Atuamos</h2>
+                    </div>
+                    <div class="space-y-4 text-gray-700">
+                        <p>
+                            A Câmara Intercontinental de Indústria e Comércio do Brasil (CIIC) oferece uma ampla gama
+                            de serviços destinados a apoiar empresas, empreendedores e investidores no desenvolvimento
+                            de negócios nacionais e internacionais.
+                        </p>
+                        <p>
+                            Por meio de nossa rede institucional e de parceiros globais, disponibilizamos soluções que
+                            fortalecem o comércio, estimulam a cooperação empresarial e contribuem para a expansão
+                            sustentável dos negócios.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Empresas -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto">
+                <div class="flex items-center mb-8">
+                    <div class="bg-green-100 p-3 rounded-full mr-4">
+                        <i data-feather="briefcase" class="w-6 h-6 text-green-600"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-800">Para Empresas</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div
+                        class="service-card bg-white border border-gray-200 rounded-lg p-7 transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                <i data-feather="folder" class="w-5 h-5 text-blue-600"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 leading-snug">Documentação e Estruturação</h4>
+                        </div>
+                        <p class="text-gray-600">
+                            Apoio com documentação para empresas estrangeiras no Brasil, endereço fiscal e
+                            assessoramento para instalação.
+                        </p>
+                    </div>
+
+                    <div
+                        class="service-card bg-white border border-gray-200 rounded-lg p-7 transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-cyan-100 p-2 rounded-full mr-3">
+                                <i data-feather="search" class="w-5 h-5 text-cyan-600"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 leading-snug">Busca de Produtos e Serviços</h4>
+                        </div>
+                        <p class="text-gray-600">
+                            Identificação de fornecedores, produtos e serviços para empresas nacionais e internacionais.
+                        </p>
+                    </div>
+
+                    <div
+                        class="service-card bg-white border border-gray-200 rounded-lg p-7 transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-yellow-100 p-2 rounded-full mr-3">
+                                <i data-feather="shield" class="w-5 h-5 text-yellow-600"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 leading-snug">Mediação, Arbitragem e Representação</h4>
+                        </div>
+                        <p class="text-gray-600">
+                            Representação legal e institucional dentro e fora do Brasil, com suporte em mediação e
+                            arbitragem.
+                        </p>
+                    </div>
+
+                    <div
+                        class="service-card bg-white border border-gray-200 rounded-lg p-7 transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-emerald-100 p-2 rounded-full mr-3">
+                                <i data-feather="award" class="w-5 h-5 text-emerald-600"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 leading-snug">Certificações e Segurança Documental</h4>
+                        </div>
+                        <p class="text-gray-600">
+                            Suporte com certificações internacionais, Blue Certificate e sistemas de blockchain para
+                            segurança documental.
+                        </p>
+                    </div>
+
+                    <div
+                        class="service-card bg-white border border-gray-200 rounded-lg p-7 transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-purple-100 p-2 rounded-full mr-3">
+                                <i data-feather="settings" class="w-5 h-5 text-purple-600"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 leading-snug">Auditoria e Expansão Produtiva</h4>
+                        </div>
+                        <p class="text-gray-600">
+                            Serviços de auditoria de produção, melhoria de processos e ampliação de plantas produtivas.
+                        </p>
+                    </div>
+
+                    <div
+                        class="service-card bg-white border border-gray-200 rounded-lg p-7 transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-rose-100 p-2 rounded-full mr-3">
+                                <i data-feather="trending-up" class="w-5 h-5 text-rose-600"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 leading-snug">Investimento e Reestruturação</h4>
+                        </div>
+                        <p class="text-gray-600">
+                            Busca de investidores, análise de projetos e assessoramento para empresas com desafios
+                            financeiros e tributários.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emprendedores -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto">
+                <div class="flex items-center mb-8">
+                    <div class="bg-blue-100 p-3 rounded-full mr-4">
+                        <i data-feather="user" class="w-6 h-6 text-blue-600"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-800">Para Empreendedores</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div
+                        class="service-card bg-white border border-gray-200 rounded-lg p-7 transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-green-100 p-2 rounded-full mr-3">
+                                <i data-feather="briefcase" class="w-5 h-5 text-green-600"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 leading-snug">Assessoria Empresarial</h4>
+                        </div>
+                        <p class="text-gray-600">
+                            Orientação para criação, formalização e desenvolvimento de empresas.
+                        </p>
+                    </div>
+
+                    <div
+                        class="service-card bg-white border border-gray-200 rounded-lg p-7 transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-cyan-100 p-2 rounded-full mr-3">
+                                <i data-feather="users" class="w-5 h-5 text-cyan-600"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 leading-snug">Networking e Rodadas de Negócio</h4>
+                        </div>
+                        <p class="text-gray-600">
+                            Encontros empresariais, eventos e conexões com parceiros, clientes e investidores.
+                        </p>
+                    </div>
+
+                    <div
+                        class="service-card bg-white border border-gray-200 rounded-lg p-7 transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-yellow-100 p-2 rounded-full mr-3">
+                                <i data-feather="globe" class="w-5 h-5 text-yellow-600"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 leading-snug">Internacionalização</h4>
+                        </div>
+                        <p class="text-gray-600">
+                            Apoio para exportar, expandir-se a novos mercados e acessar contatos internacionais.
+                        </p>
+                    </div>
+
+                    <div
+                        class="service-card bg-white border border-gray-200 rounded-lg p-7 transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-emerald-100 p-2 rounded-full mr-3">
+                                <i data-feather="book-open" class="w-5 h-5 text-emerald-600"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 leading-snug">Capacitação</h4>
+                        </div>
+                        <p class="text-gray-600">
+                            Cursos, seminários e workshops sobre gestão, liderança, marketing e comércio internacional.
+                        </p>
+                    </div>
+
+                    <div
+                        class="service-card bg-white border border-gray-200 rounded-lg p-7 transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-purple-100 p-2 rounded-full mr-3">
+                                <i data-feather="eye" class="w-5 h-5 text-purple-600"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 leading-snug">Promoção e Visibilidade</h4>
+                        </div>
+                        <p class="text-gray-600">
+                            Divulgação de empreendimentos em eventos, feiras e plataformas institucionais.
+                        </p>
+                    </div>
+
+                    <div
+                        class="service-card bg-white border border-gray-200 rounded-lg p-7 transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-rose-100 p-2 rounded-full mr-3">
+                                <i data-feather="bar-chart-2" class="w-5 h-5 text-rose-600"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 leading-snug">Investimento e Informação de Mercado</h4>
+                        </div>
+                        <p class="text-gray-600">
+                            Acesso a investidores, estudos, relatórios e programas de incubação e aceleração.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profissionais -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto">
+                <div class="flex items-center mb-8">
+                    <div class="bg-yellow-100 p-3 rounded-full mr-4">
+                        <i data-feather="users" class="w-6 h-6 text-yellow-600"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-800">Para Profissionais</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div
+                        class="service-card bg-white border border-gray-200 rounded-lg p-7 transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                <i data-feather="globe" class="w-5 h-5 text-blue-600"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 leading-snug">Rede Internacional</h4>
+                        </div>
+                        <p class="text-gray-600">
+                            Conexão entre profissionais de diferentes setores, países e mercados.
+                        </p>
+                    </div>
+
+                    <div
+                        class="service-card bg-white border border-gray-200 rounded-lg p-7 transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-green-100 p-2 rounded-full mr-3">
+                                <i data-feather="book" class="w-5 h-5 text-green-600"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 leading-snug">Capacitação e Desenvolvimento</h4>
+                        </div>
+                        <p class="text-gray-600">
+                            Cursos, seminários, workshops e conferências voltados à atualização profissional.
+                        </p>
+                    </div>
+
+                    <div
+                        class="service-card bg-white border border-gray-200 rounded-lg p-7 transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-emerald-100 p-2 rounded-full mr-3">
+                                <i data-feather="award" class="w-5 h-5 text-emerald-600"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 leading-snug">Certificação e Reconhecimento</h4>
+                        </div>
+                        <p class="text-gray-600">
+                            Credenciais, certificados e reconhecimento institucional que valorizam a atuação
+                            profissional.
+                        </p>
+                    </div>
+
+                    <div
+                        class="service-card bg-white border border-gray-200 rounded-lg p-7 transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-cyan-100 p-2 rounded-full mr-3">
+                                <i data-feather="briefcase" class="w-5 h-5 text-cyan-600"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 leading-snug">Projetos e Oportunidades</h4>
+                        </div>
+                        <p class="text-gray-600">
+                            Acesso a consultorias, parcerias, missões empresariais e oportunidades institucionais.
+                        </p>
+                    </div>
+
+                    <div
+                        class="service-card bg-white border border-gray-200 rounded-lg p-7 transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-purple-100 p-2 rounded-full mr-3">
+                                <i data-feather="user-plus" class="w-5 h-5 text-purple-600"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 leading-snug">Mentoria e Comunidades Setoriais</h4>
+                        </div>
+                        <p class="text-gray-600">
+                            Integração entre profissionais experientes, novos talentos e grupos por área de atuação.
+                        </p>
+                    </div>
+
+                    <div
+                        class="service-card bg-white border border-gray-200 rounded-lg p-7 transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-rose-100 p-2 rounded-full mr-3">
+                                <i data-feather="edit-3" class="w-5 h-5 text-rose-600"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 leading-snug">Publicação e Visibilidade</h4>
+                        </div>
+                        <p class="text-gray-600">
+                            Espaço para artigos, estudos, perfis profissionais, projetos e serviços.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Educação -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="institutional-card bg-white rounded-xl shadow-md overflow-hidden max-w-5xl mx-auto"
+                data-aos="fade-up">
+                <div class="p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i data-feather="book-open" class="w-6 h-6 text-blue-600"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-800">Educação e Capacitação</h2>
+                    </div>
+
+                    <div class="space-y-4 text-gray-700">
+                        <p>
+                            A CIIC promove programas de formação profissional, cursos de capacitação e especializações
+                            com foco em competitividade, inovação, liderança e internacionalização.
+                        </p>
+                        <p>
+                            Os programas podem ser oferecidos em formatos presenciais, online ou híbridos, atendendo
+                            profissionais e empresas de diferentes regiões.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                        <div class="bg-blue-50 border border-blue-100 rounded-lg p-5">
+                            <h4 class="font-bold text-gray-800 mb-2">+100 Cursos</h4>
+                            <p class="text-gray-600">Capacitação profissional em diversas áreas empresariais.</p>
+                        </div>
+
+                        <div class="bg-blue-50 border border-blue-100 rounded-lg p-5">
+                            <h4 class="font-bold text-gray-800 mb-2">+50 Programas</h4>
+                            <p class="text-gray-600">Mestrados e especializações voltadas ao desenvolvimento
+                                estratégico.</p>
+                        </div>
+
+                        <div class="bg-blue-50 border border-blue-100 rounded-lg p-5">
+                            <h4 class="font-bold text-gray-800 mb-2">Certificação Internacional</h4>
+                            <p class="text-gray-600">Formação alinhada às demandas do mercado global.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 bg-blue-800 text-white">
+        <div class="container mx-auto px-4 text-center" data-aos="fade-up">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Leve sua empresa ou projeto para o próximo nível</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto text-blue-100">
+                Conte com a CIIC para gerar conexões, negócios e oportunidades de expansão nacional e internacional.
+            </p>
+            <a href="#" onclick="openContactModal()"
+                class="bg-white hover:bg-gray-100 text-blue-800 px-6 py-3 rounded-lg font-medium inline-flex items-center justify-center">
+                <i data-feather="mail" class="w-5 h-5 mr-2"></i>
+                Solicitar Mais Informações
+            </a>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+
+    <button onclick="openContactModal()" id="contactFloatBtn"
+        class="fixed bottom-8 right-24 bg-green-600 hover:bg-green-700 text-white p-3 rounded-full shadow-lg z-[9998] transition-all duration-300">
+        <i data-feather="message-circle"></i>
+    </button>
+
+    <button onclick="topFunction()" id="backToTop"
+        class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hidden">
+        <i data-feather="arrow-up"></i>
+    </button>
+
+    <script>
+        fetch("footer.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("footer").innerHTML = data;
+                feather.replace();
+            });
+
+        AOS.init();
+        feather.replace();
+
+        document.getElementById('mobile-menu-button').addEventListener('click', function () {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            const backToTopBtn = document.getElementById("backToTop");
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                backToTopBtn.classList.remove('hidden');
+            } else {
+                backToTopBtn.classList.add('hidden');
+            }
+        }
+
+        function topFunction() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function openContactModal() {
+            const modal = document.getElementById('contactModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            feather.replace();
+        }
+
+        function closeContactModal() {
+            const modal = document.getElementById('contactModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+    </script>
+
+    <!-- Modal -->
+    <div id="contactModal" onclick="if(event.target === this) closeContactModal()"
+        class="fixed inset-0 bg-black/50 hidden items-center justify-center z-[9999] px-4">
+        <div class="bg-white w-full max-w-lg rounded-2xl shadow-2xl p-8 relative animate-fadeIn">
+            <button onclick="closeContactModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700">
+                <i data-feather="x" class="w-5 h-5"></i>
+            </button>
+
+            <div class="mb-6">
+                <h2 class="text-2xl font-bold text-gray-800">Entre em Contato</h2>
+                <p class="text-gray-500 mt-1">Preencha os dados abaixo e envie sua solicitude.</p>
+            </div>
+
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Nome</label>
+                    <input type="text" placeholder="Seu nome"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">País</label>
+                    <input type="text" placeholder="Seu país"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">E-mail</label>
+                    <input type="email" placeholder="seuemail@exemplo.com"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Solicitude</label>
+                    <textarea rows="5" placeholder="Escreva sua mensagem..."
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"></textarea>
+                </div>
+
+                <div class="flex justify-end gap-3 pt-2">
+                    <button type="button" onclick="closeContactModal()"
+                        class="px-5 py-3 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50">
+                        Cancelar
+                    </button>
+                    <button type="submit" class="px-5 py-3 rounded-lg bg-blue-600 text-white hover:bg-blue-700">
+                        Enviar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
