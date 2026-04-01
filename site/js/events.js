@@ -57,7 +57,7 @@ async function loadEvents() {
                 <span class="text-lg text-gray-600">${e.location ?? 'Sin ubicación'}</span>
               </div>
 
-              <div class="bg-blue-800 text-white px-4 py-3 rounded-xl text-center min-w-[140px]">
+              <div class="bg-green-600 text-white px-4 py-3 rounded-xl text-center min-w-[140px]">
                 <div class="text-lg font-bold">${e.start_date ? new Date(e.start_date).toLocaleDateString() : ''}</div>
                 <div class="text-xs opacity-75">Até</div>
                 <div class="text-lg font-bold">${e.end_date ? new Date(e.end_date).toLocaleDateString() : ''}</div>
@@ -76,3 +76,20 @@ window.addEventListener('DOMContentLoaded', () => {
   console.log('DOMContentLoaded disparado');
   loadEvents();
 });
+
+
+// Back to top button
+window.onscroll = function () { scrollFunction() };
+
+function scrollFunction() {
+  const backToTopBtn = document.getElementById("backToTop");
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    backToTopBtn.classList.remove('hidden');
+  } else {
+    backToTopBtn.classList.add('hidden');
+  }
+}
+
+function topFunction() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}

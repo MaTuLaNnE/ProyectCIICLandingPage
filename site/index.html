@@ -47,24 +47,11 @@
 
             <div class="hidden md:flex space-x-8">
                 <a href="#" class="text-blue-800 hover:text-blue-600">Início</a>
-                <a href="#services" class="text-gray-700 hover:text-blue-600">Serviços</a>
-                <div class="relative group">
-                    <button class="text-gray-700 hover:text-blue-600 flex items-center">
-                        Países <i data-feather="chevron-down" class="w-4 h-4 ml-1"></i>
-                    </button>
-                    <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 py-2 w-48 z-50">
-                        <a href="#countries" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Todos os Países</a>
-                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Argentina</a>
-                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Paraguai</a>
-                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Peru</a>
-                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Colômbia</a>
-                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">México</a>
-                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Israel</a>
-                    </div>
-                </div>
-                <a href="#opportunities" class="text-gray-700 hover:text-blue-600">Oportunidades</a>
-                <a href="#about" class="text-gray-700 hover:text-blue-600">Sobre</a>
+                <a href="news.html" class="text-gray-700 hover:text-blue-600">Oportunidades</a>
+                <a href="equipe.html" class="text-gray-700 hover:text-blue-600">Equipe</a>
                 <a href="institucional.html" class="text-gray-700 hover:text-blue-600">Institucional</a>
+
+
             </div>
             <div class="md:hidden relative">
                 <button id="mobile-menu-button">
@@ -72,25 +59,8 @@
                 </button>
                 <div id="mobile-menu" class="hidden absolute right-0 mt-2 w-56 bg-white rounded-md shadow-lg py-1 z-50">
                     <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Início</a>
-                    <a href="#services" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Serviços</a>
-                    <div class="relative">
-                        <button id="mobile-countries-button"
-                            class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 flex justify-between items-center">
-                            Países <i data-feather="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div id="mobile-countries-menu" class="hidden bg-gray-50 pl-4">
-                            <a href="#countries" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Todos os
-                                Países</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Argentina</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Paraguai</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Peru</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Colômbia</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">México</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Israel</a>
-                        </div>
-                    </div>
-                    <a href="#opportunities" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Oportunidades</a>
-                    <a href="#about" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Sobre</a>
+                    <a href="equipe.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Equipe</a>
+                    <a href="news.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Oportunidades</a>
                     <a href="institucional.html"
                         class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Institucional</a>
                 </div>
@@ -106,10 +76,11 @@
                 <p class="text-xl mb-8">A Câmara Intercontinental de Indústria e Comércio do Brasil facilita conexões
                     empresariais entre o Brasil e 16 países estratégicos.</p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a onclick="openContactModal()" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-medium">Entre em
+                    <a onclick="openContactModal()"
+                        class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-medium">Entre em
                         Contato</a>
-                    <a href="#opportunities"
-                        class="bg-white text-blue-800 hover:bg-gray-100 px-6 py-3 rounded-lg font-medium">Ver
+                    <a href="news.html"
+                        class="bg-yellow-400 text-black hover:bg-yellow-600 px-6 py-3 rounded-lg font-medium">Ver
                         Oportunidades</a>
                 </div>
             </div>
@@ -516,7 +487,7 @@
             </div>
             <div class="text-center mt-10" data-aos="fade-up">
                 <a href="news.html"
-                    class="bg-white text-blue-800 hover:bg-gray-100 px-6 py-3 rounded-lg font-medium">Ver Todas as
+                    class="bg-yellow-400 text-black hover:bg-yellow-600 px-6 py-3 rounded-lg font-medium">Ver Todas as
                     Oportunidades</a>
             </div>
         </div>
@@ -700,7 +671,7 @@
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-sm text-center" data-aos="fade-up" data-aos-delay="250">
                     <div class="text-blue-600 mb-4">
-                        <i data-feather="handshake" class="w-10 h-10 mx-auto"></i>
+                        <i data-feather="users" class="w-10 h-10 mx-auto"></i>
                     </div>
                     <h3 class="font-bold mb-2">Parceiro APEX</h3>
                     <p class="text-gray-600 text-sm">Agência de Promoção</p>
@@ -716,79 +687,25 @@
             <p class="text-xl mb-8 max-w-2xl mx-auto">Nossa equipe experiente está pronta para conectar sua empresa com
                 oportunidades globais. Entre em contato e descubra como podemos impulsionar seus negócios.</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#" class="bg-white text-blue-800 hover:bg-gray-100 px-6 py-3 rounded-lg font-medium">Fale
+                <a onclick="openContactModal()"
+                    class="bg-yellow-400 text-black hover:bg-yellow-600 px-6 py-3 rounded-lg font-medium">Fale
                     Conosco</a>
-                <a href="#"
-                    class="bg-transparent border-2 border-white hover:bg-white hover:text-blue-800 px-6 py-3 rounded-lg font-medium">Agendar
-                    Reunião</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">CIIC</h3>
-                    <p class="text-gray-400">Conectando Empresas, Criando Oportunidades</p>
-                    <div class="flex space-x-4 mt-6">
-                        <a href="https://www.instagram.com/camara.ciic/?igsh=MW9sdnRpbmN4bDEydw%3D%3Dhttp%3A%2F%2F"
-                            class="text-gray-400 hover:text-white"><i data-feather="instagram"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="linkedin"></i></a>
-                        <a href="https://api.whatsapp.com/send?phone=5551981676518&text="
-                            class="text-gray-400 hover:text-white"><i data-feather="message-circle"></i></a>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold mb-4">Serviços</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white">Acesso Privilegiado</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Rede de Contatos</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Assistência Documental</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Cotações em Tempo Real</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold mb-4">Países</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white">Argentina</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Paraguai</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">México</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Israel</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold mb-4">Contato</h3>
-                    <ul class="space-y-2">
-                        <li class="flex items-center">
-                            <i data-feather="mail" class="w-4 h-4 mr-2"></i>
-                            <span class="text-gray-400">ciicbrasil.admi@gmail.com</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i data-feather="phone" class="w-4 h-4 mr-2"></i>
-                            <a href="https://api.whatsapp.com/send?phone=5551981676518&text=" class="text-gray-400">+55
-                                51 98167-6518</a>
-                        </li>
-                        <li class="flex items-center">
-                            <i data-feather="phone" class="w-4 h-4 mr-2"></i>
-                            <a href="https://api.whatsapp.com/send?phone=5551981676518&text=" class="text-gray-400">+55
-                                51 99247-8505</a>
-                        </li>
-                        <li class="flex items-center">
-                            <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
-                            <span class="text-gray-400">Rio de Janeiro, Brasil</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2024 Câmara Intercontinental de Indústria e Comércio. Todos os direitos reservados.</p>
-            </div>
-        </div>
-    </footer>
+    <div id="footer"></div>
 
-    
+    <script>
+        fetch("footer.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("footer").innerHTML = data;
+                feather.replace();
+            });
+    </script>
+
     <!-- Contact Floating Button -->
     <button onclick="openContactModal()" id="contactFloatBtn"
         class="fixed bottom-8 right-24 bg-green-600 hover:bg-green-700 text-white p-3 rounded-full shadow-lg z-[9998] transition-all duration-300">
@@ -857,6 +774,24 @@
     </script>
 
     <script>
+        // Back to top button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            const backToTopBtn = document.getElementById("backToTop");
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                backToTopBtn.classList.remove('hidden');
+            } else {
+                backToTopBtn.classList.add('hidden');
+            }
+        }
+
+        function topFunction() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+
+    <script>
         // Update current time
         function updateTime() {
             const now = new Date();
@@ -885,8 +820,6 @@
         }
 
     </script>
-
-
 
 
 

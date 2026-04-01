@@ -28,3 +28,19 @@ async function loadNews() {
     `;
   });
 }
+
+// Back to top button
+window.onscroll = function () { scrollFunction() };
+
+function scrollFunction() {
+  const backToTopBtn = document.getElementById("backToTop");
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    backToTopBtn.classList.remove('hidden');
+  } else {
+    backToTopBtn.classList.add('hidden');
+  }
+}
+
+function topFunction() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
