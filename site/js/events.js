@@ -38,32 +38,54 @@ async function loadEvents() {
   container.innerHTML = '';
 
   data.forEach((e) => {
+    const start = e.start_date ? new Date(e.start_date).toLocaleDateString() : '';
+    const end = e.end_date ? new Date(e.end_date).toLocaleDateString() : '';
+
+    const dateDisplay = start === end
+      ? start
+      : `${start} <span class="text-slate-500 text-sm mx-1">até</span> ${end}`;
+
     container.innerHTML += `
-      <div class="grid grid-cols-1 event-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300">
-        <div class="p-6">
-          <div class="mb-6">
-            <h3 class="text-2xl font-bold text-blue-800 mb-4 leading-tight">${e.title ?? ''}</h3>
-            <p class="text-lg font-semibold text-gray-600 leading-relaxed">${e.subtitle ?? ''}</p>
+      <div class="event-card bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 h-full">
+        <div class="p-6 flex flex-col h-full">
+          
+          <div class="mb-4">
+            <h3 class="text-xl md:text-2xl font-bold text-blue-800 leading-snug mb-2">
+              ${e.title ?? ''}
+            </h3>
+            <p class="text-base md:text-lg font-medium text-slate-600">
+              ${e.subtitle ?? ''}
+            </p>
           </div>
 
-          <div class="mb-8">
-            <p class="text-gray-700 text-justify leading-relaxed">${e.summary ?? ''}</p>
+          <div class="mb-5">
+            <p class="text-slate-600 leading-7 text-sm md:text-base">
+              ${e.summary ?? ''}
+            </p>
           </div>
 
-          <div class="space-y-6">
+          <div class="pt-4 border-t border-gray-100 mt-auto">
             <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-              <div class="flex items-center">
-                <i data-feather="map-pin" class="w-5 h-5 mr-3 text-gray-400"></i>
-                <span class="text-lg text-gray-600">${e.location ?? 'Sin ubicación'}</span>
+              
+              <div class="flex items-center text-slate-600 min-w-0">
+                <i data-feather="map-pin" class="w-4 h-4 mr-2 text-slate-400 shrink-0"></i>
+                <span class="text-sm md:text-base leading-snug">
+                  ${e.location ?? 'Virtual'}
+                </span>
               </div>
 
-              <div class="bg-blue-800 text-white px-4 py-3 rounded-xl text-center min-w-[140px]">
-                <div class="text-lg font-bold">${e.start_date ? new Date(e.start_date).toLocaleDateString() : ''}</div>
-                <div class="text-xs opacity-75">Até</div>
-                <div class="text-lg font-bold">${e.end_date ? new Date(e.end_date).toLocaleDateString() : ''}</div>
+              <div class="bg-green-100 border border-slate-200 rounded-lg px-4 py-3 text-center min-w-[130px] sm:min-w-[145px]">
+                <div class="text-[11px] uppercase tracking-wide text-slate-500 mb-1 font-semibold">
+                  Data
+                </div>
+                <div class="text-base font-semibold text-slate-800 whitespace-nowrap">
+                  ${dateDisplay}
+                </div>
               </div>
+
             </div>
           </div>
+
         </div>
       </div>
     `;
@@ -76,3 +98,20 @@ window.addEventListener('DOMContentLoaded', () => {
   console.log('DOMContentLoaded disparado');
   loadEvents();
 });
+
+
+// Back to top button
+window.onscroll = function () { scrollFunction() };
+
+function scrollFunction() {
+  const backToTopBtn = document.getElementById("backToTop");
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    backToTopBtn.classList.remove('hidden');
+  } else {
+    backToTopBtn.classList.add('hidden');
+  }
+}
+
+function topFunction() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
