@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,8 @@
 
   <!-- SDK Supabase -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="/js/supabase.js"></script>
-  <script src="/js/events.js"></script>
+  <script src="js/supabase.js"></script>
+  <script src="js/events.js"></script>
 
   <!-- Tailwind y extras -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -17,42 +18,46 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
   <link rel="icon" href="images/favicon/favicon.ico" type="image/x-icon">
-  
+
   <style>
     .event-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     }
+
     #hero {
-        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('http://static.photos/office/1200x630/42');
-        background-size: cover;
-        background-position: center;
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/pagina/fondoEvento.png');
+      background-size: cover;
+      background-position: center;
     }
   </style>
 </head>
 
-<body class="font-sans bg-gray-50" onload="loadEvents()">
+<body class="font-sans bg-gray-50">
   <!-- Header con navbar -->
   <header>
     <nav class="bg-white shadow-md sticky top-0 z-50">
       <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            
-            <div class="flex items-center space-x-3">
-                <img src="images/CIIC_Logo_BG.png" alt="Logo CIIC" class="logo-img" style="width: auto;">
-                <div style="max-width: 200px;">
-                    <a class="text-40px font-bold text-blue-800">
-                        Camara Intercontinental de Industria e Comercio
-                    </a>
-                </div>
-            
-            </div>
-        
+
+        <div class="flex items-center space-x-3">
+          <img src="images/CIIC_Logo_BG.png" alt="Logo CIIC" class="logo-img" style="width: auto;">
+          <div style="max-width: 200px;">
+            <a class="text-40px font-bold text-blue-800">
+              Camara Intercontinental de Industria e Comercio
+            </a>
+          </div>
+
+        </div>
+
         <div class="hidden md:flex space-x-8">
           <a href="index.html" class="text-gray-700 hover:text-blue-600">Inicio</a>
           <a href="events.html" class="text-blue-800 font-semibold">Eventos</a>
           <a href="news.html" class="text-gray-700 hover:text-blue-600">Noticias</a>
+          <a href="equipe.html" class="text-gray-700 hover:text-blue-600">Equipe</a>
+          <a href="institucional.html" class="text-gray-700 hover:text-blue-600">Institucional</a>
+
         </div>
-        
+
         <div class="md:hidden relative">
           <button id="mobile-menu-button">
             <i data-feather="menu"></i>
@@ -61,6 +66,8 @@
             <a href="index.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Inicio</a>
             <a href="events.html" class="block px-4 py-2 text-blue-800 font-semibold">Eventos</a>
             <a href="news.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Noticias</a>
+            <a href="equipe.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Equipe</a>
+            <a href="institucional.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Institucional</a>
           </div>
         </div>
       </div>
@@ -74,8 +81,8 @@
         <h1 class="text-4xl md:text-5xl font-bold mb-6">Eventos CIIC</h1>
         <p class="text-xl mb-8">Conecta con oportunidades de negocio a través de nuestros eventos internacionales</p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
-          <a href="#events" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-medium">Ver Eventos</a>
-          <a href="#contact" class="bg-white text-blue-800 hover:bg-gray-100 px-6 py-3 rounded-lg font-medium">Contactar</a>
+          <button href="" onclick="openContactModal()"
+            class="bg-green-600 hover:bg-green-700 px-6 py-3 rounded-lg font-medium">Contactar</button>
         </div>
       </div>
     </div>
@@ -94,7 +101,7 @@
           <p class="text-gray-600 mt-2">Participantes conectados</p>
         </div>
         <div data-aos="fade-up" data-aos-delay="300">
-          <h3 class="text-4xl font-bold text-blue-800">9</h3>
+          <h3 class="text-4xl font-bold text-blue-800">13</h3>
           <p class="text-gray-600 mt-2">Países participantes</p>
         </div>
       </div>
@@ -105,90 +112,11 @@
   <section id="events" class="py-16 bg-gray-100">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Próximos Eventos</h2>
-      
+
       <div id="events-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        
-        <!-- Evento 1 -->
-        <div class="grid grid-cols-1 event-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
-          <!-- Imagen arriba -->
-          <img src="images/CIIC Logo.jpg" alt="Evento CIIC" class="w-full h-48 object-cover">
 
-          <div class="p-2"><!-- Contenido -->
-            <h3 class="text-xl font-bold text-blue-800 mb-2">Carregando...</h3><!-- Título -->
-            
-            <p class="text-gray-600 mb-4">Carregando...</p><!-- Subtítulo -->
 
-            <div class="grid grid-cols-2" style="padding-left: 40px; padding-right: 40px;">
-              
-              <div class="flex items-center mb-4"><!-- Ubicación -->
-                <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
-                <span class="text-xl text-gray-500">Carregando...</span>
-              </div>
-             
-              <div class="bg-blue-800 text-white p-3 rounded-xl text-center inline-block mb-4" > <!-- Fecha -->
-                <div class="text-xl font-bold">Carregando...</div>
-                <div class="text-xs">Carregando...</div>
-              </div>
-            </div>
-           
-            <div class="grid grid-cols-2 gap-2" style="padding-left: 60px; padding-right: 60px;"> <!-- Tags -->
-              <span style="justify-self: center;" class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Carregando...</span>
-              <span style="justify-self: center;" class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Carregando...</span>
-            </div>
-          </div>
-        </div>
 
-        <!-- Evento 2 -->
-        <div class="grid grid-cols-1 event-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
-          <img src="images/CIIC Logo.jpg" alt="Evento CIIC" class="w-full h-48 object-cover">
-          <div class="p-2">
-            <h3 class="text-xl font-bold text-blue-800 mb-2">Mesa Redonda: Tecnología e Innovación</h3>
-            <p class="text-gray-600 mb-4">Encuentro presencial con empresarios israelíes del sector tecnológico</p>
-
-            <div class="grid grid-cols-2" style="padding-left: 40px; padding-right: 40px;">
-              <div class="flex items-center mb-4">
-                <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
-                <span class="text-sm text-gray-500">São Paulo, Brasil</span>
-              </div>
-              <div class="bg-blue-800 text-white p-3 rounded-xl text-center inline-block mb-4" >
-                <div class="text-xl font-bold">22</div>
-                <div class="text-xs">JUN</div>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-2 gap-2" style="padding-left: 60px; padding-right: 60px;">
-              <span style="justify-self: center;" class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Israel</span>
-              <span style="justify-self: center;" class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">Tecnología</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Evento 3 -->
-        <div class="grid grid-cols-1 event-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
-          <img src="images/CIIC Logo.jpg" alt="Evento CIIC" class="w-full h-48 object-cover">
-          <div class="p-2">
-            <h3 class="text-xl font-bold text-blue-800 mb-2">Foro de Inversiones México-Brasil</h3>
-            <p class="text-gray-600 mb-4">Oportunidades de inversión binacional en el sector manufacturero</p>
-
-            <div class="grid grid-cols-2" style="padding-left: 40px; padding-right: 40px;">
-              <div class="flex items-center mb-4">
-                <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
-                <span class="text-sm text-gray-500">Híbrido</span>
-              </div>
-              <div class="bg-blue-800 text-white p-3 rounded-xl text-center inline-block mb-4">
-                <div class="text-xl font-bold">05</div>
-                <div class="text-xs">JUL</div>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-2 gap-2" style="padding-left: 60px; padding-right: 60px;">
-              <span style="justify-self: center;" class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">México</span>
-              <span style="justify-self: center;" class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">Manufactura</span>
-            </div>
-          </div>
-        </div>
-
-        
       </div>
     </div>
   </section>
@@ -197,92 +125,145 @@
   <section id="contact" class="py-20 bg-blue-800 text-white">
     <div class="container mx-auto px-4 text-center" data-aos="fade-up">
       <h2 class="text-3xl md:text-4xl font-bold mb-6">¿Listo para Participar?</h2>
-      <p class="text-xl mb-8 max-w-2xl mx-auto">Únete a nuestros eventos y conecta con empresarios de toda Latinoamérica. Descubre nuevas oportunidades de negocio.</p>
+      <p class="text-xl mb-8 max-w-2xl mx-auto">Únete a nuestros eventos y conecta con empresarios de toda
+        Latinoamérica. Descubre nuevas oportunidades de negocio.</p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <a href="#" class="bg-white text-blue-800 hover:bg-gray-100 px-6 py-3 rounded-lg font-medium">Registrarse</a>
-        <a href="#" class="bg-transparent border-2 border-white hover:bg-white hover:text-blue-800 px-6 py-3 rounded-lg font-medium">Más Información</a>
+        <a href="#"
+          class="bg-transparent border-2 border-white hover:bg-white hover:text-blue-800 px-6 py-3 rounded-lg font-medium">Más
+          Información</a>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-white py-12">
-    <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-        <div>
-          <h3 class="text-xl font-bold mb-4">CIIC</h3>
-          <p class="text-gray-400">Conectando Empresas, Creando Oportunidades</p>
-          <div class="flex space-x-4 mt-6">
-            <a href="https://www.instagram.com/camara.ciic/?igsh=MW9sdnRpbmN4bDEydw%3D%3Dhttp%3A%2F%2F" class="text-gray-400 hover:text-white"><i data-feather="instagram"></i></a>
-            <a href="#" class="text-gray-400 hover:text-white"><i data-feather="linkedin"></i></a>
-            <a href="https://api.whatsapp.com/send?phone=5551981676518&text=" class="text-gray-400 hover:text-white"><i data-feather="message-circle"></i></a>
-          </div>
-        </div>
-        <div>
-          <h3 class="text-lg font-bold mb-4">Servicios</h3>
-          <ul class="space-y-2">
-            <li><a href="#" class="text-gray-400 hover:text-white">Eventos Empresariales</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white">Red de Contactos</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white">Asistencia Comercial</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white">Oportunidades</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-lg font-bold mb-4">Países</h3>
-          <ul class="space-y-2">
-            <li><a href="#" class="text-gray-400 hover:text-white">Argentina</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white">Paraguay</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white">México</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white">Israel</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-lg font-bold mb-4">Contacto</h3>
-          <ul class="space-y-2">
-            <li class="flex items-center">
-              <i data-feather="mail" class="w-4 h-4 mr-2"></i>
-              <span class="text-gray-400">eventos@ciic.org</span>
-            </li>
-            <li class="flex items-center">
-              <i data-feather="phone" class="w-4 h-4 mr-2"></i>
-              <span class="text-gray-400">+55 11 99999-9999</span>
-            </li>
-            <li class="flex items-center">
-              <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
-              <span class="text-gray-400">São Paulo, Brasil</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-        <p>&copy; CIIC - 2025 | Cámara Intercontinental de Industria y Comercio</p>
-      </div>
-    </div>
-  </footer>
+  
+    <div id="footer"></div>
+
+    <script>
+        fetch("footer.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("footer").innerHTML = data;
+                feather.replace();
+            });
+    </script>
+
+
+  <!-- Contact Floating Button -->
+  <button onclick="openContactModal()" id="contactFloatBtn"
+    class="fixed bottom-8 right-24 bg-green-600 hover:bg-green-700 text-white p-3 rounded-full shadow-lg z-[9998] transition-all duration-300">
+    <i data-feather="message-circle"></i>
+  </button>
+
+  <!-- Back to Top Button -->
+  <button onclick="topFunction()" id="backToTop"
+    class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hidden">
+    <i data-feather="arrow-up"></i>
+  </button>
 
   <script>
-    // Initialize animations and icons
     AOS.init();
     feather.replace();
 
-    // Mobile menu toggle
-    document.getElementById('mobile-menu-button').addEventListener('click', function() {
-      const menu = document.getElementById('mobile-menu');
-      menu.classList.toggle('hidden');
-    });
+    const mobileMenuBtn = document.getElementById('mobile-menu-button');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', function () {
+        const menu = document.getElementById('mobile-menu');
+        if (menu) menu.classList.toggle('hidden');
+      });
+    }
 
-    // Mobile countries menu toggle
-    document.getElementById('mobile-countries-button').addEventListener('click', function() {
-      const menu = document.getElementById('mobile-countries-menu');
-      menu.classList.toggle('hidden');
-      const icon = this.querySelector('i');
-      if (menu.classList.contains('hidden')) {
-        feather.replace();
-      } else {
-        icon.setAttribute('data-feather', 'chevron-up');
-        feather.replace();
-      }
-    });
+    function openContactModal() {
+      const modal = document.getElementById('contactModal');
+      if (!modal) return;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      feather.replace();
+    }
+
+    function closeContactModal() {
+      const modal = document.getElementById('contactModal');
+      if (!modal) return;
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    window.openContactModal = openContactModal;
+    window.closeContactModal = closeContactModal;
   </script>
+
+
+
+
+
+
+  <!-- Contact Modal -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="js/contact-form.js"></script>
+
+    <div id="contactModal" onclick="if(event.target === this) closeContactModal()"
+        class="fixed inset-0 bg-black/50 hidden items-center justify-center z-[9999] px-4">
+        <div class="bg-white w-full max-w-lg rounded-2xl shadow-2xl p-8 relative animate-fadeIn">
+
+            <!-- Botón cerrar -->
+            <button type="button" onclick="closeContactModal()"
+                class="absolute top-4 right-4 text-gray-400 hover:text-gray-700">
+                <i data-feather="x" class="w-5 h-5"></i>
+            </button>
+
+            <!-- Título -->
+            <div class="mb-6">
+                <h2 class="text-2xl font-bold text-gray-800">Entre em Contato</h2>
+                <p class="text-gray-500 mt-1">
+                    Preencha os dados abaixo e envie sua solicitude.
+                </p>
+            </div>
+
+            <!-- Formulario -->
+            <form class="contact-form space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Nome</label>
+                    <input type="text" name="name" placeholder="Seu nome" required
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">País</label>
+                    <input type="text" name="country" placeholder="Seu país" required
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">E-mail</label>
+                    <input type="email" name="email" placeholder="seuemail@exemplo.com" required
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Solicitude</label>
+                    <textarea rows="5" name="message" placeholder="Escreva sua mensagem..." required
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"></textarea>
+                </div>
+
+                <div class="hidden text-sm rounded-lg px-4 py-3" data-form-status></div>
+
+                <div class="flex justify-end gap-3 pt-2">
+                    <button type="button" onclick="closeContactModal()"
+                        class="px-5 py-3 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50">
+                        Cancelar
+                    </button>
+
+                    <button type="submit" class="px-5 py-3 rounded-lg bg-blue-600 text-white hover:bg-blue-700">
+                        Enviar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    
 </body>
+
 </html>

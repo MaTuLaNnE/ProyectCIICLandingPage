@@ -1,6 +1,9 @@
-const { createClient } = supabase
+const SUPABASE_URL = 'https://idhamypkvekfwmofewqc.supabase.co';
+const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_mmW8Bo_-QtfV_P2w4js6bg_1FjdmrQq';
 
-const supabaseUrl = "https://xsysdcvyryzxldlyrbfo.supabase.co"
-const supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhzeXNkY3Z5cnl6eGxkbHlyYmZvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTc3MjY0NTIsImV4cCI6MjA3MzMwMjQ1Mn0.xTCWftzODlXrfpTXLadrQ78K8b0SlxcLZ_ddTWH5Lfg"
+window.supabaseClient = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_PUBLISHABLE_KEY
+);
 
-window.supabase = createClient(supabaseUrl, supabaseAnonKey)
+console.log('Supabase client creado:', window.supabaseClient);

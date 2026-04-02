@@ -89,82 +89,153 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 
-let previousRates = {};
+async function obtenerCotizacionesAnteriores() {
+    const today = new Date().toISOString().split('T')[0];
 
-function actualizarCotizaciones() {
+    const { data, error } = await window.supabaseClient
+        .from('exchange_rates_history')
+        .select('currency_code, rate_brl, reference_date')
+        .lt('reference_date', today)
+        .order('reference_date', { ascending: false });
+
+    if (error) {
+        console.error('Error buscando histórico en Supabase:', error);
+        return {};
+    }
+
+    const previousRates = {};
+    const currencies = ['USD', 'EUR', 'MXN', 'UYU', 'ARS'];
+
+    data.forEach(row => {
+        if (currencies.includes(row.currency_code) && !previousRates[row.currency_code]) {
+            previousRates[row.currency_code] = Number(row.rate_brl);
+        }
+    });
+
+    return previousRates;
+}
+
+async function guardarCotizacionesDelDia(currentRates) {
+    const today = new Date().toISOString().split('T')[0];
+
+    const rows = Object.entries(currentRates).map(([currency, value]) => ({
+        currency_code: currency,
+        rate_brl: value,
+        reference_date: today
+    }));
+
+    const { error } = await window.supabaseClient
+        .from('exchange_rates_history')
+        .upsert(rows, {
+            onConflict: 'currency_code,reference_date'
+        });
+
+    if (error) {
+        console.error('Error guardando cotizaciones del día:', error);
+    } else {
+        console.log('✅ Cotizaciones del día guardadas en Supabase');
+    }
+}
+
+function formatearValor(currency, value) {
+    let decimals = 2;
+
+    if (currency === 'ARS') decimals = 4;
+
+    return `R$ ${value.toFixed(decimals)}`;
+}
+
+function formatearCambio(change) {
+    if (change === null || isNaN(change)) {
+        return 'Sem histórico';
+    }
+
+    if (Math.abs(change) < 0.01) {
+        return '0.00%';
+    }
+
+    return `${change > 0 ? '+' : ''}${change.toFixed(2)}%`;
+}
+
+function aplicarClaseCambio(changeElement, change) {
+    changeElement.className = 'rate-change text-sm mt-1';
+
+    if (change === null || isNaN(change)) {
+        changeElement.classList.add('text-gray-500');
+    } else if (Math.abs(change) < 0.01) {
+        changeElement.classList.add('text-gray-500');
+    } else if (change > 0) {
+        changeElement.classList.add('text-green-500');
+    } else {
+        changeElement.classList.add('text-red-500');
+    }
+}
+
+async function actualizarCotizaciones() {
     console.log("Obteniendo cotizaciones reales...");
-    
-    // API que devuelve todas las monedas en una sola llamada
-    fetch("https://api.exchangerate-api.com/v4/latest/BRL")
-        .then(response => {
-            console.log("Respuesta recibida:", response.status);
-            return response.json();
-        })
-        .then(data => {
-            console.log("Datos de la API:", data);
-            
-            if (data && data.rates) {
-                // Convertir las tasas para mostrar cuántos BRL necesitas para comprar 1 unidad de cada moneda
-                const currentRates = {
-                    USD: 1 / data.rates.USD,  // BRL por USD
-                    EUR: 1 / data.rates.EUR,  // BRL por EUR  
-                    MXN: 1 / data.rates.MXN,  // BRL por MXN
-                    UYU: 1 / data.rates.UYU,  // BRL por UYU
-                    ARS: 1 / data.rates.ARS   // BRL por ARS
-                };
-                
-                console.log("Tasas calculadas:", currentRates);
-                
-                const items = document.querySelectorAll('.rate-item');
-                const currencies = ['USD', 'EUR', 'MXN', 'UYU', 'ARS'];
-                
-                currencies.forEach((currency, index) => {
-                    const currentRate = currentRates[currency];
-                    const previousRate = previousRates[currency];
-                    
-                    console.log(`${currency}/BRL: ${currentRate.toFixed(4)}`);
-                    
-                    // Actualizar valor
-                    if (items[index]) {
-                        let decimals = currency === 'ARS' ? 4 : 2;
-                        items[index].querySelector('.rate-value').textContent = `R$ ${currentRate.toFixed(decimals)}`;
-                        
-                        // Calcular y mostrar cambio
-                        if (previousRate) {
-                            const change = ((currentRate - previousRate) / previousRate) * 100;
-                            const changeElement = items[index].querySelector('.rate-change');
-                            
-                            if (Math.abs(change) < 0.01) {
-                                changeElement.textContent = '0.00%';
-                                changeElement.className = 'rate-change';
-                            } else if (change > 0) {
-                                changeElement.textContent = `+${change.toFixed(2)}%`;
-                                changeElement.className = 'rate-change positive';
-                            } else {
-                                changeElement.textContent = `${change.toFixed(2)}%`;
-                                changeElement.className = 'rate-change negative';
-                            }
-                        } else {
-                            items[index].querySelector('.rate-change').textContent = 'Nuevo';
-                        }
-                    }
-                });
-                
-                // Guardar tasas actuales para la próxima comparación
-                previousRates = { ...currentRates };
-                console.log("✅ Cotizaciones actualizadas con datos reales");
-            }
-        })
-        .catch(error => {
-            console.error("❌ Error al obtener tasas:", error);
+
+    try {
+        const response = await fetch("https://api.exchangerate-api.com/v4/latest/BRL");
+        console.log("Respuesta recibida:", response.status);
+
+        const data = await response.json();
+        console.log("Datos de la API:", data);
+
+        if (data && data.rates) {
+            const currentRates = {
+                USD: 1 / data.rates.USD,
+                EUR: 1 / data.rates.EUR,
+                MXN: 1 / data.rates.MXN,
+                UYU: 1 / data.rates.UYU,
+                ARS: 1 / data.rates.ARS
+            };
+
+            console.log("Tasas calculadas:", currentRates);
+
+            const previousRates = await obtenerCotizacionesAnteriores();
+
             const items = document.querySelectorAll('.rate-item');
-            items.forEach((item, index) => {
-                if (item) {
-                    item.querySelector('.rate-value').textContent = 'Error API';
-                    item.querySelector('.rate-change').textContent = '--';
+            const currencies = ['USD', 'EUR', 'MXN', 'UYU', 'ARS'];
+
+            currencies.forEach((currency, index) => {
+                const currentRate = currentRates[currency];
+                const previousRate = previousRates[currency] ?? null;
+
+                console.log(`${currency}/BRL actual: ${currentRate.toFixed(4)}`);
+                console.log(`${currency}/BRL anterior:`, previousRate);
+
+                if (items[index]) {
+                    const valueElement = items[index].querySelector('.rate-value');
+                    const changeElement = items[index].querySelector('.rate-change');
+
+                    valueElement.textContent = formatearValor(currency, currentRate);
+
+                    let change = null;
+                    if (previousRate && previousRate !== 0) {
+                        change = ((currentRate - previousRate) / previousRate) * 100;
+                    }
+
+                    changeElement.textContent = formatearCambio(change);
+                    aplicarClaseCambio(changeElement, change);
                 }
             });
+
+            await guardarCotizacionesDelDia(currentRates);
+
+            console.log("✅ Cotizaciones actualizadas con datos reales y comparación diaria");
+        }
+    } catch (error) {
+        console.error("❌ Error al obtener tasas:", error);
+
+        const items = document.querySelectorAll('.rate-item');
+        items.forEach((item) => {
+            if (item) {
+                item.querySelector('.rate-value').textContent = 'Error API';
+                item.querySelector('.rate-change').textContent = '--';
+                item.querySelector('.rate-change').className = 'rate-change text-sm mt-1 text-gray-500';
+            }
         });
+    }
 }
 
 // Esperar a que el DOM esté completamente cargado
@@ -173,7 +244,7 @@ document.addEventListener('DOMContentLoaded', function() {
     actualizarCotizaciones();
     
     // Actualizar cada 30 segundos para ver cambios
-    setInterval(actualizarCotizaciones, 30000);
+    setInterval(actualizarCotizaciones, 3000);
 });
 
 // Smooth scrolling para links internos
