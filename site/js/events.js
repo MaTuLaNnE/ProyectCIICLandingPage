@@ -38,6 +38,13 @@ async function loadEvents() {
   container.innerHTML = '';
 
   data.forEach((e) => {
+    const start = e.start_date ? new Date(e.start_date).toLocaleDateString() : '';
+    const end = e.end_date ? new Date(e.end_date).toLocaleDateString() : '';
+
+    const dateDisplay = start === end
+      ? start
+      : `${start} <span class="text-slate-500 text-sm mx-1">até</span> ${end}`;
+
     container.innerHTML += `
       <div class="event-card bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 h-full">
         <div class="p-6 flex flex-col h-full">
@@ -71,14 +78,8 @@ async function loadEvents() {
                 <div class="text-[11px] uppercase tracking-wide text-slate-500 mb-1 font-semibold">
                   Data
                 </div>
-                <div class="text-base font-semibold text-slate-800 leading-tight">
-                  ${e.start_date ? new Date(e.start_date).toLocaleDateString() : ''}
-                </div>
-                <div class="text-xs text-slate-500 my-0.5">
-                  até
-                </div>
-                <div class="text-base font-semibold text-slate-800 leading-tight">
-                  ${e.end_date ? new Date(e.end_date).toLocaleDateString() : ''}
+                <div class="text-base font-semibold text-slate-800 whitespace-nowrap">
+                  ${dateDisplay}
                 </div>
               </div>
 
