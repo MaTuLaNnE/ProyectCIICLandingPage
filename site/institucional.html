@@ -817,12 +817,17 @@
 
 
     <!-- Contact Modal -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="js/contact-form.js"></script>
+
     <div id="contactModal" onclick="if(event.target === this) closeContactModal()"
         class="fixed inset-0 bg-black/50 hidden items-center justify-center z-[9999] px-4">
         <div class="bg-white w-full max-w-lg rounded-2xl shadow-2xl p-8 relative animate-fadeIn">
 
             <!-- Botón cerrar -->
-            <button onclick="closeContactModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700">
+            <button type="button" onclick="closeContactModal()"
+                class="absolute top-4 right-4 text-gray-400 hover:text-gray-700">
                 <i data-feather="x" class="w-5 h-5"></i>
             </button>
 
@@ -835,30 +840,32 @@
             </div>
 
             <!-- Formulario -->
-            <form class="space-y-4">
+            <form class="contact-form space-y-4">
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1">Nome</label>
-                    <input type="text" placeholder="Seu nome"
+                    <input type="text" name="name" placeholder="Seu nome" required
                         class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
                 </div>
 
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1">País</label>
-                    <input type="text" placeholder="Seu país"
+                    <input type="text" name="country" placeholder="Seu país" required
                         class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
                 </div>
 
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1">E-mail</label>
-                    <input type="email" placeholder="seuemail@exemplo.com"
+                    <input type="email" name="email" placeholder="seuemail@exemplo.com" required
                         class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
                 </div>
 
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1">Solicitude</label>
-                    <textarea rows="5" placeholder="Escreva sua mensagem..."
+                    <textarea rows="5" name="message" placeholder="Escreva sua mensagem..." required
                         class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"></textarea>
                 </div>
+
+                <div class="hidden text-sm rounded-lg px-4 py-3" data-form-status></div>
 
                 <div class="flex justify-end gap-3 pt-2">
                     <button type="button" onclick="closeContactModal()"
@@ -873,6 +880,7 @@
             </form>
         </div>
     </div>
+    
 </body>
 
 </html>
