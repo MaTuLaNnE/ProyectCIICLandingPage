@@ -1,7 +1,7 @@
 (function () {
-  (function(){
-  emailjs.init("L-dkwk2oxyNQ6gRy7");
-})();
+  (function () {
+    emailjs.init("L-dkwk2oxyNQ6gRy7");
+  })();
 
   document.addEventListener("DOMContentLoaded", function () {
     const forms = document.querySelectorAll(".contact-form");
@@ -29,6 +29,7 @@
           name: form.querySelector('[name="name"]')?.value || "",
           country: form.querySelector('[name="country"]')?.value || "",
           email: form.querySelector('[name="email"]')?.value || "",
+          subject: form.subject.value,
           message: form.querySelector('[name="message"]')?.value || ""
         };
 

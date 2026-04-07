@@ -894,6 +894,7 @@ body {
     animation: pulse 2s infinite;
 }
 
+
 /* =================================
    PAÍSES
 ================================= */
@@ -914,7 +915,6 @@ body {
 .country-card {
     background: var(--white);
     border-radius: 15px;
-    padding: 2rem;
     text-align: center;
     box-shadow: 0 8px 25px rgba(0,0,0,0.08);
     transition: all 0.3s ease;
@@ -964,6 +964,38 @@ body {
 .country-card p {
     color: var(--text-light);
     font-size: 0.9rem;
+}
+
+/* FOTO DEL REPRESENTANTE */
+.representative-photo {
+    transition: all 0.3s ease;
+}
+
+.country-card:hover .representative-photo {
+    transform: scale(1.05);
+}
+
+/* BANDERA */
+.country-header {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 190px;
+    opacity: 0.8;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .country-card {
+        border-radius: 14px;
+    }
+
+    .country-header {
+        background-size: 80% !important;
+        background-color: #617baf;
+        height: 90px;
+        opacity: 1;
+    }
 }
 
 /* =================================

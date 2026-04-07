@@ -42,7 +42,23 @@
         }
 
         .country-header {
-            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 190px;
+            opacity: 0.8;
+        }
+
+        /* 📱 MOBILE FIX */
+        @media (max-width: 768px) {
+            .country-header {
+                background-size: contain !important;
+                /* muestra completa */
+                background-color: #f3f4f6;
+                /* fondo neutro */
+                height: 70px;
+                /* más chica */
+            }
         }
     </style>
 </head>
@@ -163,7 +179,7 @@
         </div>
     </section>
 
-    
+
     <!-- Global Coverage Section -->
     <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
@@ -199,7 +215,7 @@
                     <h3 class="font-bold text-gray-800">Total</h3>
                     <p class="text-sm text-gray-600">13 países</p>
                 </div>
-                
+
             </div>
         </div>
     </section>
@@ -219,395 +235,238 @@
 
 
                     <!-- Argentina -->
-                    <div class="country-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
-                        <!-- Foto circular -->
-                        <div class="flex justify-center pt-6 pb-4">
-                            <div class="representative-photo w-24 h-24 rounded-full shadow-lg overflow-hidden">
-                                <img src="images/profilePics/JorgeKomers.jpeg" alt="Foto"
-                                    class="w-full h-full object-cover">
-                            </div>
-                        </div>
+<div class="country-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+    <div class="flex justify-center pt-6 pb-4">
+        <div class="representative-photo w-24 h-24 rounded-full shadow-lg overflow-hidden">
+            <img src="images/profilePics/JorgeKomers.jpeg" class="w-full h-full object-cover">
+        </div>
+    </div>
+    <div class="country-header mx-4 rounded-lg mb-4" style="background-image: url(images/flags/Flag_of_Argentina.svg.png);"></div>
+    <div class="p-6 pt-0 text-center">
+        <h4 class="text-xl font-bold text-gray-800 mb-2">Jorge Komers</h4>
+        <p class="text-blue-600 text-sm mb-3">Representante Oficial - Argentina</p>
+        <div class="flex flex-wrap gap-2 justify-center">
+            <span class="bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full text-xs">- - - - -</span>
+            <span class="bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full text-xs">- - - - -</span>
+        </div>
+    </div>
+</div>
 
-                        <!-- País cuadrado -->
-                        <div class="country-header p-4 text-white text-center mx-4 rounded-lg mb-4" style="background-image: url(images/flags/Flag_of_Argentina.svg.png);
-                            background-size: cover;
-                            background-position: center;
-                            opacity: 0.8;
-                            height: 190px;">
-                        </div>
+<!-- Paraguay -->
+<div class="country-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+    <div class="flex justify-center pt-6 pb-4">
+        <div class="representative-photo w-24 h-24 rounded-full shadow-lg overflow-hidden">
+            <img src="images/profilePics/RogerMacielParaguay.jpeg" class="w-full h-full object-cover">
+        </div>
+    </div>
+    <div class="country-header mx-4 rounded-lg mb-4" style="background-image: url(images/flags/Flag_of_Paraguay.svg.png);"></div>
+    <div class="p-6 pt-0 text-center">
+        <h4 class="text-xl font-bold text-gray-800 mb-2">Roger Maciel</h4>
+        <p class="text-blue-600 text-sm mb-3">Representante Oficial - Paraguay</p>
+        <div class="flex flex-wrap gap-2 justify-center">
+            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs">- - - - -</span>
+            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs">- - - - -</span>
+        </div>
+    </div>
+</div>
 
-                        <!-- Información del representante -->
-                        <div class="p-6 pt-0">
-                            <h4 class="text-xl font-bold text-gray-800 mb-2 text-center"> Jorge Komers </h4>
-                            <p class="text-blue-600 font-medium text-sm mb-3 text-center">Representante Oficial -
-                                Argentina</p>
-                            <div class="flex flex-wrap gap-2 mb-4 justify-center">
-                                <span class="bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full text-xs font-medium"> - -
-                                    - - - </span>
-                                <span class="bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full text-xs font-medium"> - -
-                                    - - - </span>
-                            </div>
-                        </div>
-                    </div>
+<!-- Perú -->
+<div class="country-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+    <div class="flex justify-center pt-6 pb-4">
+        <div class="representative-photo w-24 h-24 rounded-full shadow-lg overflow-hidden">
+            <img src="images/profilePics/SergioPeru.png" class="w-full h-full object-cover">
+        </div>
+    </div>
+    <div class="country-header mx-4 rounded-lg mb-4" style="background-image: url(images/flags/Flag_of_Peru.svg);"></div>
+    <div class="p-6 pt-0 text-center">
+        <h4 class="text-xl font-bold text-gray-800 mb-2">Sergio Gonzales Velardes</h4>
+        <p class="text-blue-600 text-sm mb-3">Representante Oficial - Perú</p>
+        <div class="flex flex-wrap gap-2 justify-center">
+            <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">Tecnologia</span>
+            <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">Manufatura</span>
+        </div>
+    </div>
+</div>
 
-                    <!-- Paraguay -->
-                    <div class="country-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
-                        <div class="flex justify-center pt-6 pb-4">
-                            <div class="representative-photo w-24 h-24 rounded-full shadow-lg overflow-hidden">
-                                <img src="images/profilePics/RogerMacielParaguay.jpeg" alt="Foto"
-                                    class="w-full h-full object-cover">
-                            </div>
-                        </div>
+<!-- Colombia -->
+<div class="country-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+    <div class="flex justify-center pt-6 pb-4">
+        <div class="representative-photo w-24 h-24 rounded-full shadow-lg overflow-hidden">
+            <img src="images/profilePics/HenryColombia.png" class="w-full h-full object-cover">
+        </div>
+    </div>
+    <div class="country-header mx-4 rounded-lg mb-4" style="background-image: url(images/flags/Flag_of_Colombia.svg.png);"></div>
+    <div class="p-6 pt-0 text-center">
+        <h4 class="text-xl font-bold text-gray-800 mb-2">Henry Armando Orozco</h4>
+        <p class="text-blue-600 text-sm mb-3">Representante Oficial - Colombia</p>
+        <div class="flex flex-wrap gap-2 justify-center">
+            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs">Investimentos</span>
+            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs">Legal</span>
+        </div>
+    </div>
+</div>
 
-                        <div class="country-header p-4 text-white text-center mx-4 rounded-lg mb-4" style="background-image: url(images/flags/Flag_of_Paraguay.svg.png);
-                            background-size: cover;
-                            background-position: center;
-                            opacity: 0.8;
-                            height: 190px;">
-                        </div>
+<!-- México -->
+<div class="country-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+    <div class="flex justify-center pt-6 pb-4">
+        <div class="representative-photo w-24 h-24 rounded-full shadow-lg overflow-hidden">
+            <img src="images/profilePics/imagenPorDefecto.jpg" class="w-full h-full object-cover">
+        </div>
+    </div>
+    <div class="country-header mx-4 rounded-lg mb-4" style="background-image: url(images/flags/Flag_of_Mexico.svg.png);"></div>
+    <div class="p-6 pt-0 text-center">
+        <h4 class="text-xl font-bold text-gray-800 mb-2">Alfonso Gómez Zamudio</h4>
+        <p class="text-blue-600 text-sm mb-3">Representante Oficial - México</p>
+        <div class="flex flex-wrap gap-2 justify-center">
+            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs">Manufatura</span>
+            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs">Eletrônicos</span>
+        </div>
+    </div>
+</div>
 
-                        <div class="p-6 pt-0">
-                            <h4 class="text-xl font-bold text-gray-800 mb-2 text-center">Roger Maciel</h4>
-                            <p class="text-blue-600 font-medium text-sm mb-3 text-center">Representante Oficial -
-                                Paraguay</p>
-                            <div class="flex flex-wrap gap-2 mb-4 justify-center">
-                                <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs font-medium"> - - -
-                                    - - </span>
-                                <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs font-medium"> - - -
-                                    - - </span>
-                            </div>
-                        </div>
-                    </div>
+<!-- Israel -->
+<div class="country-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+    <div class="flex justify-center pt-6 pb-4">
+        <div class="representative-photo w-24 h-24 rounded-full shadow-lg overflow-hidden">
+            <img src="images/profilePics/GabrielIsrael.png" class="w-full h-full object-cover">
+        </div>
+    </div>
+    <div class="country-header mx-4 rounded-lg mb-4" style="background-image: url(images/flags/Flag_of_Israel.svg);"></div>
+    <div class="p-6 pt-0 text-center">
+        <h4 class="text-xl font-bold text-gray-800 mb-2">Gabriel Curdi</h4>
+        <p class="text-blue-600 text-sm mb-3">Representante Oficial - Israel</p>
+        <div class="flex flex-wrap gap-2 justify-center">
+            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs">Luxo</span>
+            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs">- - - - -</span>
+        </div>
+    </div>
+</div>
 
-                    <!-- Peru -->
-                    <div class="country-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
-                        <div class="flex justify-center pt-6 pb-4">
-                            <div class="representative-photo w-24 h-24 rounded-full shadow-lg overflow-hidden">
-                                <img src="images/profilePics/SergioPeru.png" alt="Foto"
-                                    class="w-full h-full object-cover">
-                            </div>
-                        </div>
+<!-- Uruguay -->
+<div class="country-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+    <div class="flex justify-center pt-6 pb-4">
+        <div class="representative-photo w-24 h-24 rounded-full shadow-lg overflow-hidden">
+            <img src="images/profilePics/ClaudiaAramendi.jpeg" class="w-full h-full object-cover">
+        </div>
+    </div>
+    <div class="country-header mx-4 rounded-lg mb-4" style="background-image: url(images/flags/Flag_of_Uruguay.svg.png);"></div>
+    <div class="p-6 pt-0 text-center">
+        <h4 class="text-xl font-bold text-gray-800 mb-2">Claudia Aramendi</h4>
+        <p class="text-blue-600 text-sm mb-3">Representante Oficial - Uruguay</p>
+        <div class="flex flex-wrap gap-2 justify-center">
+            <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-xs">- - - - -</span>
+            <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-xs">- - - - -</span>
+        </div>
+    </div>
+</div>
 
-                        <div class="country-header p-4 text-white text-center mx-4 rounded-lg mb-4" style="background-image: url(images/flags/Flag_of_Peru.svg);
-                            background-size: cover;
-                            background-position: center;
-                            opacity: 0.8;
-                            height: 190px;">
-                        </div>
+<!-- El Salvador -->
+<div class="country-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+    <div class="flex justify-center pt-6 pb-4">
+        <div class="representative-photo w-24 h-24 rounded-full shadow-lg overflow-hidden">
+            <img src="images/profilePics/HectorElSalvador.png" class="w-full h-full object-cover">
+        </div>
+    </div>
+    <div class="country-header mx-4 rounded-lg mb-4" style="background-image: url(images/flags/Flag_of_El_Salvador.svg.png);"></div>
+    <div class="p-6 pt-0 text-center">
+        <h4 class="text-xl font-bold text-gray-800 mb-2">Hector Leonardo Delgado</h4>
+        <p class="text-blue-600 text-sm mb-3">Representante Oficial - El Salvador</p>
+        <div class="flex flex-wrap gap-2 justify-center">
+            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs">Fintech</span>
+            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs">Serviços</span>
+        </div>
+    </div>
+</div>
 
-                        <div class="p-6 pt-0">
-                            <h4 class="text-xl font-bold text-gray-800 mb-2 text-center">Sergio Gonzales Velardes</h4>
-                            <p class="text-blue-600 font-medium text-sm mb-3 text-center">Representante Oficial - Peru
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4 justify-center">
-                                <span
-                                    class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs font-medium">Tecnologia</span>
-                                <span
-                                    class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs font-medium">Manufatura</span>
-                            </div>
-                            
-                        </div>
-                    </div>
+<!-- Panamá -->
+<div class="country-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+    <div class="flex justify-center pt-6 pb-4">
+        <div class="representative-photo w-24 h-24 rounded-full shadow-lg overflow-hidden">
+            <img src="images/profilePics/FranciaOlmos.jpeg" class="w-full h-full object-cover">
+        </div>
+    </div>
+    <div class="country-header mx-4 rounded-lg mb-4" style="background-image: url(images/flags/Flag_of_Panama.svg.png);"></div>
+    <div class="p-6 pt-0 text-center">
+        <h4 class="text-xl font-bold text-gray-800 mb-2">Francia Olmos</h4>
+        <p class="text-blue-600 text-sm mb-3">Representante Oficial - Panamá</p>
+        <div class="flex flex-wrap gap-2 justify-center">
+            <span class="bg-slate-100 text-slate-800 px-3 py-1 rounded-full text-xs">Energia</span>
+            <span class="bg-slate-100 text-slate-800 px-3 py-1 rounded-full text-xs">Recursos</span>
+        </div>
+    </div>
+</div>
 
-                    <!-- Colombia -->
-                    <div class="country-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
-                        <div class="flex justify-center pt-6 pb-4">
-                            <div class="representative-photo w-24 h-24 rounded-full shadow-lg overflow-hidden">
-                                <img src="images/profilePics/HenryColombia.png" alt="Foto"
-                                    class="w-full h-full object-cover">
-                            </div>
-                        </div>
+<!-- Dubai -->
+<div class="country-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+    <div class="flex justify-center pt-6 pb-4">
+        <div class="representative-photo w-24 h-24 rounded-full shadow-lg overflow-hidden">
+            <img src="images/profilePics/MarianaTurchio.png" class="w-full h-full object-cover">
+        </div>
+    </div>
+    <div class="country-header mx-4 rounded-lg mb-4" style="background-image: url(images/flags/Flag_of_Dubai.svg.png);"></div>
+    <div class="p-6 pt-0 text-center">
+        <h4 class="text-xl font-bold text-gray-800 mb-2">Mariana Turchio</h4>
+        <p class="text-blue-600 text-sm mb-3">Representante Oficial - Dubai</p>
+        <div class="flex flex-wrap gap-2 justify-center">
+            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs">Manufatura</span>
+            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs">Relações Públicas</span>
+        </div>
+    </div>
+</div>
 
-                        <div class="country-header p-4 text-white text-center mx-4 rounded-lg mb-4" style="background-image: url(images/flags/Flag_of_Colombia.svg.png);
-                            background-size: cover;
-                            background-position: center;
-                            align-items: center;
-                            opacity: 0.8;
-                            height: 190px;">
-                        </div>
+<!-- España -->
+<div class="country-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+    <div class="flex justify-center pt-6 pb-4">
+        <div class="representative-photo w-24 h-24 rounded-full shadow-lg overflow-hidden">
+            <img src="images/profilePics/LilianaFranco.jpeg" class="w-full h-full object-cover">
+        </div>
+    </div>
+    <div class="country-header mx-4 rounded-lg mb-4" style="background-image: url(images/flags/Flag_of_Spain.svg.png);"></div>
+    <div class="p-6 pt-0 text-center">
+        <h4 class="text-xl font-bold text-gray-800 mb-2">Liliana Franco</h4>
+        <p class="text-blue-600 text-sm mb-3">Representante Oficial - España / Barcelona</p>
+        <div class="flex flex-wrap gap-2 justify-center">
+            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs">Importações</span>
+            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs">Exportações</span>
+        </div>
+    </div>
+</div>
 
-                        <div class="p-6 pt-0">
-                            <h4 class="text-xl font-bold text-gray-800 mb-2 text-center">Henry Armando Orozco</h4>
-                            <p class="text-blue-600 font-medium text-sm mb-3 text-center">Representante Oficial -
-                                Colombia</p>
-                            <div class="flex flex-wrap gap-2 mb-4 justify-center">
-                                <span
-                                    class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium">Investimentos</span>
-                                <span
-                                    class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium">Legal</span>
-                            </div>
-                            
-                        </div>
-                    </div>
+<!-- India -->
+<div class="country-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+    <div class="flex justify-center pt-6 pb-4">
+        <div class="representative-photo w-24 h-24 rounded-full shadow-lg overflow-hidden">
+            <img src="images/profilePics/danubioFachero.jpeg" class="w-full h-full object-cover">
+        </div>
+    </div>
+    <div class="country-header mx-4 rounded-lg mb-4" style="background-image: url(images/flags/Flag_of_India.svg.png);"></div>
+    <div class="p-6 pt-0 text-center">
+        <h4 class="text-xl font-bold text-gray-800 mb-2">Danubio Pereira Barcelos</h4>
+        <p class="text-blue-600 text-sm mb-3">Representante Oficial - Índia</p>
+        <div class="flex flex-wrap gap-2 justify-center">
+            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs">Manufatura</span>
+            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs">Exportações</span>
+        </div>
+    </div>
+</div>
 
-                    <!-- México -->
-                    <div class="country-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
-                        <div class="flex justify-center pt-6 pb-4">
-                            <div class="representative-photo w-24 h-24 rounded-full shadow-lg overflow-hidden">
-                                <img src="images/profilePics/imagenPorDefecto.jpg" alt="Foto"
-                                    class="w-full h-full object-cover">
-                            </div>
-                        </div>
-
-                        <div class="country-header p-4 text-white text-center mx-4 rounded-lg mb-4" style="background-image: url(images/flags/Flag_of_Mexico.svg.png);
-                            background-size: cover;
-                            background-position: center;
-                            opacity: 0.8;
-                            height: 190px;">
-                        </div>
-
-                        <div class="p-6 pt-0">
-                            <h4 class="text-xl font-bold text-gray-800 mb-2 text-center">Alfonso Gómez Zamudio</h4>
-                            <p class="text-blue-600 font-medium text-sm mb-3 text-center">Representante Oficial - México
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4 justify-center">
-                                <span
-                                    class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs font-medium">Manufatura</span>
-                                <span
-                                    class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs font-medium">Eletrônicos</span>
-                            </div>
-                            
-                        </div>
-                    </div>
-
-                    <!-- Israel -->
-                    <div class="country-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
-                        <div class="flex justify-center pt-6 pb-4">
-                            <div class="representative-photo w-24 h-24 rounded-full shadow-lg overflow-hidden">
-                                <img src="images/profilePics/GabrielIsrael.png" alt="Foto"
-                                    class="w-full h-full object-cover">
-                            </div>
-                        </div>
-
-                        <div class="country-header p-4 text-white text-center mx-4 rounded-lg mb-4" style="background-image: url(images/flags/Flag_of_Israel.svg);
-                            background-size: cover;
-                            background-position: center;
-                            opacity: 0.8;
-                            height: 190px;">
-                        </div>
-
-                        <div class="p-6 pt-0">
-                            <h4 class="text-xl font-bold text-gray-800 mb-2 text-center">Gabriel Curdi</h4>
-                            <p class="text-blue-600 font-medium text-sm mb-3 text-center">Representante Oficial - Israel
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4 justify-center">
-                                <span
-                                    class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs font-medium">Luxo</span>
-                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs font-medium">
-                                    - - - - - </span>
-                            </div>
-                            
-                        </div>
-                    </div>
-
-                    <!-- Uruguay -->
-                    <div class="country-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
-                        <div class="flex justify-center pt-6 pb-4">
-                            <div class="representative-photo w-24 h-24 rounded-full shadow-lg overflow-hidden">
-                                <img src="images/profilePics/ClaudiaAramendi.jpeg" alt="Foto"
-                                    class="w-full h-full object-cover">
-                            </div>
-                        </div>
-
-                        <div class="country-header p-4 text-white text-center mx-4 rounded-lg mb-4" style="background-image: url(images/flags/Flag_of_Uruguay.svg.png);
-                            background-size: cover;
-                            background-position: center;
-                            opacity: 0.8;
-                            height: 190px;">
-                        </div>
-
-                        <div class="p-6 pt-0">
-                            <h4 class="text-xl font-bold text-gray-800 mb-2 text-center">Claudia Aramendi</h4>
-                            <p class="text-blue-600 font-medium text-sm mb-3 text-center">Representante Oficial -
-                                Uruguay</p>
-                            <div class="flex flex-wrap gap-2 mb-4 justify-center">
-                                <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-xs font-medium"> - -
-                                    - - - </span>
-                                <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-xs font-medium"> - -
-                                    - - - </span>
-                            </div>
-                            
-                        </div>
-                    </div>
-
-                    <!-- El Salvador -->
-                    <div class="country-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
-                        <div class="flex justify-center pt-6 pb-4">
-                            <div class="representative-photo w-24 h-24 rounded-full shadow-lg overflow-hidden">
-                                <img src="images/profilePics/HectorElSalvador.png" alt="Foto"
-                                    class="w-full h-full object-cover">
-                            </div>
-                        </div>
-
-                        <div class="country-header p-4 text-white text-center mx-4 rounded-lg mb-4" style="background-image: url(images/flags/Flag_of_El_Salvador.svg.png);
-                            background-size: cover;
-                            background-position: center;
-                            opacity: 0.8;
-                            height: 190px;">
-                        </div>
-
-                        <div class="p-6 pt-0">
-                            <h4 class="text-xl font-bold text-gray-800 mb-2 text-center">Hector Leonardo Delgado</h4>
-                            <p class="text-blue-600 font-medium text-sm mb-3 text-center">Representante Oficial - El
-                                Salvador</p>
-                            <div class="flex flex-wrap gap-2 mb-4 justify-center">
-                                <span
-                                    class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-medium">Fintech</span>
-                                <span
-                                    class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-medium">Serviços</span>
-                            </div>
-                            
-                        </div>
-                    </div>
-
-                    <!-- Panamá -->
-                    <div class="country-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
-                        <div class="flex justify-center pt-6 pb-4">
-                            <div class="representative-photo w-24 h-24 rounded-full shadow-lg overflow-hidden">
-                                <img src="images/profilePics/FranciaOlmos.jpeg" alt="Foto"
-                                    class="w-full h-full object-cover">
-                            </div>
-                        </div>
-
-                        <div class="country-header p-4 text-white text-center mx-4 rounded-lg mb-4" style="background-image: url(images/flags/Flag_of_Panama.svg.png);
-                            background-size: cover;
-                            background-position: center;
-                            opacity: 0.8;
-                            height: 190px;">
-                        </div>
-
-                        <div class="p-6 pt-0">
-                            <h4 class="text-xl font-bold text-gray-800 mb-2 text-center">Francia Olmos</h4>
-                            <h4 class="text-xl font-bold text-gray-800 mb-2 text-center"> - - - - - </h4>
-                            <p class="text-blue-600 font-medium text-sm mb-3 text-center">Representante Oficial - Panamá
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4 justify-center">
-                                <span
-                                    class="bg-slate-100 text-slate-800 px-3 py-1 rounded-full text-xs font-medium">Energia</span>
-                                <span
-                                    class="bg-slate-100 text-slate-800 px-3 py-1 rounded-full text-xs font-medium">Recursos</span>
-                            </div>
-                            
-                        </div>
-                    </div>
-
-                    <!-- Dubai -->
-                    <div class="country-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
-                        <div class="flex justify-center pt-6 pb-4">
-                            <div class="representative-photo w-24 h-24 rounded-full shadow-lg overflow-hidden">
-                                <img src="images/profilePics/MarianaTurchio.png" alt="Foto"
-                                    class="w-full h-full object-cover">
-                            </div>
-                        </div>
-
-                        <div class="country-header p-4 text-white text-center mx-4 rounded-lg mb-4" style="background-image: url(images/flags/Flag_of_Dubai.svg.png);
-                            background-size: cover;
-                            background-position: center;
-                            opacity: 0.8;
-                            height: 190px;">
-                        </div>
-
-                        <div class="p-6 pt-0">
-                            <h4 class="text-xl font-bold text-gray-800 mb-2 text-center">Mariana Turchio</h4>
-                            <p class="text-blue-600 font-medium text-sm mb-3 text-center">Representante Oficial - Dubai
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4 justify-center">
-                                <span
-                                    class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs font-medium">Manufatura</span>
-                                <span
-                                    class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs font-medium">Relações
-                                    Públicas</span>
-                            </div>
-                            
-                        </div>
-                    </div>
-
-                    <!-- España / Barcelona -->
-                    <div class="country-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
-                        <div class="flex justify-center pt-6 pb-4">
-                            <div class="representative-photo w-24 h-24 rounded-full shadow-lg overflow-hidden">
-                                <img src="images/profilePics/LilianaFranco.jpeg" alt="Foto"
-                                    class="w-full h-full object-cover">
-                            </div>
-                        </div>
-
-                        <div class="country-header p-4 text-white text-center mx-4 rounded-lg mb-4" style="background-image: url('images/flags/Flag_of_Spain.svg.png');
-                            background-size: cover;
-                            background-position: center;
-                            opacity: 0.8;
-                            height: 190px;">
-                        </div>
-
-                        <div class="p-6 pt-0">
-                            <h4 class="text-xl font-bold text-gray-800 mb-2 text-center">Liliana Franco</h4>
-                            <p class="text-blue-600 font-medium text-sm mb-3 text-center">Representante Oficial - España
-                                / Barcelona</p>
-                            <div class="flex flex-wrap gap-2 mb-4 justify-center">
-                                <span
-                                    class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs font-medium">Importações</span>
-                                <span
-                                    class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs font-medium">Exportações</span>
-                            </div>
-                            
-                        </div>
-                    </div>
-
-                    <!-- Índia  -->
-                    <div class="country-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
-                        <div class="flex justify-center pt-6 pb-4">
-                            <div class="representative-photo w-24 h-24 rounded-full shadow-lg overflow-hidden">
-                                <img src="images/profilePics/danubioFachero.jpeg" alt="Foto"
-                                    class="w-full h-full object-cover">
-                            </div>
-                        </div>
-
-                        <div class="country-header p-4 text-white text-center mx-4 rounded-lg mb-4" style="background-image: url('images/flags/Flag_of_India.svg.png');
-                            background-size: cover;
-                            background-position: center;
-                            opacity: 0.8;
-                            height: 190px;">
-                        </div>
-
-                        <div class="p-6 pt-0">
-                            <h4 class="text-xl font-bold text-gray-800 mb-2 text-center">Danubio Pereira Barcelos</h4>
-                            <p class="text-blue-600 font-medium text-sm mb-3 text-center">Representante Oficial - Índia</p>
-                            <div class="flex flex-wrap gap-2 mb-4 justify-center">
-                                <span
-                                    class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs font-medium">Manufatura</span>
-                                <span
-                                    class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs font-medium">Exportações</span>
-                            </div>
-                            
-                        </div>
-                    </div>
-
-                    <!-- Kenya  -->
-                    <div class="country-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
-                        <div class="flex justify-center pt-6 pb-4">
-                            <div class="representative-photo w-24 h-24 rounded-full shadow-lg overflow-hidden">
-                                <img src="images/profilePics/danubioFachero.jpeg" alt="Foto"
-                                    class="w-full h-full object-cover">
-                            </div>
-                        </div>
-                        <div class="country-header p-4 text-white text-center mx-4 rounded-lg mb-4" style="background-image: url('images/flags/Flag_of_Kenya.svg.png');
-                            background-size: cover;
-                            background-position: center;
-                            opacity: 0.8;
-                            height: 190px;">
-                        </div>
-
-                        <div class="p-6 pt-0">
-                            <h4 class="text-xl font-bold text-gray-800 mb-2 text-center">Danubio Pereira Barcelos</h4>
-                            <p class="text-blue-600 font-medium text-sm mb-3 text-center">Representante Oficial - Kenya</p>
-                            <div class="flex flex-wrap gap-2 mb-4 justify-center">
-                                <span
-                                    class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs font-medium">Manufatura</span>
-                                <span
-                                    class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs font-medium">Exportações</span>
-                            </div>
-                            
-                        </div>
-                    </div>
+<!-- Kenya -->
+<div class="country-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+    <div class="flex justify-center pt-6 pb-4">
+        <div class="representative-photo w-24 h-24 rounded-full shadow-lg overflow-hidden">
+            <img src="images/profilePics/danubioFachero.jpeg" class="w-full h-full object-cover">
+        </div>
+    </div>
+    <div class="country-header mx-4 rounded-lg mb-4" style="background-image: url(images/flags/Flag_of_Kenya.svg.png);"></div>
+    <div class="p-6 pt-0 text-center">
+        <h4 class="text-xl font-bold text-gray-800 mb-2">Danubio Pereira Barcelos</h4>
+        <p class="text-blue-600 text-sm mb-3">Representante Oficial - Kenya</p>
+        <div class="flex flex-wrap gap-2 justify-center">
+            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs">Manufatura</span>
+            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs">Exportações</span>
+        </div>
+    </div>
+</div>
                 </div>
             </div>
         </div>
@@ -686,7 +545,7 @@
     </section>
 
     <!-- Footer -->
-    
+
     <div id="footer"></div>
 
     <script>
@@ -698,7 +557,7 @@
             });
     </script>
 
-    
+
     <!-- Contact Floating Button -->
     <button onclick="openContactModal()" id="contactFloatBtn"
         class="fixed bottom-8 right-24 bg-green-600 hover:bg-green-700 text-white p-3 rounded-full shadow-lg z-[9998] transition-all duration-300">
@@ -842,7 +701,7 @@
                 this.style.boxShadow = 'none';
             });
         });
-        
+
         function openContactModal() {
             const modal = document.getElementById('contactModal');
             modal.classList.remove('hidden');
@@ -906,6 +765,28 @@
                 </div>
 
                 <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Assunto</label>
+                    <select name="subject" required
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option value="" disabled selected>Selecione um assunto</option>
+                        <option value="Atendimento legal internacional">Atendimento legal internacional</option>
+                        <option value="Arbitragem e mediação">Arbitragem e mediação</option>
+                        <option value="Solução para empresas com dívida fiscal">Solução para empresas com dívida fiscal
+                        </option>
+                        <option value="Cursos e capacitação">Cursos e capacitação</option>
+                        <option value="Parcerias institucionais">Parcerias institucionais</option>
+                        <option value="Comércio internacional">Comércio internacional</option>
+                        <option value="Representação empresarial">Representação empresarial</option>
+                        <option value="Consultoria empresarial">Consultoria empresarial</option>
+                        <option value="Eventos e missões comerciais">Eventos e missões comerciais</option>
+                        <option value="Portal de notícias">Portal de notícias</option>
+                        <option value="Associação / filiação">Associação / filiação</option>
+                        <option value="Suporte técnico">Suporte técnico</option>
+                        <option value="Outros">Outros</option>
+                    </select>
+                </div>
+
+                <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1">Solicitude</label>
                     <textarea rows="5" name="message" placeholder="Escreva sua mensagem..." required
                         class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"></textarea>
@@ -927,7 +808,7 @@
         </div>
     </div>
 
-    
+
 </body>
 
 </html>
