@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIIC Brasil - Arbitragem e Mediação</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link rel="icon" href="/site/images/favicon/favicon.ico" type="image/x-icon">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .hero-bg {
+            background: linear-gradient(rgba(10, 40, 96, 0.78), rgba(10, 40, 96, 0.78)),
+                url('images/pagina/arbitragem-bg.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(10px);
+        }
+
+        .service-card,
+        .benefit-card,
+        .step-card {
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover,
+        .benefit-card:hover,
+        .step-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.10);
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur shadow-sm border-b border-gray-100">
+        <div class="container mx-auto px-4 lg:px-6">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex items-center gap-3 min-w-0">
+                    <img src="images/logo.png" alt="CIIC Brasil" class="h-12 w-auto">
+                    <div class="hidden sm:block">
+                        <h1 class="text-lg lg:text-xl font-bold text-blue-800 leading-tight">Camara Intercontinental de</h1>
+                        <p class="text-lg lg:text-xl font-bold text-blue-800 leading-tight">Industria e Comercio</p>
+                    </div>
+                </a>
+
+                <nav class="hidden lg:flex items-center gap-7 text-[15px] font-medium text-gray-700">
+                    <a href="index.html" class="hover:text-blue-700 transition">Início</a>
+                    <a href="team.html" class="hover:text-blue-700 transition">Equipe</a>
+                    <a href="opportunities.html" class="hover:text-blue-700 transition">Oportunidades</a>
+                    <a href="institutional.html" class="hover:text-blue-700 transition">Institucional</a>
+                    <a href="legal.html" class="hover:text-blue-700 transition">Legal Internacional</a>
+                    <a href="arbitragem.html" class="text-blue-700 font-semibold">Arbitragem e Mediação</a>
+                    <a href="deuda-fiscal.html" class="hover:text-blue-700 transition">Dívida Fiscal</a>
+                </nav>
+
+                <button id="menu-btn" class="lg:hidden text-gray-800" aria-label="Abrir menu">
+                    <i data-feather="menu" class="w-8 h-8"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 shadow-md">
+            <div class="px-4 py-4 space-y-3 text-gray-700 font-medium">
+                <a href="index.html" class="block hover:text-blue-700">Início</a>
+                <a href="team.html" class="block hover:text-blue-700">Equipe</a>
+                <a href="opportunities.html" class="block hover:text-blue-700">Oportunidades</a>
+                <a href="institutional.html" class="block hover:text-blue-700">Institucional</a>
+                <a href="legal.html" class="block hover:text-blue-700">Legal Internacional</a>
+                <a href="arbitragem.html" class="block text-blue-700 font-semibold">Arbitragem e Mediação</a>
+                <a href="deuda-fiscal.html" class="block hover:text-blue-700">Dívida Fiscal</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero-bg pt-36 pb-24 md:pt-44 md:pb-32 text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl">
+                <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2 mb-6" data-aos="fade-up">
+                    <i data-feather="shield" class="w-4 h-4"></i>
+                    <span class="text-sm font-medium">Soluções estratégicas para conflitos</span>
+                </div>
+
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6" data-aos="fade-up" data-aos-delay="100">
+                    Arbitragem e Mediação
+                </h1>
+
+                <p class="text-lg md:text-2xl text-blue-50 max-w-3xl leading-relaxed mb-8" data-aos="fade-up" data-aos-delay="200">
+                    Um espaço para conhecer alternativas modernas de resolução de conflitos, com orientação inicial, visão estratégica e encaminhamento ao suporte técnico adequado.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="300">
+                    <button onclick="openContactModal('Consulta sobre Arbitragem e Mediação')"
+                        class="bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold px-8 py-4 rounded-xl transition shadow-lg">
+                        Falar com o time técnico
+                    </button>
+                    <a href="#about"
+                        class="border border-white/40 hover:bg-white/10 font-semibold px-8 py-4 rounded-xl transition text-center">
+                        Entender melhor
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-10 items-center">
+                <div data-aos="fade-right">
+                    <div class="flex items-center mb-5">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i data-feather="scale" class="w-6 h-6 text-blue-700"></i>
+                        </div>
+                        <h2 class="text-3xl font-bold text-gray-800">Resolução eficiente de controvérsias</h2>
+                    </div>
+
+                    <p class="text-gray-600 text-lg leading-relaxed mb-5">
+                        A arbitragem e a mediação são caminhos estratégicos para tratar conflitos com mais agilidade, confidencialidade e foco em soluções práticas.
+                    </p>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        Nesta seção, a proposta é apresentar uma visão clara do serviço, gerar confiança e orientar o usuário a entrar em contato com a equipe técnica para avaliar o caso.
+                    </p>
+                </div>
+
+                <div class="glass-card rounded-3xl p-8 shadow-xl border border-gray-100" data-aos="fade-left">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Quando pode ser útil</h3>
+                    <div class="space-y-5">
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-blue-700 text-white flex items-center justify-center shrink-0">
+                                <i data-feather="briefcase" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg">Conflitos empresariais</h4>
+                                <p class="text-gray-600">Divergências contratuais, societárias, comerciais e operacionais.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-blue-700 text-white flex items-center justify-center shrink-0">
+                                <i data-feather="users" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg">Mediação entre partes</h4>
+                                <p class="text-gray-600">Situações que exigem diálogo estruturado e construção de consenso.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-blue-700 text-white flex items-center justify-center shrink-0">
+                                <i data-feather="globe" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg">Relações internacionais</h4>
+                                <p class="text-gray-600">Casos com partes de diferentes mercados ou operações entre países.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IA Review -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Uma visão moderna com apoio de IA</h2>
+                <p class="text-gray-600 text-lg">A página pode apresentar uma resenha explicativa sobre arbitragem e mediação com linguagem atual, acessível e alinhada à inovação.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-6">
+                <div class="benefit-card bg-white border border-gray-200 rounded-2xl p-6" data-aos="fade-up">
+                    <div class="bg-purple-100 w-14 h-14 rounded-xl flex items-center justify-center mb-5">
+                        <i data-feather="cpu" class="w-7 h-7 text-purple-700"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Resenha inteligente</h3>
+                    <p class="text-gray-600">Um conteúdo introdutório que explica de forma simples como esses mecanismos podem ajudar em situações concretas.</p>
+                </div>
+
+                <div class="benefit-card bg-white border border-gray-200 rounded-2xl p-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-green-100 w-14 h-14 rounded-xl flex items-center justify-center mb-5">
+                        <i data-feather="zap" class="w-7 h-7 text-green-700"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Abordagem moderna</h3>
+                    <p class="text-gray-600">O uso do tema IA reforça inovação e posiciona a Câmara com uma comunicação contemporânea e estratégica.</p>
+                </div>
+
+                <div class="benefit-card bg-white border border-gray-200 rounded-2xl p-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-yellow-100 w-14 h-14 rounded-xl flex items-center justify-center mb-5">
+                        <i data-feather="message-circle" class="w-7 h-7 text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Contato com especialistas</h3>
+                    <p class="text-gray-600">Após entender o contexto geral, o usuário é convidado a consultar a equipe técnica para avaliação do caso.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Steps -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Como a jornada pode ser apresentada</h2>
+                <p class="text-gray-600 text-lg">Uma estrutura clara ajuda o visitante a entender rapidamente o processo e tomar a ação principal: entrar em contato.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="step-card bg-gray-50 border border-gray-200 rounded-2xl p-6" data-aos="fade-up">
+                    <div class="w-14 h-14 bg-blue-700 text-white rounded-2xl flex items-center justify-center text-xl font-bold mb-5">1</div>
+                    <h3 class="text-xl font-bold mb-3">Conheça a proposta</h3>
+                    <p class="text-gray-600">O visitante entende o que são arbitragem e mediação e em quais contextos elas podem ser úteis.</p>
+                </div>
+
+                <div class="step-card bg-gray-50 border border-gray-200 rounded-2xl p-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-blue-700 text-white rounded-2xl flex items-center justify-center text-xl font-bold mb-5">2</div>
+                    <h3 class="text-xl font-bold mb-3">Leia a resenha inicial</h3>
+                    <p class="text-gray-600">Um texto explicativo com apoio conceitual e tom moderno desperta interesse e confiança.</p>
+                </div>
+
+                <div class="step-card bg-gray-50 border border-gray-200 rounded-2xl p-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-blue-700 text-white rounded-2xl flex items-center justify-center text-xl font-bold mb-5">3</div>
+                    <h3 class="text-xl font-bold mb-3">Consulte o time técnico</h3>
+                    <p class="text-gray-600">O formulário é o ponto de conversão para que a equipe analise a situação e responda com orientação adequada.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why choose -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-10 items-start">
+                <div data-aos="fade-right">
+                    <div class="flex items-center mb-5">
+                        <div class="bg-yellow-100 p-3 rounded-full mr-4">
+                            <i data-feather="star" class="w-6 h-6 text-yellow-600"></i>
+                        </div>
+                        <h2 class="text-3xl font-bold text-gray-800">Por que incluir essa seção</h2>
+                    </div>
+
+                    <div class="space-y-5">
+                        <div class="service-card bg-white border border-gray-200 rounded-2xl p-6">
+                            <h3 class="text-xl font-bold mb-2">Reforça autoridade institucional</h3>
+                            <p class="text-gray-600">Mostra que a CIIC também atua em serviços estratégicos de alto valor agregado.</p>
+                        </div>
+                        <div class="service-card bg-white border border-gray-200 rounded-2xl p-6">
+                            <h3 class="text-xl font-bold mb-2">Gera consultas qualificadas</h3>
+                            <p class="text-gray-600">Atrai usuários com demandas reais e potencial de relacionamento comercial.</p>
+                        </div>
+                        <div class="service-card bg-white border border-gray-200 rounded-2xl p-6">
+                            <h3 class="text-xl font-bold mb-2">Traz posicionamento moderno</h3>
+                            <p class="text-gray-600">O conceito de IA aplicado à resenha ajuda a comunicar inovação sem complicar a navegação.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-blue-800 text-white rounded-3xl p-8 shadow-xl" data-aos="fade-left">
+                    <h3 class="text-2xl font-bold mb-5">Mensagem sugerida para a página</h3>
+                    <p class="text-blue-100 text-lg leading-relaxed mb-6">
+                        Conheça uma alternativa estratégica para resolução de conflitos. Entenda, de forma clara e moderna, como arbitragem e mediação podem contribuir para soluções mais eficientes.
+                    </p>
+
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start gap-3">
+                            <i data-feather="check-circle" class="w-5 h-5 text-yellow-300 mt-1"></i>
+                            <p class="text-blue-50">Explicação objetiva e acessível</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i data-feather="check-circle" class="w-5 h-5 text-yellow-300 mt-1"></i>
+                            <p class="text-blue-50">Comunicação moderna com referência em IA</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i data-feather="check-circle" class="w-5 h-5 text-yellow-300 mt-1"></i>
+                            <p class="text-blue-50">Convite direto para consultar o time técnico</p>
+                        </div>
+                    </div>
+
+                    <button onclick="openContactModal('Consulta sobre Arbitragem e Mediação')"
+                        class="w-full bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold px-6 py-4 rounded-xl transition">
+                        Abrir formulário
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-3xl mx-auto" data-aos="zoom-in">
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-5">Quer avaliar um caso com a equipe técnica?</h2>
+                <p class="text-lg md:text-xl text-blue-100 leading-relaxed mb-8">
+                    Entre em contato e receba orientação inicial sobre arbitragem e mediação com uma abordagem clara, estratégica e profissional.
+                </p>
+                <button onclick="openContactModal('Consulta sobre Arbitragem e Mediação')"
+                    class="bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold px-10 py-4 rounded-xl transition shadow-lg">
+                    Fazer consulta
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+
+    <div id="footer"></div>
+
+    <script>
+        fetch("footer.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("footer").innerHTML = data;
+                feather.replace();
+            });
+    </script>
+
+    <script>
+        AOS.init({ duration: 900, once: true });
+        feather.replace();
+
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        function openContactModal(subject = 'Consulta sobre Arbitragem e Mediação') {
+            const modal = document.getElementById('contactModal');
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            }
+
+            const subjectInput = document.getElementById('contact-subject');
+            if (subjectInput) {
+                subjectInput.value = subject;
+            }
+
+            const titleField = document.getElementById('contactModalTitle');
+            if (titleField) {
+                titleField.textContent = subject;
+            }
+        }
+    </script>
+</body>
+
+</html>

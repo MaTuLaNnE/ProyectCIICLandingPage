@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIIC Brasil - Legal Internacional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link rel="icon" href="/site/images/favicon/favicon.ico" type="image/x-icon">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .hero-bg {
+            background: linear-gradient(rgba(0, 35, 102, 0.72), rgba(0, 35, 102, 0.72)),
+                url('images/pagina/legal-bg.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+        }
+
+        .country-item {
+            transition: all 0.3s ease;
+        }
+
+        .country-item:hover {
+            transform: translateY(-2px);
+        }
+
+        .service-card,
+        .benefit-card {
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover,
+        .benefit-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.10);
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur shadow-sm border-b border-gray-100">
+        <div class="container mx-auto px-4 lg:px-6">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex items-center gap-3 min-w-0">
+                    <img src="images/logo.png" alt="CIIC Brasil" class="h-12 w-auto">
+                    <div class="hidden sm:block">
+                        <h1 class="text-lg lg:text-xl font-bold text-blue-800 leading-tight">Camara Intercontinental de</h1>
+                        <p class="text-lg lg:text-xl font-bold text-blue-800 leading-tight">Industria e Comercio</p>
+                    </div>
+                </a>
+
+                <nav class="hidden lg:flex items-center gap-7 text-[15px] font-medium text-gray-700">
+                    <a href="index.html" class="hover:text-blue-700 transition">Início</a>
+                    <a href="team.html" class="hover:text-blue-700 transition">Equipe</a>
+                    <a href="opportunities.html" class="hover:text-blue-700 transition">Oportunidades</a>
+                    <a href="institutional.html" class="hover:text-blue-700 transition">Institucional</a>
+                    <a href="legal.html" class="text-blue-700 font-semibold">Legal Internacional</a>
+                    <a href="arbitragem.html" class="hover:text-blue-700 transition">Arbitragem e Mediação</a>
+                    <a href="deuda-fiscal.html" class="hover:text-blue-700 transition">Dívida Fiscal</a>
+                </nav>
+
+                <button id="menu-btn" class="lg:hidden text-gray-800" aria-label="Abrir menu">
+                    <i data-feather="menu" class="w-8 h-8"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 shadow-md">
+            <div class="px-4 py-4 space-y-3 text-gray-700 font-medium">
+                <a href="index.html" class="block hover:text-blue-700">Início</a>
+                <a href="team.html" class="block hover:text-blue-700">Equipe</a>
+                <a href="opportunities.html" class="block hover:text-blue-700">Oportunidades</a>
+                <a href="institutional.html" class="block hover:text-blue-700">Institucional</a>
+                <a href="legal.html" class="block text-blue-700 font-semibold">Legal Internacional</a>
+                <a href="arbitragem.html" class="block hover:text-blue-700">Arbitragem e Mediação</a>
+                <a href="deuda-fiscal.html" class="block hover:text-blue-700">Dívida Fiscal</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero-bg pt-36 pb-24 md:pt-44 md:pb-32 text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl">
+                <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2 mb-6" data-aos="fade-up">
+                    <i data-feather="briefcase" class="w-4 h-4"></i>
+                    <span class="text-sm font-medium">Suporte jurídico em múltiplos países</span>
+                </div>
+
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6" data-aos="fade-up" data-aos-delay="100">
+                    Legal Internacional
+                </h1>
+
+                <p class="text-lg md:text-2xl text-blue-50 max-w-3xl leading-relaxed mb-8" data-aos="fade-up" data-aos-delay="200">
+                    Orientação jurídica para empresas e particulares com análise do caso e encaminhamento ao time adequado conforme o país e a natureza da consulta.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="300">
+                    <button onclick="openContactModal('Consulta Legal Internacional')"
+                        class="bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold px-8 py-4 rounded-xl transition shadow-lg">
+                        Realizar consulta
+                    </button>
+                    <a href="#countries"
+                        class="border border-white/40 hover:bg-white/10 font-semibold px-8 py-4 rounded-xl transition text-center">
+                        Ver países disponíveis
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-10 items-center">
+                <div data-aos="fade-right">
+                    <div class="flex items-center mb-5">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i data-feather="scale" class="w-6 h-6 text-blue-700"></i>
+                        </div>
+                        <h2 class="text-3xl font-bold text-gray-800">Consultoria jurídica com alcance internacional</h2>
+                    </div>
+
+                    <p class="text-gray-600 text-lg leading-relaxed mb-5">
+                        A CIIC Brasil oferece um canal de consulta para temas jurídicos relacionados ao Brasil e a outros mercados estratégicos, atendendo tanto empresas quanto pessoas físicas.
+                    </p>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        Cada solicitação é analisada individualmente para ser direcionada ao time mais adequado conforme o tema, a complexidade do caso e a jurisdição envolvida.
+                    </p>
+                </div>
+
+                <div class="glass-card rounded-3xl p-8 shadow-xl border border-gray-100" data-aos="fade-left">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Como funciona</h3>
+                    <div class="space-y-5">
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-full bg-blue-700 text-white flex items-center justify-center font-bold shrink-0">1</div>
+                            <div>
+                                <h4 class="font-semibold text-lg">Envie sua consulta</h4>
+                                <p class="text-gray-600">Abra o formulário de contato e descreva brevemente seu caso.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-full bg-blue-700 text-white flex items-center justify-center font-bold shrink-0">2</div>
+                            <div>
+                                <h4 class="font-semibold text-lg">Análise inicial</h4>
+                                <p class="text-gray-600">A equipe avalia o país envolvido, o assunto jurídico e o melhor encaminhamento.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-full bg-blue-700 text-white flex items-center justify-center font-bold shrink-0">3</div>
+                            <div>
+                                <h4 class="font-semibold text-lg">Retorno especializado</h4>
+                                <p class="text-gray-600">A Câmara entra em contato e direciona a consulta conforme a necessidade apresentada.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Temas que podem ser consultados</h2>
+                <p class="text-gray-600 text-lg">A página pode apresentar diferentes tipos de demanda jurídica com linguagem clara e foco em geração de contato.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="service-card bg-white border border-gray-200 rounded-2xl p-6" data-aos="fade-up">
+                    <div class="bg-blue-100 w-14 h-14 rounded-xl flex items-center justify-center mb-5">
+                        <i data-feather="file-text" class="w-7 h-7 text-blue-700"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Processos legais</h3>
+                    <p class="text-gray-600">Consultas sobre processos em andamento, procedimentos e acompanhamento jurídico internacional.</p>
+                </div>
+
+                <div class="service-card bg-white border border-gray-200 rounded-2xl p-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-yellow-100 w-14 h-14 rounded-xl flex items-center justify-center mb-5">
+                        <i data-feather="alert-circle" class="w-7 h-7 text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Demandas e conflitos</h3>
+                    <p class="text-gray-600">Apoio inicial para litígios, notificações, disputas comerciais e outras situações jurídicas complexas.</p>
+                </div>
+
+                <div class="service-card bg-white border border-gray-200 rounded-2xl p-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-green-100 w-14 h-14 rounded-xl flex items-center justify-center mb-5">
+                        <i data-feather="briefcase" class="w-7 h-7 text-green-700"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Assuntos empresariais</h3>
+                    <p class="text-gray-600">Orientação para empresas em temas regulatórios, contratuais, societários e operacionais.</p>
+                </div>
+
+                <div class="service-card bg-white border border-gray-200 rounded-2xl p-6" data-aos="fade-up">
+                    <div class="bg-purple-100 w-14 h-14 rounded-xl flex items-center justify-center mb-5">
+                        <i data-feather="globe" class="w-7 h-7 text-purple-700"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Casos internacionais</h3>
+                    <p class="text-gray-600">Situações que envolvem mais de um país, jurisdições distintas ou operações internacionais.</p>
+                </div>
+
+                <div class="service-card bg-white border border-gray-200 rounded-2xl p-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-red-100 w-14 h-14 rounded-xl flex items-center justify-center mb-5">
+                        <i data-feather="shield" class="w-7 h-7 text-red-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Orientação preventiva</h3>
+                    <p class="text-gray-600">Consultas para reduzir riscos, esclarecer dudas y receber direcionamento antes de avançar.</p>
+                </div>
+
+                <div class="service-card bg-white border border-gray-200 rounded-2xl p-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-sky-100 w-14 h-14 rounded-xl flex items-center justify-center mb-5">
+                        <i data-feather="users" class="w-7 h-7 text-sky-700"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Atendimento para todos</h3>
+                    <p class="text-gray-600">Serviço orientado tanto a empresas quanto a pessoas físicas com necessidade de suporte jurídico.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countries -->
+    <section id="countries" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-10 items-start">
+                <div data-aos="fade-right">
+                    <div class="flex items-center mb-5">
+                        <div class="bg-yellow-100 p-3 rounded-full mr-4">
+                            <i data-feather="map-pin" class="w-6 h-6 text-yellow-600"></i>
+                        </div>
+                        <h2 class="text-3xl font-bold text-gray-800">Países com atendimento</h2>
+                    </div>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                        A lista de atuação pode ser atualizada conforme a evolução das parcerias e da estrutura internacional da Câmara.
+                    </p>
+                    <div class="grid sm:grid-cols-2 gap-3">
+                        <div class="country-item flex items-center gap-3 bg-gray-50 border border-gray-200 rounded-xl px-4 py-3"><span class="text-2xl">🇧🇷</span><span class="font-medium">Brasil</span></div>
+                        <div class="country-item flex items-center gap-3 bg-gray-50 border border-gray-200 rounded-xl px-4 py-3"><span class="text-2xl">🇦🇷</span><span class="font-medium">Argentina</span></div>
+                        <div class="country-item flex items-center gap-3 bg-gray-50 border border-gray-200 rounded-xl px-4 py-3"><span class="text-2xl">🇺🇾</span><span class="font-medium">Uruguai</span></div>
+                        <div class="country-item flex items-center gap-3 bg-gray-50 border border-gray-200 rounded-xl px-4 py-3"><span class="text-2xl">🇪🇸</span><span class="font-medium">Espanha</span></div>
+                        <div class="country-item flex items-center gap-3 bg-gray-50 border border-gray-200 rounded-xl px-4 py-3"><span class="text-2xl">🇵🇦</span><span class="font-medium">Panamá</span></div>
+                        <div class="country-item flex items-center gap-3 bg-gray-50 border border-gray-200 rounded-xl px-4 py-3"><span class="text-2xl">🇲🇽</span><span class="font-medium">México</span></div>
+                        <div class="country-item flex items-center gap-3 bg-gray-50 border border-gray-200 rounded-xl px-4 py-3"><span class="text-2xl">🇨🇴</span><span class="font-medium">Colômbia</span></div>
+                        <div class="country-item flex items-center gap-3 bg-gray-50 border border-gray-200 rounded-xl px-4 py-3"><span class="text-2xl">🇵🇪</span><span class="font-medium">Peru</span></div>
+                        <div class="country-item flex items-center gap-3 bg-gray-50 border border-gray-200 rounded-xl px-4 py-3"><span class="text-2xl">🇵🇾</span><span class="font-medium">Paraguai</span></div>
+                        <div class="country-item flex items-center gap-3 bg-gray-50 border border-gray-200 rounded-xl px-4 py-3"><span class="text-2xl">🇮🇳</span><span class="font-medium">Índia</span></div>
+                        <div class="country-item flex items-center gap-3 bg-gray-50 border border-gray-200 rounded-xl px-4 py-3"><span class="text-2xl">🇻🇪</span><span class="font-medium">Venezuela</span></div>
+                    </div>
+                </div>
+
+                <div class="bg-blue-800 text-white rounded-3xl p-8 shadow-xl" data-aos="fade-left">
+                    <h3 class="text-2xl font-bold mb-5">Encaminhamento conforme cada caso</h3>
+                    <p class="text-blue-100 text-lg leading-relaxed mb-6">
+                        Os profissionais não são exibidos individualmente na página porque cada consulta será direcionada segundo o tema apresentado, o país envolvido e a necessidade específica de atendimento.
+                    </p>
+
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start gap-3">
+                            <i data-feather="check-circle" class="w-5 h-5 text-yellow-300 mt-1"></i>
+                            <p class="text-blue-50">Atendimento inicial simples e objetivo</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i data-feather="check-circle" class="w-5 h-5 text-yellow-300 mt-1"></i>
+                            <p class="text-blue-50">Avaliação conforme o tipo de demanda</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i data-feather="check-circle" class="w-5 h-5 text-yellow-300 mt-1"></i>
+                            <p class="text-blue-50">Direcionamento ao suporte mais adequado</p>
+                        </div>
+                    </div>
+
+                    <button onclick="openContactModal('Consulta Legal Internacional')"
+                        class="w-full bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold px-6 py-4 rounded-xl transition">
+                        Falar com a Câmara
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-3xl mx-auto" data-aos="zoom-in">
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-5">Precisa de orientação jurídica internacional?</h2>
+                <p class="text-lg md:text-xl text-blue-100 leading-relaxed mb-8">
+                    Entre em contato com a CIIC Brasil e envie sua consulta. Nossa equipe analisará o caso e retornará com o encaminhamento adequado.
+                </p>
+                <button onclick="openContactModal('Consulta Legal Internacional')"
+                    class="bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold px-10 py-4 rounded-xl transition shadow-lg">
+                    Abrir formulário de contato
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+
+    <div id="footer"></div>
+
+    <script>
+        fetch("footer.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("footer").innerHTML = data;
+                feather.replace();
+            });
+    </script>
+
+
+    <script>
+        AOS.init({ duration: 900, once: true });
+        feather.replace();
+
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        function openContactModal(subject = 'Consulta Legal Internacional') {
+            const modal = document.getElementById('contactModal');
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            }
+
+            const subjectInput = document.getElementById('contact-subject');
+            if (subjectInput) {
+                subjectInput.value = subject;
+            }
+
+            const titleField = document.getElementById('contactModalTitle');
+            if (titleField) {
+                titleField.textContent = subject;
+            }
+        }
+    </script>
+</body>
+
+</html>
