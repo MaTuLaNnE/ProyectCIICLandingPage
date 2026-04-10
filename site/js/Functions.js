@@ -74,6 +74,35 @@ function scrollToTop() {
         behavior: 'smooth'
     });
 }
+let menuOpen = false;
+
+function openMenu() {
+  menuOpen = true;
+  document.getElementById('mobile-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  // Animación X
+  document.getElementById('hb1').style.transform = 'translateY(7px) rotate(45deg)';
+  document.getElementById('hb2').style.opacity = '0';
+  document.getElementById('hb3').style.transform = 'translateY(-7px) rotate(-45deg)';
+}
+
+function closeMenu() {
+  menuOpen = false;
+  document.getElementById('mobile-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+  // Volver a hamburguesa
+  document.getElementById('hb1').style.transform = '';
+  document.getElementById('hb2').style.opacity = '1';
+  document.getElementById('hb3').style.transform = '';
+}
+
+document.getElementById('mobile-menu-button').addEventListener('click', function () {
+  menuOpen ? closeMenu() : openMenu();
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeMenu();
+});
 
 // Smooth scroll para los enlaces del footer
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
