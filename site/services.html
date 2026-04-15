@@ -12,6 +12,10 @@
     <link rel="icon" href="/site/images/favicon/favicon.ico" type="image/x-icon">
 
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         .institutional-card {
             transition: all 0.3s ease;
         }
@@ -26,8 +30,8 @@
             transform: translateY(-4px);
         }
 
-        #hero-services {
-            background: linear-gradient(rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.68)),
+        .hero-bg {
+            background: linear-gradient(rgba(0, 35, 102, 0.72), rgba(0, 35, 102, 0.72)),
                 url('images/pagina/EjecutivosFondoYates.jpeg');
             background-size: cover;
             background-position: center;
@@ -51,36 +55,38 @@
     </style>
 </head>
 
-<body class="font-sans bg-gray-50">
+<body class="font-sans bg-gray-50 text-gray-800">
     
         <!-- Header -->
     <div id="navbar-container"></div>
     <script src="js/navbar.js"></script>
 
     <!-- Hero -->
-    <section id="hero-services" class="py-32 text-white" data-aos="fade-in">
-        <div class="container mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-6">Serviços e Soluções</h1>
-            <p class="text-xl mb-8 max-w-3xl mx-auto">
-                A CIIC oferece suporte estratégico para empresas, empreendedores e profissionais que desejam crescer,
-                internacionalizar-se e gerar novas oportunidades de negócio.
-            </p>
-        </div>
+    <section class="hero-bg pt-36 pb-24 md:pt-44 md:pb-32 text-white relative overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6" data-aos="fade-up">Serviços e Soluções</h1>
+                <p class="text-lg md:text-2xl text-blue-50 max-w-3xl leading-relaxed mb-8" data-aos="fade-up"
+                    data-aos-delay="100">
+                    A CIIC oferece suporte estratégico para empresas, empreendedores e profissionais que desejam crescer,
+                    internacionalizar-se e gerar novas oportunidades de negócio.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="200">
 
-        <div class="flex flex-col sm:flex-row justify-center gap-4 mt-6">
+                    <a href="institucional.html"
+                        class="bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold px-8 py-4 rounded-xl transition shadow-lg flex items-center justify-center">
+                        <i data-feather="file-text" class="w-5 h-5 mr-2"></i>
+                        Voltar a institucional
+                    </a>
 
-            <a href="institucional.html"
-                class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium flex items-center justify-center">
-                <i data-feather="file-text" class="w-5 h-5 mr-2"></i>
-                Voltar a institucional
-            </a>
+                    <a href="acordos.html"
+                        class="border border-white/40 hover:bg-white/10 font-semibold px-8 py-4 rounded-xl transition text-center flex items-center justify-center">
+                        <i data-feather="file-text" class="w-5 h-5 mr-2"></i>
+                        Ver Acordos
+                    </a>
 
-            <a href="acordos.html"
-                class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium flex items-center justify-center">
-                <i data-feather="file-text" class="w-5 h-5 mr-2"></i>
-                Ver Acordos
-            </a>
-
+                </div>
+            </div>
         </div>
     </section>
 

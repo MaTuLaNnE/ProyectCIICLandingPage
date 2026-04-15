@@ -1,69 +1,175 @@
-<nav class="bg-white shadow-md fixed w-full top-0 z-50">
-  <div class="container mx-auto px-4">
-    <div class="flex items-center justify-between h-20">
+<style>
+  #site-mobile-backdrop {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+  }
 
-      <!-- Logo -->
-      <div class="flex items-center gap-3 min-w-0">
- 
-        <a href="index.html" class="flex items-center">
-          <img src="images/CIIC_Logo_BG.png" alt="CIIC Brasil" class="h-10 w-auto">
-        </a>
-        <div class="hidden sm:block">
-          <h1 class="text-lg lg:text-xl font-bold text-blue-800 leading-tight">Camara Intercontinental de</h1>
-          <p class="text-lg lg:text-xl font-bold text-blue-800 leading-tight">Industria e Comercio</p>
+  #site-mobile-backdrop.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  #site-mobile-drawer {
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(.4, 0, .2, 1);
+  }
+
+  #site-mobile-drawer.is-open {
+    transform: translateX(0);
+  }
+
+  body.nav-locked {
+    overflow: hidden;
+  }
+
+  #mobile-menu-button.is-open #hb1 {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  #mobile-menu-button.is-open #hb2 {
+    opacity: 0;
+  }
+
+  #mobile-menu-button.is-open #hb3 {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+</style>
+
+<nav class="fixed inset-x-0 top-0 z-50 border-b border-slate-100 bg-white/95 shadow-md backdrop-blur-md">
+  <div class="container mx-auto px-4">
+    <div class="flex min-h-[5rem] items-center justify-between gap-4">
+
+      <a href="index.html" class="flex min-w-0 items-center gap-3">
+        <img src="images/CIIC_Logo_BG.png" alt="CIIC Brasil" class="h-10 w-auto shrink-0 sm:h-11">
+        <div class="hidden min-w-0 sm:block">
+          <h1 class="text-base font-bold leading-tight text-blue-800 lg:text-lg">Camara Intercontinental de</h1>
+          <p class="text-base font-bold leading-tight text-blue-800 lg:text-lg">Industria e Comercio</p>
         </div>
-      </div>
+      </a>
 
 
       <!-- Desktop Menu -->
-      <div class="hidden md:flex items-center space-x-6">
-        <a href="index.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors">Início</a>
-        <a href="institucional.html"
-          class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors">Institucional</a>
-        <a href="services.html"
-          class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors">Serviços</a>
-        <a href="acordos.html"
-          class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors">Acordos</a>
-        <a href="legal-internacional.html"
-          class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors">Consulta Legal
-          Internacional</a>
-        <a href="arbitragem-mediacao.html"
-          class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors">Arbitragem e Mediação</a>
-        <a href="divida-fiscal.html"
-          class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors">Dívida Fiscal</a>
-        <a href="news.html"
-          class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors">Notícias</a>
-        <a href="events.html"
-          class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors">Eventos</a>
+      <div class="hidden xl:flex items-center gap-4 text-[13px]">
+        <a href="index.html" data-nav-link data-nav-variant="desktop"
+          class="nav-link-desktop font-medium text-slate-        <a href="news.html" data-nav-link data-nav-variant="desktop"
+          class="nav-link-desktop font-medium text-slate-600 transition-colors hover:text-blue-700">Oportunidades</a>
+        <a href="events.html" data-nav-link data-nav-variant="desktop"
+          class="nav-link-desktop font-medium text-slate-600 transition-colors hover:text-blue-700">Eventos</a>
+        <a href="equipe.html" data-nav-link data-nav-variant="desktop"
+          class="nav-link-desktop font-medium text-slate-600 transition-colors hover:text-blue-700">Equipe</a>
+        <a href="institucional.html" data-nav-link data-nav-variant="desktop"
+          class="nav-link-desktop font-medium text-slate-600 transition-colors hover:text-blue-700">Institucional</a>
+        <a href="services.html" data-nav-link data-nav-variant="desktop"
+          class="nav-link-desktop font-medium text-slate-600 transition-colors hover:text-blue-700">Servicos</a>
+        <a href="acordos.html" data-nav-link data-nav-variant="desktop"
+          class="nav-link-desktop font-medium text-slate-600 transition-colors hover:text-blue-700">Acordos</a>
+        <a href="legal-internacional.html" data-nav-link data-nav-variant="desktop"
+          class="nav-link-desktop font-medium text-slate-600 transition-colors hover:text-blue-700">Legal Internacional</a>
+        <a href="arbitragem-mediacao.html" data-nav-link data-nav-variant="desktop"
+          class="nav-link-desktop font-medium text-slate-600 transition-colors hover:text-blue-700">Arbitragem e Mediacao</a>
+        <a href="divida-fiscal.html" data-nav-link data-nav-variant="desktop"
+          class="nav-link-desktop font-medium text-slate-600 transition-colors hover:text-blue-700">Divida Fiscal</a>
+ray-700 hover:text-blue-600 font-medium transition-colors">Eventos</      <button id="mobile-menu-button" type="button" aria-label="Abrir menu" aria-controls="site-mobile-drawer"
+        aria-expanded="false"
+        class="xl:hidden flex h-11 w-11 items-center justify-center rounded-xl border border-slate-700 rgb(37 99 235) shadow-sm transition hover:bg-slate-800">
+        <span class="flex flex-col items-center justify-center gap-[5px]">
+          <span id="hb1"
+            class="block h-[2px] w-5 rounded-full bg-white 900 transition-all duration-300 ease-out"></span>
+          <span id="hb2"
+            class="block h-[2px] w-5 rounded-full bg-white 900 transition-all duration-300 ease-out"></span>
+          <span id="hb3"
+            class="block h-[2px] w-5 rounded-full bg-white 900 transition-all duration-300 ease-out"></span>
+        </span>
+s="w-6 h-6"></i>
+      </but  </div>
+</nav>
+
+<div id="site-mobile-backdrop" class="fixed inset-0 z-[60] bg-slate-950/55 xl:hidden"></div>
+
+<aside id="site-mobile-drawer"
+  class="fixed bottom-0 right-0 top-0 z-[70] flex w-[85vw] max-w-sm flex-col overflow-hidden bg-blue-900 text-white shadow-2xl xl:hidden">
+  <div class="pointer-events-none absolute -right-16 -top-16 h-52 w-52 rounded-full bg-white/5"></div>
+  <div class="pointer-events-none absolute -bottom-14 -left-14 h-44 w-44 rounded-full bg-white/5"></div>
+
+  <div class="relative flex h-full flex-col p-6">
+    <div class="flex items-center justify-between gap-4">
+      <div class="flex min-w-0 items-center gap-3">
+        <img src="images/CIIC_Logo_BG.png" alt="CIIC Brasil" class="h-10 w-auto shrink-0">
+        <div class="min-w-0">
+          <p class="text-sm font-semibold text-white/90">CIIC Brasil</p>
+          <p class="text-xs text-white/60">Navegacao principal</p>
+        </div>
       </div>
 
-      <!-- Mobile Button -->
-      <button id="mobile-menu-btn" class="md:hidden text-gray-700">
-        <i data-feather="menu" class="w-6 h-6"></i>
+      <button type="button" id="mobile-menu-close" aria-label="Cerrar menu"
+        class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-white transition hover:bg-white/15">
+        <i data-feather="x" class="h-5 w-5"></i>
       </button>
     </div>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden pb-4">
-      <div class="flex flex-col space-y-3">
-        <a href="index.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors">Início</a>
-        <a href="institutional.html"
-          class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors">Institucional</a>
-        <a href="services.html"
-          class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors">Serviços</a>
-        <a href="acordos.html"
-          class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors">Acordos</a>
-        <a href="legal.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors">Consulta
-          Legal Internacional</a>
-        <a href="arbitragem.html"
-          class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors">Arbitragem e Mediação</a>
-        <a href="deuda-fiscal.html"
-          class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors">Dívida Fiscal</a>
-        <a href="news.html"
-          class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors">Notícias</a>
-        <a href="events.html"
-          class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors">Eventos</a>
-      </div>
+    <nav class="mt-8 flex flex-1 flex-col gap-1 overflow-y-auto">
+      <a href="index.html" data-nav-link data-nav-variant="mobile" data-nav-close
+        class="nav-link-mobile flex items-center justify-center gap-3 rounded-xl px-4 py-3 text-center text-base text-white/75 transition hover:bg-white/10 hover:text-white">
+        <i data-feather="home" class="h-4 w-4"></i>
+        Inicio
+      </a>
+      <a href="news.html" data-nav-link data-nav-variant="mobile" data-nav-close
+        class="nav-link-mobile flex items-center justify-center gap-3 rounded-xl px-4 py-3 text-center text-base text-white/75 transition hover:bg-white/10 hover:text-white">
+        <i data-feather="briefcase" class="h-4 w-4"></i>
+        Oportunidades
+      </a>
+      <a href="events.html" data-nav-link data-nav-variant="mobile" data-nav-close
+        class="nav-link-mobile flex items-center justify-center gap-3 rounded-xl px-4 py-3 text-center text-base text-white/75 transition hover:bg-white/10 hover:text-white">
+        <i data-feather="calendar" class="h-4 w-4"></i>
+        Eventos
+      </a>
+      <a href="equipe.html" data-nav-link data-nav-variant="mobile" data-nav-close
+        class="nav-link-mobile flex items-center justify-center gap-3 rounded-xl px-4 py-3 text-center text-base text-white/75 transition hover:bg-white/10 hover:text-white">
+        <i data-feather="users" class="h-4 w-4"></i>
+        Equipe
+      </a>
+      <a href="institucional.html" data-nav-link data-nav-variant="mobile" data-nav-close
+        class="nav-link-mobile flex items-center justify-center gap-3 rounded-xl px-4 py-3 text-center text-base text-white/75 transition hover:bg-white/10 hover:text-white">
+        <i data-feather="file-text" class="h-4 w-4"></i>
+        Institucional
+      </a>
+      <a href="services.html" data-nav-link data-nav-variant="mobile" data-nav-close
+        class="nav-link-mobile flex items-center justify-center gap-3 rounded-xl px-4 py-3 text-center text-base text-white/75 transition hover:bg-white/10 hover:text-white">
+        <i data-feather="layers" class="h-4 w-4"></i>
+        Servicos
+      </a>
+      <a href="acordos.html" data-nav-link data-nav-variant="mobile" data-nav-close
+        class="nav-link-mobile flex items-center justify-center gap-3 rounded-xl px-4 py-3 text-center text-base text-white/75 transition hover:bg-white/10 hover:text-white">
+        <i data-feather="file-plus" class="h-4 w-4"></i>
+        Acordos
+      </a>
+      <a href="legal-internacional.html" data-nav-link data-nav-variant="mobile" data-nav-close
+        class="nav-link-mobile flex items-center justify-center gap-3 rounded-xl px-4 py-3 text-center text-base text-white/75 transition hover:bg-white/10 hover:text-white">
+        <i data-feather="scale" class="h-4 w-4"></i>
+        Legal Internacional
+      </a>
+      <a href="arbitragem-mediacao.html" data-nav-link data-nav-variant="mobile" data-nav-close
+        class="nav-link-mobile flex items-center justify-center gap-3 rounded-xl px-4 py-3 text-center text-base text-white/75 transition hover:bg-white/10 hover:text-white">
+        <i data-feather="shield" class="h-4 w-4"></i>
+        Arbitragem e Mediacao
+      </a>
+      <a href="divida-fiscal.html" data-nav-link data-nav-variant="mobile" data-nav-close
+        class="nav-link-mobile flex items-center justify-center gap-3 rounded-xl px-4 py-3 text-center text-base text-white/75 transition hover:bg-white/10 hover:text-white">
+        <i data-feather="alert-circle" class="h-4 w-4"></i>
+        Divida Fiscal
+      </a>
+    </nav>
+
+    <div class="mt-6 border-t border-white/10 pt-6">
+      <button type="button" id="mobile-contact-btn"
+        class="block w-full rounded-xl bg-yellow-400 px-4 py-4 text-center text-base font-semibold text-blue-950 transition hover:bg-yellow-300">
+        Entre em Contato
+      </button>
+      <p class="mt-3 text-center text-xs text-white/35">ciicbrasil.com</p>
     </div>
+  </div>
+</aside>
+
   </div>
 </nav>

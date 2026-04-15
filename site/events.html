@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -20,34 +20,39 @@
   <link rel="icon" href="images/favicon/favicon.ico" type="image/x-icon">
 
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     .event-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     }
 
-    #hero {
-      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/pagina/fondoEvento.png');
+    .hero-bg {
+      background: linear-gradient(rgba(0, 35, 102, 0.72), rgba(0, 35, 102, 0.72)), url('images/pagina/fondoEvento.png');
       background-size: cover;
       background-position: center;
     }
   </style>
 </head>
 
-<body class="font-sans bg-gray-50">
+<body class="font-sans bg-gray-50 text-gray-800">
       <!-- Header -->
     <div id="navbar-container"></div>
     <script src="js/navbar.js"></script>
   </header>
 
   <!-- Hero Section -->
-  <section id="hero" class="py-20 text-white" data-aos="fade-in">
-    <div class="container mx-auto px-4 text-center">
-      <div class="max-w-3xl mx-auto">
-        <h1 class="text-4xl md:text-5xl font-bold mb-6">Eventos CIIC</h1>
-        <p class="text-xl mb-8">Conecta con oportunidades de negocio a través de nuestros eventos internacionales</p>
-        <div class="flex flex-col sm:flex-row justify-center gap-4">
+  <section class="hero-bg pt-36 pb-24 md:pt-44 md:pb-32 text-white relative overflow-hidden">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl">
+        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6" data-aos="fade-up">Eventos CIIC</h1>
+        <p class="text-lg md:text-2xl text-blue-50 max-w-3xl leading-relaxed mb-8" data-aos="fade-up"
+          data-aos-delay="100">Conecta con oportunidades de negocio a través de nuestros eventos internacionales</p>
+        <div class="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="200">
           <button href="" onclick="openContactModal()"
-            class="bg-green-600 hover:bg-green-700 px-6 py-3 rounded-lg font-medium">Contactar</button>
+            class="bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold px-8 py-4 rounded-xl transition shadow-lg">Contactar</button>
         </div>
       </div>
     </div>
