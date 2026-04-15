@@ -10,6 +10,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <link rel="icon" href="/site/images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="js/Functions.js">
     <style>
         html {
             scroll-behavior: smooth;
@@ -49,45 +50,8 @@
 <body class="bg-white text-gray-800">
 
     <!-- Header -->
-    <header class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur shadow-sm border-b border-gray-100">
-        <div class="container mx-auto px-4 lg:px-6">
-            <div class="flex items-center justify-between h-20">
-                <a href="index.html" class="flex items-center gap-3 min-w-0">
-                    <img src="images/logo.png" alt="CIIC Brasil" class="h-12 w-auto">
-                    <div class="hidden sm:block">
-                        <h1 class="text-lg lg:text-xl font-bold text-blue-800 leading-tight">Camara Intercontinental de</h1>
-                        <p class="text-lg lg:text-xl font-bold text-blue-800 leading-tight">Industria e Comercio</p>
-                    </div>
-                </a>
-
-                <nav class="hidden lg:flex items-center gap-7 text-[15px] font-medium text-gray-700">
-                    <a href="index.html" class="hover:text-blue-700 transition">Início</a>
-                    <a href="team.html" class="hover:text-blue-700 transition">Equipe</a>
-                    <a href="opportunities.html" class="hover:text-blue-700 transition">Oportunidades</a>
-                    <a href="institutional.html" class="hover:text-blue-700 transition">Institucional</a>
-                    <a href="legal.html" class="hover:text-blue-700 transition">Legal Internacional</a>
-                    <a href="arbitragem.html" class="text-blue-700 font-semibold">Arbitragem e Mediação</a>
-                    <a href="deuda-fiscal.html" class="hover:text-blue-700 transition">Dívida Fiscal</a>
-                </nav>
-
-                <button id="menu-btn" class="lg:hidden text-gray-800" aria-label="Abrir menu">
-                    <i data-feather="menu" class="w-8 h-8"></i>
-                </button>
-            </div>
-        </div>
-
-        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 shadow-md">
-            <div class="px-4 py-4 space-y-3 text-gray-700 font-medium">
-                <a href="index.html" class="block hover:text-blue-700">Início</a>
-                <a href="team.html" class="block hover:text-blue-700">Equipe</a>
-                <a href="opportunities.html" class="block hover:text-blue-700">Oportunidades</a>
-                <a href="institutional.html" class="block hover:text-blue-700">Institucional</a>
-                <a href="legal.html" class="block hover:text-blue-700">Legal Internacional</a>
-                <a href="arbitragem.html" class="block text-blue-700 font-semibold">Arbitragem e Mediação</a>
-                <a href="deuda-fiscal.html" class="block hover:text-blue-700">Dívida Fiscal</a>
-            </div>
-        </div>
-    </header>
+    <div id="navbar-container"></div>
+    <script src="js/navbar.js"></script>
 
     <!-- Hero -->
     <section class="hero-bg pt-36 pb-24 md:pt-44 md:pb-32 text-white">
@@ -329,6 +293,21 @@
             });
     </script>
 
+    
+
+    <!-- Contact Floating Button -->
+    <button onclick="openContactModal()" id="contactFloatBtn"
+        class="fixed bottom-8 right-24 bg-green-600 hover:bg-green-700 text-white p-3 rounded-full shadow-lg z-[9998] transition-all duration-300">
+        <i data-feather="message-circle"></i>
+    </button>
+
+    <!-- Back to Top Button -->
+    <button onclick="topFunction()" id="backToTop"
+        class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hidden">
+        <i data-feather="arrow-up"></i>
+    </button>
+
+    
     <script>
         AOS.init({ duration: 900, once: true });
         feather.replace();
@@ -360,6 +339,95 @@
             }
         }
     </script>
+
+    
+    <!-- Contact Modal -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="js/contact-form.js"></script>
+
+    <div id="contactModal" onclick="if(event.target === this) closeContactModal()"
+        class="fixed inset-0 bg-black/50 hidden items-center justify-center z-[9999] px-4">
+        <div class="bg-white w-full max-w-lg rounded-2xl shadow-2xl p-8 relative animate-fadeIn">
+
+            <!-- Botón cerrar -->
+            <button type="button" onclick="closeContactModal()"
+                class="absolute top-4 right-4 text-gray-400 hover:text-gray-700">
+                <i data-feather="x" class="w-5 h-5"></i>
+            </button>
+
+            <!-- Título -->
+            <div class="mb-6">
+                <h2 class="text-2xl font-bold text-gray-800">Entre em Contato</h2>
+                <p class="text-gray-500 mt-1">
+                    Preencha os dados abaixo e envie sua solicitude.
+                </p>
+            </div>
+
+            <!-- Formulario -->
+            <form class="contact-form space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Nome</label>
+                    <input type="text" name="name" placeholder="Seu nome" required
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">País</label>
+                    <input type="text" name="country" placeholder="Seu país" required
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">E-mail</label>
+                    <input type="email" name="email" placeholder="seuemail@exemplo.com" required
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Assunto</label>
+                    <select name="subject" required
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option value="" disabled selected>Selecione um assunto</option>
+                        <option value="Atendimento legal internacional">Atendimento legal internacional</option>
+                        <option value="Arbitragem e mediação">Arbitragem e mediação</option>
+                        <option value="Solução para empresas com dívida fiscal">Solução para empresas com dívida fiscal
+                        </option>
+                        <option value="Cursos e capacitação">Cursos e capacitação</option>
+                        <option value="Parcerias institucionais">Parcerias institucionais</option>
+                        <option value="Comércio internacional">Comércio internacional</option>
+                        <option value="Representação empresarial">Representação empresarial</option>
+                        <option value="Consultoria empresarial">Consultoria empresarial</option>
+                        <option value="Eventos e missões comerciais">Eventos e missões comerciais</option>
+                        <option value="Portal de notícias">Portal de notícias</option>
+                        <option value="Associação / filiação">Associação / filiação</option>
+                        <option value="Suporte técnico">Suporte técnico</option>
+                        <option value="Outros">Outros</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Solicitude</label>
+                    <textarea rows="5" name="message" placeholder="Escreva sua mensagem..." required
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"></textarea>
+                </div>
+
+                <div class="hidden text-sm rounded-lg px-4 py-3" data-form-status></div>
+
+                <div class="flex justify-end gap-3 pt-2">
+                    <button type="button" onclick="closeContactModal()"
+                        class="px-5 py-3 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50">
+                        Cancelar
+                    </button>
+
+                    <button type="submit" class="px-5 py-3 rounded-lg bg-blue-600 text-white hover:bg-blue-700">
+                        Enviar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
 </body>
 
 </html>

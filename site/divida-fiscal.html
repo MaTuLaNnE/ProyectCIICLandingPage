@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIIC Brasil - Solução para Dívida Fiscal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link rel="icon" href="/site/images/favicon/favicon.ico" type="image/x-icon">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .hero-bg {
+            background: linear-gradient(rgba(8, 35, 92, 0.82), rgba(8, 35, 92, 0.82)),
+                url('images/pagina/divida-fiscal-bg.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(10px);
+        }
+
+        .service-card,
+        .benefit-card,
+        .step-card,
+        .problem-card {
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover,
+        .benefit-card:hover,
+        .step-card:hover,
+        .problem-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.10);
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800">
+
+        <!-- Header -->
+    <div id="navbar-container"></div>
+    <script src="js/navbar.js"></script>
+
+    <!-- Hero -->
+    <section class="hero-bg pt-36 pb-24 md:pt-44 md:pb-32 text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl">
+                <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2 mb-6" data-aos="fade-up">
+                    <i data-feather="alert-triangle" class="w-4 h-4"></i>
+                    <span class="text-sm font-medium">Apoio estratégico para regularização</span>
+                </div>
+
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6" data-aos="fade-up" data-aos-delay="100">
+                    Solução para Dívida Fiscal
+                </h1>
+
+                <p class="text-lg md:text-2xl text-blue-50 max-w-3xl leading-relaxed mb-8" data-aos="fade-up" data-aos-delay="200">
+                    Entre em contato com a CIIC Brasil e encontre orientação para enfrentar problemas de dívida fiscal com o Estado do Brasil, com uma abordagem clara, profissional e direcionada à solução.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="300">
+                    <button onclick="openContactModal('Consulta sobre Dívida Fiscal')"
+                        class="bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold px-8 py-4 rounded-xl transition shadow-lg">
+                        Solicitar orientação
+                    </button>
+                    <a href="#details"
+                        class="border border-white/40 hover:bg-white/10 font-semibold px-8 py-4 rounded-xl transition text-center">
+                        Entender como funciona
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro -->
+    <section id="details" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-10 items-center">
+                <div data-aos="fade-right">
+                    <div class="flex items-center mb-5">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i data-feather="shield" class="w-6 h-6 text-blue-700"></i>
+                        </div>
+                        <h2 class="text-3xl font-bold text-gray-800">Apoio para empresas e particulares</h2>
+                    </div>
+
+                    <p class="text-gray-600 text-lg leading-relaxed mb-5">
+                        Esta seção foi pensada para apresentar um canal direto de contato para quem enfrenta dificuldades relacionadas a dívidas fiscais, pendências com órgãos públicos ou necessidade de orientação sobre regularização.
+                    </p>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        A proposta é simples: facilitar o primeiro contato, entender o cenário do usuário e direcionar a consulta para uma avaliação técnica mais adequada.
+                    </p>
+                </div>
+
+                <div class="glass-card rounded-3xl p-8 shadow-xl border border-gray-100" data-aos="fade-left">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">O que a página transmite</h3>
+                    <div class="space-y-5">
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-blue-700 text-white flex items-center justify-center shrink-0">
+                                <i data-feather="target" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg">Foco em solução</h4>
+                                <p class="text-gray-600">Uma mensagem direta para quem precisa resolver um problema concreto.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-blue-700 text-white flex items-center justify-center shrink-0">
+                                <i data-feather="lock" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg">Confiança e seriedade</h4>
+                                <p class="text-gray-600">Comunicação institucional com tom profissional e acolhedor.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-blue-700 text-white flex items-center justify-center shrink-0">
+                                <i data-feather="send" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg">Ação imediata</h4>
+                                <p class="text-gray-600">O principal objetivo da página é gerar contato pelo formulário.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problems -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Situações em que podemos orientar</h2>
+                <p class="text-gray-600 text-lg">A página pode listar cenários comuns para que o visitante se identifique rapidamente com o problema que está enfrentando.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="problem-card bg-white border border-gray-200 rounded-2xl p-6" data-aos="fade-up">
+                    <div class="bg-red-100 w-14 h-14 rounded-xl flex items-center justify-center mb-5">
+                        <i data-feather="file-minus" class="w-7 h-7 text-red-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Pendências fiscais</h3>
+                    <p class="text-gray-600">Situações de débitos, notificações ou irregularidades que exigem avaliação inicial.</p>
+                </div>
+
+                <div class="problem-card bg-white border border-gray-200 rounded-2xl p-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-yellow-100 w-14 h-14 rounded-xl flex items-center justify-center mb-5">
+                        <i data-feather="briefcase" class="w-7 h-7 text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Dificuldades empresariais</h3>
+                    <p class="text-gray-600">Empresas com necessidade de orientação diante de obrigações tributárias e desafios de regularização.</p>
+                </div>
+
+                <div class="problem-card bg-white border border-gray-200 rounded-2xl p-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-blue-100 w-14 h-14 rounded-xl flex items-center justify-center mb-5">
+                        <i data-feather="search" class="w-7 h-7 text-blue-700"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Necessidade de análise</h3>
+                    <p class="text-gray-600">Casos em que o usuário ainda não sabe exatamente qual é o melhor caminho para resolver a situação.</p>
+                </div>
+
+                <div class="problem-card bg-white border border-gray-200 rounded-2xl p-6" data-aos="fade-up">
+                    <div class="bg-green-100 w-14 h-14 rounded-xl flex items-center justify-center mb-5">
+                        <i data-feather="check-square" class="w-7 h-7 text-green-700"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Busca por regularização</h3>
+                    <p class="text-gray-600">Pessoas ou empresas que desejam organizar sua situação fiscal e avançar com mais segurança.</p>
+                </div>
+
+                <div class="problem-card bg-white border border-gray-200 rounded-2xl p-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-purple-100 w-14 h-14 rounded-xl flex items-center justify-center mb-5">
+                        <i data-feather="clock" class="w-7 h-7 text-purple-700"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Urgência no atendimento</h3>
+                    <p class="text-gray-600">Demandas que precisam de um primeiro direcionamento rápido para evitar agravamento do problema.</p>
+                </div>
+
+                <div class="problem-card bg-white border border-gray-200 rounded-2xl p-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-sky-100 w-14 h-14 rounded-xl flex items-center justify-center mb-5">
+                        <i data-feather="users" class="w-7 h-7 text-sky-700"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Atendimento amplo</h3>
+                    <p class="text-gray-600">Página pensada tanto para empresas quanto para particulares que precisem de orientação inicial.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Steps -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Como funciona o primeiro contato</h2>
+                <p class="text-gray-600 text-lg">A estrutura da página deve ser simples e orientada à conversão, sem complicar a experiência do usuário.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="step-card bg-gray-50 border border-gray-200 rounded-2xl p-6" data-aos="fade-up">
+                    <div class="w-14 h-14 bg-blue-700 text-white rounded-2xl flex items-center justify-center text-xl font-bold mb-5">1</div>
+                    <h3 class="text-xl font-bold mb-3">Explique sua situação</h3>
+                    <p class="text-gray-600">O visitante entra em contato usando o mesmo formulário principal do site.</p>
+                </div>
+
+                <div class="step-card bg-gray-50 border border-gray-200 rounded-2xl p-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-blue-700 text-white rounded-2xl flex items-center justify-center text-xl font-bold mb-5">2</div>
+                    <h3 class="text-xl font-bold mb-3">Análise inicial</h3>
+                    <p class="text-gray-600">A equipe recebe a consulta e entende o contexto antes de orientar os próximos passos.</p>
+                </div>
+
+                <div class="step-card bg-gray-50 border border-gray-200 rounded-2xl p-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-blue-700 text-white rounded-2xl flex items-center justify-center text-xl font-bold mb-5">3</div>
+                    <h3 class="text-xl font-bold mb-3">Retorno profissional</h3>
+                    <p class="text-gray-600">A Câmara faz o retorno conforme a necessidade apresentada e o tipo de caso recebido.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA message -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-10 items-start">
+                <div data-aos="fade-right">
+                    <div class="flex items-center mb-5">
+                        <div class="bg-yellow-100 p-3 rounded-full mr-4">
+                            <i data-feather="message-square" class="w-6 h-6 text-yellow-600"></i>
+                        </div>
+                        <h2 class="text-3xl font-bold text-gray-800">Mensagem comercial sugerida</h2>
+                    </div>
+
+                    <div class="service-card bg-white border border-gray-200 rounded-2xl p-6">
+                        <p class="text-gray-700 text-lg leading-relaxed">
+                            Entre em contato conosco e encontre orientação para solucionar seu problema de dívida fiscal com o Estado do Brasil.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-blue-800 text-white rounded-3xl p-8 shadow-xl" data-aos="fade-left">
+                    <h3 class="text-2xl font-bold mb-5">Por que essa página funciona</h3>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start gap-3">
+                            <i data-feather="check-circle" class="w-5 h-5 text-yellow-300 mt-1"></i>
+                            <p class="text-blue-50">Comunica urgência sem exagero</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i data-feather="check-circle" class="w-5 h-5 text-yellow-300 mt-1"></i>
+                            <p class="text-blue-50">Fala diretamente com quem tem um problema real</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i data-feather="check-circle" class="w-5 h-5 text-yellow-300 mt-1"></i>
+                            <p class="text-blue-50">Leva o usuário ao formulário com clareza</p>
+                        </div>
+                    </div>
+
+                    <button onclick="openContactModal('Consulta sobre Dívida Fiscal')"
+                        class="w-full bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold px-6 py-4 rounded-xl transition">
+                        Entrar em contato
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-20 bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-3xl mx-auto" data-aos="zoom-in">
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-5">Precisa de ajuda com dívida fiscal?</h2>
+                <p class="text-lg md:text-xl text-blue-100 leading-relaxed mb-8">
+                    Fale com a CIIC Brasil e dê o primeiro passo para entender sua situação e buscar uma solução com mais segurança.
+                </p>
+                <button onclick="openContactModal('Consulta sobre Dívida Fiscal')"
+                    class="bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold px-10 py-4 rounded-xl transition shadow-lg">
+                    Abrir formulário de contato
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+
+    <div id="footer"></div>
+
+    <script>
+        fetch("footer.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("footer").innerHTML = data;
+                feather.replace();
+            });
+    </script>
+
+
+    <!-- Contact Floating Button -->
+    <button onclick="openContactModal()" id="contactFloatBtn"
+        class="fixed bottom-8 right-24 bg-green-600 hover:bg-green-700 text-white p-3 rounded-full shadow-lg z-[9998] transition-all duration-300">
+        <i data-feather="message-circle"></i>
+    </button>
+
+    <!-- Back to Top Button -->
+    <button onclick="topFunction()" id="backToTop"
+        class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hidden">
+        <i data-feather="arrow-up"></i>
+    </button>
+
+
+    <script>
+        AOS.init({ duration: 900, once: true });
+        feather.replace();
+
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        function openContactModal(subject = 'Consulta sobre Dívida Fiscal') {
+            const modal = document.getElementById('contactModal');
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            }
+
+            const subjectInput = document.getElementById('contact-subject');
+            if (subjectInput) {
+                subjectInput.value = subject;
+            }
+
+            const titleField = document.getElementById('contactModalTitle');
+            if (titleField) {
+                titleField.textContent = subject;
+            }
+        }
+    </script>
+</body>
+
+</html>

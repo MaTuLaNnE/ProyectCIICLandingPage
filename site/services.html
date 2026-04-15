@@ -52,43 +52,10 @@
 </head>
 
 <body class="font-sans bg-gray-50">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="flex items-center space-x-3">
-                <img src="images/CIIC_Logo_BG.png" alt="Logo CIIC" class="logo-img" style="width: 10%;">
-                <div style="max-width: 220px;">
-                    <a class="text-40px font-bold text-blue-800">
-                        Camara Intercontinental de Industria e Comercio
-                    </a>
-                </div>
-            </div>
-
-            <div class="hidden md:flex space-x-8">
-                <a href="index.html" class="text-gray-700 hover:text-blue-600">Início</a>
-                <a href="news.html" class="text-gray-700 hover:text-blue-600">Oportunidades</a>
-                <a href="equipe.html" class="text-gray-700 hover:text-blue-600">Equipe</a>
-                <a href="institucional.html" class="text-gray-700 hover:text-blue-600">Institucional</a>
-                <a href="services.html" class="text-blue-700 hover:text-blue-600">Serviços</a>
-                <a href="acordos.html" class="text-gray-700 hover:text-blue-600">Acordos</a>
-            </div>
-
-            <div class="md:hidden">
-                <button id="mobile-menu-button">
-                    <i data-feather="menu"></i>
-                </button>
-                <div id="mobile-menu" class="hidden absolute right-0 mt-2 w-56 bg-white rounded-md shadow-lg py-1 z-50">
-                    <a href="index.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Início</a>
-                    <a href="news.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Oportunidades</a>
-                    <a href="equipe.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Equipe</a>
-                    <a href="institucional.html"
-                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Institucional</a>
-                    <a href="services.html" class="block px-4 py-2 text-blue-700 hover:bg-gray-100">Serviços</a>
-                    <a href="acordos.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Acordos</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+    
+        <!-- Header -->
+    <div id="navbar-container"></div>
+    <script src="js/navbar.js"></script>
 
     <!-- Hero -->
     <section id="hero-services" class="py-32 text-white" data-aos="fade-in">
@@ -101,20 +68,20 @@
         </div>
 
         <div class="flex flex-col sm:flex-row justify-center gap-4 mt-6">
-    
-    <a href="institucional.html"
-        class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium flex items-center justify-center">
-        <i data-feather="file-text" class="w-5 h-5 mr-2"></i>
-        Voltar a institucional
-    </a>
 
-    <a href="acordos.html"
-        class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium flex items-center justify-center">
-        <i data-feather="file-text" class="w-5 h-5 mr-2"></i>
-        Ver Acordos
-    </a>
+            <a href="institucional.html"
+                class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium flex items-center justify-center">
+                <i data-feather="file-text" class="w-5 h-5 mr-2"></i>
+                Voltar a institucional
+            </a>
 
-</div>
+            <a href="acordos.html"
+                class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium flex items-center justify-center">
+                <i data-feather="file-text" class="w-5 h-5 mr-2"></i>
+                Ver Acordos
+            </a>
+
+        </div>
     </section>
 
     <!-- Intro -->
@@ -637,7 +604,7 @@
             </form>
         </div>
     </div>
-    
+
 </body>
 
 </html>
