@@ -21,68 +21,39 @@
   <link rel="icon" href="images/favicon/favicon.ico" type="image/x-icon">
 
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     .event-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     }
 
-    #hero {
-      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/pagina/fondoNoticias.jpg');
+    .hero-bg {
+      background: linear-gradient(rgba(0, 35, 102, 0.72), rgba(0, 35, 102, 0.72)), url('images/pagina/fondoNoticias.jpg');
       background-size: cover;
       background-position: center;
     }
   </style>
 </head>
 
-<body class="font-sans bg-gray-50" >
-  <!-- Header con navbar -->
-  <header>
-    <nav class="bg-white shadow-md sticky top-0 z-50">
-      <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-
-        <div class="flex items-center space-x-3">
-          <img src="images/CIIC_Logo_BG.png" alt="Logo CIIC" class="logo-img" style="width: auto;">
-          <div style="max-width: 200px;">
-            <a class="text-40px font-bold text-blue-800">
-              Camara Intercontinental de Industria e Comercio
-            </a>
-          </div>
-
-        </div>
-
-        <div class="hidden md:flex space-x-8">
-          <a href="index.html" class="text-gray-700 hover:text-blue-600">Inicio</a>
-          <a href="events.html" class="text-gray-700 hover:text-blue-600">Eventos</a>
-          <a href="news.html" class="text-blue-800 font-semibold">Noticias</a>
-          <a href="equipe.html" class="text-gray-700 hover:text-blue-600">Equipe</a>
-          <a href="institucional.html" class="text-gray-700 hover:text-blue-600">Institucional</a>
-        </div>
-
-        <div class="md:hidden relative">
-          <button id="mobile-menu-button">
-            <i data-feather="menu"></i>
-          </button>
-          <div id="mobile-menu" class="hidden absolute right-0 mt-2 w-56 bg-white rounded-md shadow-lg py-1 z-50">
-            <a href="index.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Inicio</a>
-            <a href="events.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Eventos</a>
-            <a href="news.html" class="block px-4 py-2 text-blue-800 font-semibold">Noticias</a>
-            <a href="equipe.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Equipe</a>
-            <a href="institucional.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Institucional</a>
-          </div>
-        </div>
-      </div>
-    </nav>
+<body class="font-sans bg-gray-50 text-gray-800">
+      <!-- Header -->
+    <div id="navbar-container"></div>
+    <script src="js/navbar.js"></script>
   </header>
 
   <!-- Hero Section -->
-  <section id="hero" class="py-20 text-white" data-aos="fade-in">
-    <div class="container mx-auto px-4 text-center">
-      <div class="max-w-3xl mx-auto">
-        <h1 class="text-4xl md:text-5xl font-bold mb-6">Noticias e Oportunidades</h1>
-        <p class="text-xl mb-8">Conecte-se com oportunidades de negocio por meio dos nossos eventos internacionais</p>
-        <div class="flex flex-col sm:flex-row justify-center gap-4">
+  <section class="hero-bg pt-36 pb-24 md:pt-44 md:pb-32 text-white relative overflow-hidden">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl">
+        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6" data-aos="fade-up">Noticias e Oportunidades</h1>
+        <p class="text-lg md:text-2xl text-blue-50 max-w-3xl leading-relaxed mb-8" data-aos="fade-up"
+          data-aos-delay="100">Conecte-se com oportunidades de negocio por meio dos nossos eventos internacionais</p>
+        <div class="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="200">
           <a href="#" onClick="openContactModal()"
-            class="bg-green-600 hover:bg-green-700 px-6 py-3 rounded-lg font-medium">Contactar</a>
+            class="bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold px-8 py-4 rounded-xl transition shadow-lg text-center">Contactar</a>
         </div>
       </div>
     </div>
@@ -136,17 +107,17 @@
   </section> -->
 
   <!-- Footer -->
-  
-    <div id="footer"></div>
 
-    <script>
-        fetch("footer.html")
-            .then(res => res.text())
-            .then(data => {
-                document.getElementById("footer").innerHTML = data;
-                feather.replace();
-            });
-    </script>
+  <div id="footer"></div>
+
+  <script>
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("footer").innerHTML = data;
+        feather.replace();
+      });
+  </script>
 
   <!-- Contact Floating Button -->
   <button onclick="openContactModal()" id="contactFloatBtn"
@@ -204,91 +175,91 @@
 
   <!-- Contact Modal -->
 
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="js/contact-form.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="js/contact-form.js"></script>
 
-    <div id="contactModal" onclick="if(event.target === this) closeContactModal()"
-        class="fixed inset-0 bg-black/50 hidden items-center justify-center z-[9999] px-4">
-        <div class="bg-white w-full max-w-lg rounded-2xl shadow-2xl p-8 relative animate-fadeIn">
+  <div id="contactModal" onclick="if(event.target === this) closeContactModal()"
+    class="fixed inset-0 bg-black/50 hidden items-center justify-center z-[9999] px-4">
+    <div class="bg-white w-full max-w-lg rounded-2xl shadow-2xl p-8 relative animate-fadeIn">
 
-            <!-- Botón cerrar -->
-            <button type="button" onclick="closeContactModal()"
-                class="absolute top-4 right-4 text-gray-400 hover:text-gray-700">
-                <i data-feather="x" class="w-5 h-5"></i>
-            </button>
+      <!-- Botón cerrar -->
+      <button type="button" onclick="closeContactModal()"
+        class="absolute top-4 right-4 text-gray-400 hover:text-gray-700">
+        <i data-feather="x" class="w-5 h-5"></i>
+      </button>
 
-            <!-- Título -->
-            <div class="mb-6">
-                <h2 class="text-2xl font-bold text-gray-800">Entre em Contato</h2>
-                <p class="text-gray-500 mt-1">
-                    Preencha os dados abaixo e envie sua solicitude.
-                </p>
-            </div>
+      <!-- Título -->
+      <div class="mb-6">
+        <h2 class="text-2xl font-bold text-gray-800">Entre em Contato</h2>
+        <p class="text-gray-500 mt-1">
+          Preencha os dados abaixo e envie sua solicitude.
+        </p>
+      </div>
 
-            <!-- Formulario -->
-            <form class="contact-form space-y-4">
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Nome</label>
-                    <input type="text" name="name" placeholder="Seu nome" required
-                        class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                </div>
-
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">País</label>
-                    <input type="text" name="country" placeholder="Seu país" required
-                        class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                </div>
-
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">E-mail</label>
-                    <input type="email" name="email" placeholder="seuemail@exemplo.com" required
-                        class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                </div>
-
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Assunto</label>
-                    <select name="subject" required
-                        class="w-full border border-gray-300 rounded-lg px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        <option value="" disabled selected>Selecione um assunto</option>
-                        <option value="Atendimento legal internacional">Atendimento legal internacional</option>
-                        <option value="Arbitragem e mediação">Arbitragem e mediação</option>
-                        <option value="Solução para empresas com dívida fiscal">Solução para empresas com dívida fiscal
-                        </option>
-                        <option value="Cursos e capacitação">Cursos e capacitação</option>
-                        <option value="Parcerias institucionais">Parcerias institucionais</option>
-                        <option value="Comércio internacional">Comércio internacional</option>
-                        <option value="Representação empresarial">Representação empresarial</option>
-                        <option value="Consultoria empresarial">Consultoria empresarial</option>
-                        <option value="Eventos e missões comerciais">Eventos e missões comerciais</option>
-                        <option value="Portal de notícias">Portal de notícias</option>
-                        <option value="Associação / filiação">Associação / filiação</option>
-                        <option value="Suporte técnico">Suporte técnico</option>
-                        <option value="Outros">Outros</option>
-                    </select>
-                </div>
-
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Solicitude</label>
-                    <textarea rows="5" name="message" placeholder="Escreva sua mensagem..." required
-                        class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"></textarea>
-                </div>
-
-                <div class="hidden text-sm rounded-lg px-4 py-3" data-form-status></div>
-
-                <div class="flex justify-end gap-3 pt-2">
-                    <button type="button" onclick="closeContactModal()"
-                        class="px-5 py-3 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50">
-                        Cancelar
-                    </button>
-
-                    <button type="submit" class="px-5 py-3 rounded-lg bg-blue-600 text-white hover:bg-blue-700">
-                        Enviar
-                    </button>
-                </div>
-            </form>
+      <!-- Formulario -->
+      <form class="contact-form space-y-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Nome</label>
+          <input type="text" name="name" placeholder="Seu nome" required
+            class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
         </div>
-    </div>  
-    
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">País</label>
+          <input type="text" name="country" placeholder="Seu país" required
+            class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">E-mail</label>
+          <input type="email" name="email" placeholder="seuemail@exemplo.com" required
+            class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Assunto</label>
+          <select name="subject" required
+            class="w-full border border-gray-300 rounded-lg px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <option value="" disabled selected>Selecione um assunto</option>
+            <option value="Atendimento legal internacional">Atendimento legal internacional</option>
+            <option value="Arbitragem e mediação">Arbitragem e mediação</option>
+            <option value="Solução para empresas com dívida fiscal">Solução para empresas com dívida fiscal
+            </option>
+            <option value="Cursos e capacitação">Cursos e capacitação</option>
+            <option value="Parcerias institucionais">Parcerias institucionais</option>
+            <option value="Comércio internacional">Comércio internacional</option>
+            <option value="Representação empresarial">Representação empresarial</option>
+            <option value="Consultoria empresarial">Consultoria empresarial</option>
+            <option value="Eventos e missões comerciais">Eventos e missões comerciais</option>
+            <option value="Portal de notícias">Portal de notícias</option>
+            <option value="Associação / filiação">Associação / filiação</option>
+            <option value="Suporte técnico">Suporte técnico</option>
+            <option value="Outros">Outros</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Solicitude</label>
+          <textarea rows="5" name="message" placeholder="Escreva sua mensagem..." required
+            class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"></textarea>
+        </div>
+
+        <div class="hidden text-sm rounded-lg px-4 py-3" data-form-status></div>
+
+        <div class="flex justify-end gap-3 pt-2">
+          <button type="button" onclick="closeContactModal()"
+            class="px-5 py-3 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50">
+            Cancelar
+          </button>
+
+          <button type="submit" class="px-5 py-3 rounded-lg bg-blue-600 text-white hover:bg-blue-700">
+            Enviar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
 </body>
 
 </html>
