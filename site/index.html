@@ -15,6 +15,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="js/supabase.js"></script>
     <script src="js/Functions.js"></script>
+    <script src="js/association-modal.js"></script>
+    
     <style>
         .country-card:hover {
             transform: translateY(-5px);
@@ -31,7 +33,7 @@
 
 <body class="font-sans bg-gray-50">
     <!-- Navigation -->
-     <div id="navbar-container"></div>
+    <div id="navbar-container"></div>
     <script src="js/navbar.js"></script>
 
     <!-- Hero Section -->
@@ -918,7 +920,8 @@
         <!-- Header del drawer: logo + X -->
         <div
             style="display:flex;justify-content:space-between;align-items:center;margin-bottom:40px;position:relative;z-index:2;">
-            <span style="color:white;font-weight:600;font-size:15px;opacity:0.9;"><img src="images/CIIC_Logo_BG.png" alt="Logo CIIC" class="logo-img" style="width: 15%;"></span>
+            <span style="color:white;font-weight:600;font-size:15px;opacity:0.9;"><img src="images/CIIC_Logo_BG.png"
+                    alt="Logo CIIC" class="logo-img" style="width: 15%;"></span>
             <button onclick="closeMenu()"
                 style="width:25%;height:36px;background:rgba(255,255,255,0.12);border:none;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;">
                 <!-- X SVG -->
