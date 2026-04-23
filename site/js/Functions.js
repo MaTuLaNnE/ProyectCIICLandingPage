@@ -75,6 +75,7 @@ function scrollToTop() {
     });
 }
 
+
 // Smooth scroll para los enlaces del footer
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
