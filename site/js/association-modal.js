@@ -42,28 +42,73 @@ function closeAssociationModal() {
 }
 
 function setupAssociationForm() {
-  const form = document.getElementById("associationForm");
-  if (!form) return;
+  (function () {
+    emailjs.init("L-dkwk2oxyNQ6gRy7");
+  })();
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+  const forms = document.querySelectorAll(".association-form");
 
-    const formData = new FormData(form);
+  forms.forEach((form) => {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
 
-    const data = {
-      name: formData.get("name"),
-      email: formData.get("email"),
-      phone: formData.get("phone"),
-      subject: formData.get("subject"),
-      message: formData.get("message"),
-    };
+      const submitButton = form.querySelector('button[type="submit"]');
+      const statusBox = form.querySelector("[data-form-status]");
+      const originalButtonText = submitButton ? submitButton.innerHTML : "";
 
-    console.log("Solicitud de asociación:", data);
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.innerHTML = "Enviando...";
+      }
 
-    // Acá después podés conectar EmailJS si querés
-    alert("Solicitação enviada com sucesso.");
-    form.reset();
-    closeAssociationModal();
+      if (statusBox) {
+        statusBox.classList.add("hidden");
+        statusBox.textContent = "";
+        statusBox.className = "hidden text-sm rounded-lg px-4 py-3";
+      }
+
+      const templateParams = {
+        name: form.querySelector('[name="name"]')?.value || "",
+        email: form.querySelector('[name="email"]')?.value || "",
+        phone: form.querySelector('[name="phone"]')?.value || "",
+        subject: form.subject.value,
+        message: form.querySelector('[name="message"]')?.value || ""
+      };
+
+      emailjs.send("service_4mt67zj", "template_egr19lw", templateParams)
+        .then(function () {
+          if (statusBox) {
+            statusBox.textContent = "Solicitação enviada com sucesso.";
+            statusBox.className = "text-sm rounded-lg px-4 py-3 bg-green-100 text-green-700";
+          } else {
+            alert("Solicitação enviada com sucesso.");
+          }
+
+          form.reset();
+
+          setTimeout(() => {
+            if (typeof closeAssociationModal === "function") {
+              closeAssociationModal();
+            }
+          }, 1200);
+        })
+        .catch(function (error) {
+          console.error("Erro ao enviar solicitação de associação:", error);
+
+          if (statusBox) {
+            statusBox.textContent = "Ocorreu um erro ao enviar. Tente novamente.";
+            statusBox.className = "text-sm rounded-lg px-4 py-3 bg-red-100 text-red-700";
+          } else {
+            alert("Ocorreu um erro ao enviar.");
+          }
+        })
+        .finally(function () {
+          if (submitButton) {
+            submitButton.disabled = false;
+            submitButton.innerHTML = originalButtonText;
+          }
+        });
+    });
   });
 }
 
