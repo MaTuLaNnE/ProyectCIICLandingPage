@@ -1,5 +1,3 @@
-// 
-
 async function loadEvents() {
   console.log('loadEvents arrancó');
 
@@ -15,17 +13,12 @@ async function loadEvents() {
     return;
   }
 
-  console.log('Consultando tabla events...');
-
   const { data, error } = await window.supabaseClient
     .from('events')
     .select('*')
     .order('start_date', { ascending: false });
 
-  console.log('Respuesta de Supabase:', { data, error });
-
   if (error) {
-    console.error('Error cargando eventos:', error);
     container.innerHTML = `<p class="text-red-600">Error cargando eventos: ${error.message}</p>`;
     return;
   }
@@ -38,54 +31,48 @@ async function loadEvents() {
   container.innerHTML = '';
 
   data.forEach((e) => {
-    const start = e.start_date ? new Date(e.start_date).toLocaleDateString() : '';
-    const end = e.end_date ? new Date(e.end_date).toLocaleDateString() : '';
+    const fmt = (d) => d ? new Date(d).toLocaleDateString('pt-BR') : '';
+    const start = fmt(e.start_date);
+    const end   = fmt(e.end_date);
 
-    const dateDisplay = start === end
-      ? start
-      : `${start} <span class="text-slate-500 text-sm mx-1">até</span> ${end}`;
+    const dateDisplay = !end || start === end
+      ? `<span class="text-sm font-semibold text-slate-700">${start}</span>`
+      : `<span class="text-sm font-semibold text-slate-700">${start}</span>
+         <span class="text-xs text-slate-400 mx-1">→</span>
+         <span class="text-sm font-semibold text-slate-700">${end}</span>`;
 
     container.innerHTML += `
-      <div class="event-card bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 h-full">
-        <div class="p-6 flex flex-col h-full">
-          
-          <div class="mb-4">
-            <h3 class="text-xl md:text-2xl font-bold text-blue-800 leading-snug mb-2">
+      <div class="event-card bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-300">
+        <div class="p-4 flex flex-col gap-2">
+
+          <div>
+            <h3 class="text-base font-bold text-blue-800 leading-snug">
               ${e.title ?? ''}
             </h3>
-            <p class="text-base md:text-lg font-medium text-slate-600">
+            <p class="text-sm font-medium text-slate-500 mt-0.5">
               ${e.subtitle ?? ''}
             </p>
           </div>
 
-          <div class="mb-5">
-            <p class="text-slate-600 leading-7 text-sm md:text-base">
-              ${e.summary ?? ''}
-            </p>
-          </div>
+          <p class="text-sm text-slate-600 leading-relaxed line-clamp-3">
+            ${e.summary ?? ''}
+          </p>
 
-          <div class="pt-4 border-t border-gray-100 mt-auto">
-            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-              
-              <div class="flex items-center text-slate-600 min-w-0">
-                <i data-feather="map-pin" class="w-4 h-4 mr-2 text-slate-400 shrink-0"></i>
-                <span class="text-sm md:text-base leading-snug">
-                  ${e.location ?? 'Virtual'}
-                </span>
-              </div>
+          <div class="flex items-center justify-between gap-3 pt-2 border-t border-gray-100 mt-1">
 
-              <div class="bg-green-100 border border-slate-200 rounded-lg px-4 py-3 text-center min-w-[130px] sm:min-w-[145px]">
-                <div class="text-[11px] uppercase tracking-wide text-slate-500 mb-1 font-semibold">
-                  Data
-                </div>
-                <div class="text-base font-semibold text-slate-800 whitespace-nowrap">
-                  ${dateDisplay}
-                </div>
-              </div>
-
+            <div class="flex items-center gap-1.5 text-slate-500 min-w-0">
+              <i data-feather="map-pin" class="w-3.5 h-3.5 shrink-0 text-slate-400"></i>
+              <span class="text-xs truncate">${e.location ?? 'Virtual'}</span>
             </div>
-          </div>
 
+            <div class="flex items-center gap-1 bg-green-50 border border-green-200 rounded-lg px-3 py-1.5 shrink-0">
+              <i data-feather="calendar" class="w-3.5 h-3.5 text-green-600 shrink-0"></i>
+              <div class="flex items-center gap-0.5">
+                ${dateDisplay}
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
     `;
@@ -95,20 +82,17 @@ async function loadEvents() {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-  console.log('DOMContentLoaded disparado');
   loadEvents();
 });
 
-
-// Back to top button
-window.onscroll = function () { scrollFunction() };
+window.onscroll = function () { scrollFunction(); };
 
 function scrollFunction() {
-  const backToTopBtn = document.getElementById("backToTop");
+  const btn = document.getElementById("backToTop");
   if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-    backToTopBtn.classList.remove('hidden');
+    btn.classList.remove('hidden');
   } else {
-    backToTopBtn.classList.add('hidden');
+    btn.classList.add('hidden');
   }
 }
 
