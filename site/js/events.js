@@ -33,13 +33,13 @@ async function loadEvents() {
   data.forEach((e) => {
     const fmt = (d) => d ? new Date(d).toLocaleDateString('pt-BR') : '';
     const start = fmt(e.start_date);
-    const end   = fmt(e.end_date);
+    const end = fmt(e.end_date);
 
     const dateDisplay = !end || start === end
-      ? `<span class="text-sm font-semibold text-slate-700">${start}</span>`
-      : `<span class="text-sm font-semibold text-slate-700">${start}</span>
-         <span class="text-xs text-slate-400 mx-1">→</span>
-         <span class="text-sm font-semibold text-slate-700">${end}</span>`;
+      ? `<span class="text-sm font-semibold text-slate-700 whitespace-nowrap">${start}</span>`
+      : `<span class="text-sm font-semibold text-slate-700 whitespace-nowrap">${start}</span>
+          <span class="text-xs text-slate-400 mx-1">→</span>
+         <span class="text-sm font-semibold text-slate-700 whitespace-nowrap">${end}</span>`;
 
     container.innerHTML += `
       <div class="event-card bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-300">
@@ -58,21 +58,27 @@ async function loadEvents() {
             ${e.summary ?? ''}
           </p>
 
-          <div class="flex items-center justify-between gap-3 pt-2 border-t border-gray-100 mt-1">
 
-            <div class="flex items-center gap-1.5 text-slate-500 min-w-0">
-              <i data-feather="map-pin" class="w-3.5 h-3.5 shrink-0 text-slate-400"></i>
-              <span class="text-xs truncate">${e.location ?? 'Virtual'}</span>
-            </div>
+          <div class="flex flex-col gap-2 pt-2 border-t border-gray-100 mt-1">
 
-            <div class="flex items-center gap-1 bg-green-50 border border-green-200 rounded-lg px-3 py-1.5 shrink-0">
-              <i data-feather="calendar" class="w-3.5 h-3.5 text-green-600 shrink-0"></i>
-              <div class="flex items-center gap-0.5">
-                ${dateDisplay}
-              </div>
-            </div>
-
+          <div class="flex items-center gap-1.5 text-slate-500 min-w-0">
+            <i data-feather="map-pin" class="w-3.5 h-3.5 shrink-0 text-slate-400"></i>
+            <span class="text-xs">${e.location ?? 'Virtual'}</span>
           </div>
+
+          <div class="flex items-center gap-1 bg-green-50 border border-green-200 rounded-lg px-3 py-1.5 self-start">
+            <i data-feather="calendar" class="w-3.5 h-3.5 text-green-600 shrink-0"></i>
+            <div class="flex items-center gap-0.5 flex-wrap">
+              ${dateDisplay}
+            </div>
+          </div>
+
+        </div>
+
+
+
+
+
         </div>
       </div>
     `;
