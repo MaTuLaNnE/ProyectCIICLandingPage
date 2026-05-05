@@ -14,8 +14,6 @@ async function loadEvents() {
     .select('*')
     .order('start_date', { ascending: false });
 
-  console.log('Respuesta de Supabase:', { data, error });
-
   if (error) {
     console.error('Error cargando eventos:', error);
     container.innerHTML = `<p class="text-red-600">Error: ${error.message}</p>`;

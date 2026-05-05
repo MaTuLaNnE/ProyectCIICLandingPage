@@ -13,7 +13,7 @@ async function loadNews() {
   console.log('Respuesta news:', { data, error });
   if (error) { console.error('Error cargando noticias:', error); return; }
   if (!data || data.length === 0) {
-    container.innerHTML = '<p>No hay noticias</p>';
+    container.innerHTML = '<p class="text-center text-gray-400 py-12">No hay noticias disponibles.</p>';
     return;
   }
 

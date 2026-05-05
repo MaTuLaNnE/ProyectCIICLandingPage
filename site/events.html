@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Eventos CIIC</title>
   <link rel="stylesheet" href="css/styles.css">
 
@@ -11,6 +11,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="js/supabase.js"></script>
   <script src="js/events.js"></script>
+  <script src="js/association-modal.js"></script>
 
   <!-- Tailwind y extras -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -34,6 +35,45 @@
       background-size: cover;
       background-position: center;
     }
+
+    html {
+      overflow-x: hidden;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    /* Tarjetas de eventos: texto contenido */
+    .event-card {
+      overflow: hidden;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .event-card p,
+    .event-card h2,
+    .event-card h3,
+    .event-card h4,
+    .event-card span,
+    .event-card a {
+      max-width: 100%;
+      overflow-wrap: break-word;
+      hyphens: auto;
+    }
+
+    .event-card img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    /* Evita zoom automático en iOS al tocar inputs del modal */
+    #contactModal input,
+    #contactModal select,
+    #contactModal textarea {
+      font-size: 16px;
+    }
   </style>
 </head>
 
@@ -41,7 +81,7 @@
   <!-- Header -->
   <div id="navbar-container"></div>
   <script src="js/navbar.js"></script>
-  </header>
+
 
   <!-- Hero Section -->
   <section class="hero-bg pt-36 pb-24 md:pt-44 md:pb-32 text-white relative overflow-hidden">
@@ -187,6 +227,21 @@
       modal.classList.add('hidden');
       modal.classList.remove('flex');
     }
+
+    function topFunction() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    window.onscroll = function () {
+      const btn = document.getElementById("backToTop");
+      if (btn) {
+        if (document.documentElement.scrollTop > 300) {
+          btn.classList.remove('hidden');
+        } else {
+          btn.classList.add('hidden');
+        }
+      }
+    };
 
     window.openContactModal = openContactModal;
     window.closeContactModal = closeContactModal;
